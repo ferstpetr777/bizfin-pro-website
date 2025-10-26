@@ -1,0 +1,27 @@
+
+# BEGIN WordPress
+# Директивы (строки) между `BEGIN WordPress` и `END WordPress`
+# созданы автоматически и подлежат изменению только через фильтры WordPress.
+# Сделанные вручную изменения между этими маркерами будут перезаписаны.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+# Additional security - Block wp-admin access
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Block direct access to wp-admin
+RewriteCond %{REQUEST_URI} ^/wp-admin/$
+RewriteRule ^(.*)$ / [R=301,L]
+# Block wp-admin for non-admins
+RewriteCond %{REQUEST_URI} ^/wp-admin/
+RewriteCond %{HTTP_COOKIE} !wordpress_logged_in
+RewriteRule ^(.*)$ / [R=301,L]
+</IfModule>

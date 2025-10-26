@@ -1,0 +1,259 @@
+/* Reasonable Width Content Styles for BizFin Articles */
+
+/* Set reasonable max-width ONLY for article content, not affecting header */
+.single-post .ast-container .ast-article-single,
+.single-post .ast-separate-container .ast-article-single {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Header styles removed - let theme handle header naturally */
+
+/* Reasonable width for article content */
+.single-post .entry-content,
+.single-post .ast-article-single .entry-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Full width for article header */
+.single-post .entry-header,
+.single-post .ast-article-single .entry-header {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Ensure full width for all article elements */
+.single-post .ast-article-single {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Full width for article wrapper */
+.single-post .ast-article-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Override any theme-specific width constraints */
+.single-post .site-content,
+.single-post .content-area {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Reasonable width ONLY for article content containers */
+.single-post .ast-article-single,
+.single-post .ast-article-inner,
+.single-post .entry-content,
+.single-post .entry-header {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Preserve original styling for blog pages and alphabet menu */
+.blog .ast-container,
+.archive .ast-container,
+.search .ast-container,
+.page .ast-container {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ensure header is full width but with proper content padding */
+.ast-header .ast-container,
+.ast-header .ast-separate-container,
+.ast-main-header-wrap .ast-container,
+.ast-main-header-wrap .ast-separate-container {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Force consistent header layout on ALL pages */
+.ast-main-header-wrap,
+.ast-primary-header-bar,
+#ast-desktop-header,
+#masthead,
+.site-header {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Override theme-specific header constraints */
+.single-post .ast-main-header-wrap,
+.single-post .ast-primary-header-bar,
+.single-post #ast-desktop-header,
+.single-post #masthead,
+.single-post .site-header {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Force full width for header containers on single post pages */
+.single-post #ast-desktop-header,
+.single-post #masthead,
+.single-post .site-header {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Override body width constraints on single post pages */
+.single-post body {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Simple header width fix - let theme handle positioning */
+.ast-primary-header-bar {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Header content padding - simplified */
+.ast-main-header-wrap .ast-container,
+.ast-main-header-wrap .ast-separate-container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Remove extra padding from content since container already has it */
+.single-post .entry-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Normalize heading sizes to match theme */
+.single-post .entry-title,
+.single-post h1.entry-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+.single-post h2 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: 600 !important;
+}
+
+.single-post h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+    font-weight: 600 !important;
+}
+
+.single-post h4 {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+}
+
+/* Protect alphabet menu and blog functionality */
+.alphabet-menu,
+.alphabet-blog-panel,
+.blog-alphabet-panel,
+.alphabet-filter {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ensure blog pages maintain original layout */
+.blog .ast-container,
+.archive .ast-container,
+.search .ast-container {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 768px) {
+    .single-post .entry-content,
+    .single-post .ast-article-single .entry-content,
+    .single-post .entry-header,
+    .single-post .ast-article-single .entry-header {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .single-post .entry-title,
+    .single-post h1.entry-title {
+        font-size: 2rem !important;
+    }
+    
+    .single-post h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .single-post h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Override Elementor container width if present */
+.single-post .elementor-container {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Ensure full width for any custom containers */
+.single-post .container,
+.single-post .wp-container {
+    max-width: 100% !important;
+    width: 100% !important;
+}

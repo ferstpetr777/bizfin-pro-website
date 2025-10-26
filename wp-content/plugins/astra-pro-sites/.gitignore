@@ -1,0 +1,58 @@
+# ignore VSCode files
+.vscode/
+
+# ignore package.json lock
+package-lock.json
+
+# ignore PHPStorm extra directories
+.idea/
+
+# Leave node_modules from git
+node_modules/
+
+# sass cache
+.sass-cache
+
+# map files
+*.map
+
+# database files
+*.sql
+
+# XML files
+*.xml
+
+# Skip package file from versoning
+*.zip
+
+# Exclude OS specific files
+.DS_Store
+
+# Exclude composer's directories
+vendor/
+
+# Exclude todo.
+todo.txt
+
+# ignore git inside subproject
+admin/bsf-core/.git
+
+# ignore PHPCS report files
+phpcs-summary.log
+phpcs-full.log
+
+# Large dist directory - Build files can be in MBs, let's not increase size of the git repo
+inc/assets/js/dist/
+astra-pro-sites/
+inc/lib/onboarding/assets/dist
+
+#ignore readme inside subproject
+inc/lib/bsf-quick-links/readme.md
+
+#ignore readme inside subproject
+inc/lib/onboarding/packages/starter-templates-components/build
+
+#ignore docker snapshot
+artifacts
+
+wordpress

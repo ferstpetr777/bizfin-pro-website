@@ -1,0 +1,637 @@
+/* Bank Guarantee Page Styles */
+.bank-guarantee-page {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.bank-guarantee-page * {
+    box-sizing: border-box;
+}
+
+.bank-guarantee-page :root {
+    --primary-color: #1A5CE0;
+    --secondary-color: #E85A00;
+    --text-color: #000000;
+    --text-light: #475569;
+    --border-color: #e0e0e0;
+    --bg-light: #f8fafc;
+}
+
+.bank-guarantee-page .gjs-t-h1 {
+    color: var(--text-color);
+    font-size: 48px;
+    line-height: 1.15;
+    font-family: Poppins, Inter, ui-sans-serif, system-ui;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+}
+
+.bank-guarantee-page .gjs-t-h2 {
+    color: var(--text-color);
+    font-size: 32px;
+    line-height: 1.25;
+    font-family: Poppins, Inter, ui-sans-serif, system-ui;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.bank-guarantee-page .gjs-t-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 12px;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.bank-guarantee-page .gjs-t-button:hover {
+    opacity: 0.9;
+}
+
+.bank-guarantee-page .gjs-t-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.bank-guarantee-page .gjs-t-link:hover {
+    opacity: 0.8;
+}
+
+.bank-guarantee-page .gjs-t-border {
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background-color: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Hero Section */
+.bank-guarantee-page .hero-section {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.bank-guarantee-page .hero-container {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.bank-guarantee-page .hero-content {
+    width: 50%;
+}
+
+.bank-guarantee-page .hero-subtitle {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.bank-guarantee-page .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.bank-guarantee-page .hero-primary-cta {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.bank-guarantee-page .hero-secondary-cta {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bank-guarantee-page .arrow-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.bank-guarantee-page .hero-trust-bullets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bank-guarantee-page .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.bank-guarantee-page .trust-icon-shield {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--secondary-color);
+}
+
+.bank-guarantee-page .trust-text {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.bank-guarantee-page .hero-image-wrapper {
+    width: 50%;
+}
+
+.bank-guarantee-page .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Benefits Section */
+.bank-guarantee-page .benefits-section {
+    width: 100%;
+    background-color: var(--bg-light);
+    padding: 4rem 0;
+}
+
+.bank-guarantee-page .benefits-container {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1.5rem;
+}
+
+.bank-guarantee-page .benefits-header {
+    max-width: 48rem;
+    margin-bottom: 2.5rem;
+}
+
+.bank-guarantee-page .benefits-subtitle {
+    color: var(--text-light);
+}
+
+.bank-guarantee-page .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.bank-guarantee-page .benefit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bank-guarantee-page .benefit-icon-wrap {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background-color: rgba(26, 92, 224, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-guarantee-page .benefit-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--primary-color);
+}
+
+.bank-guarantee-page .benefit-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.bank-guarantee-page .benefit-text {
+    color: var(--text-light);
+}
+
+/* Process Section */
+.bank-guarantee-page .process-section {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.bank-guarantee-page .process-container {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1.5rem;
+}
+
+.bank-guarantee-page .process-header {
+    max-width: 48rem;
+    margin-bottom: 2.5rem;
+}
+
+.bank-guarantee-page .process-subtitle {
+    color: var(--text-light);
+}
+
+.bank-guarantee-page .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.bank-guarantee-page .process-step-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.bank-guarantee-page .process-step-icon-wrap {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background-color: rgba(232, 90, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-guarantee-page .process-step-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.bank-guarantee-page .process-step-content {
+    flex: 1;
+}
+
+.bank-guarantee-page .process-step-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.bank-guarantee-page .process-step-text {
+    color: var(--text-light);
+}
+
+/* Calculator Section */
+.bank-guarantee-page .calculator-section {
+    width: 100%;
+    background-color: var(--bg-light);
+    padding: 4rem 0;
+}
+
+.bank-guarantee-page .calculator-container {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1.5rem;
+}
+
+.bank-guarantee-page .calculator-header {
+    max-width: 48rem;
+    margin-bottom: 2.5rem;
+}
+
+.bank-guarantee-page .calculator-subtitle {
+    color: var(--text-light);
+}
+
+.bank-guarantee-page .calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.bank-guarantee-page .calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.bank-guarantee-page .calc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bank-guarantee-page .calc-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.bank-guarantee-page .calc-input, 
+.bank-guarantee-page .calc-select {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+.bank-guarantee-page .calc-input:focus, 
+.bank-guarantee-page .calc-select:focus {
+    border-color: var(--primary-color);
+}
+
+.bank-guarantee-page .calc-button {
+    padding: 12px 24px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.bank-guarantee-page .calculator-result {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bank-guarantee-page .result-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bank-guarantee-page .result-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.bank-guarantee-page .result-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--primary-color);
+}
+
+.bank-guarantee-page .result-value {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.bank-guarantee-page .result-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.bank-guarantee-page .meta-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--bg-light);
+    border-radius: 12px;
+}
+
+.bank-guarantee-page .meta-chip img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.bank-guarantee-page .meta-text {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.bank-guarantee-page .disclaimer {
+    margin-top: 0.25rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.bank-guarantee-page .result-cta {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Contact Section */
+.bank-guarantee-page .contact-section {
+    width: 100%;
+    background-color: var(--bg-light);
+    padding: 4rem 0;
+}
+
+.bank-guarantee-page .contact-container {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1.5rem;
+}
+
+.bank-guarantee-page .contact-header {
+    max-width: 48rem;
+    margin-bottom: 2.5rem;
+}
+
+.bank-guarantee-page .contact-subtitle {
+    color: var(--text-light);
+}
+
+.bank-guarantee-page .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.bank-guarantee-page .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.bank-guarantee-page .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.bank-guarantee-page .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bank-guarantee-page .form-field label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.bank-guarantee-page .form-field input, 
+.bank-guarantee-page .form-field textarea {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+.bank-guarantee-page .form-field input:focus, 
+.bank-guarantee-page .form-field textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.bank-guarantee-page .submit-button {
+    width: 100%;
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+.bank-guarantee-page .contact-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bank-guarantee-page .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bank-guarantee-page .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bank-guarantee-page .contact-icon-phone, 
+.bank-guarantee-page .contact-icon-mail {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--primary-color);
+}
+
+.bank-guarantee-page .contact-phone-link, 
+.bank-guarantee-page .contact-mail-link {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* FAQ Section */
+.bank-guarantee-page .faq-section {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.bank-guarantee-page .faq-container {
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1.5rem;
+}
+
+.bank-guarantee-page .faq-header {
+    max-width: 48rem;
+    margin-bottom: 2.5rem;
+}
+
+.bank-guarantee-page .faq-subtitle {
+    color: var(--text-light);
+}
+
+.bank-guarantee-page .faq-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.bank-guarantee-page .faq-item {
+    padding: 1.25rem;
+}
+
+.bank-guarantee-page .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.bank-guarantee-page .faq-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--primary-color);
+}
+
+.bank-guarantee-page .faq-answer {
+    color: var(--text-light);
+    margin-top: 0.75rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .bank-guarantee-page .hero-container {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 3rem 0;
+    }
+    
+    .bank-guarantee-page .hero-content {
+        width: 100%;
+    }
+    
+    .bank-guarantee-page .hero-image-wrapper {
+        width: 100%;
+    }
+    
+    .bank-guarantee-page .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bank-guarantee-page .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bank-guarantee-page .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bank-guarantee-page .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .bank-guarantee-page .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bank-guarantee-page .faq-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .bank-guarantee-page .hero-trust-bullets {
+        grid-template-columns: 1fr;
+    }
+    
+    .bank-guarantee-page .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bank-guarantee-page .process-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bank-guarantee-page .result-meta {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Срок действия банковской гарантии на возврат аванса: расчет и продление</title>
+    <meta name="description" content="Срок действия банковской гарантии на возврат аванса: как рассчитать, продлить и избежать рисков. Полное руководство с примерами и калькулятором.">
+    <meta name="keywords" content="срок действия банковской гарантии на возврат аванса, банковская гарантия аванс, продление гарантии, сроки гарантии">
+    <style>
+        :root {
+            --orange: #FF6B00;
+            --orange-2: #FF9A3C;
+            --text: #0F172A;
+            --text-muted: #556070;
+            --surface: #FFFFFF;
+            --surface-2: #F7F7F7;
+            --blue: #3498db;
+            --green: #28a745;
+            --yellow: #ffc107;
+            --red: #dc3545;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--surface-2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--surface);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--orange);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--text);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, var(--orange), var(--orange-2));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .example {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid white;
+        }
+
+        .toc {
+            background: var(--surface-2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .toc strong {
+            color: var(--orange);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--orange);
+            text-decoration: underline;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            margin: 2rem auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .content-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 8px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .calendar-module {
+            background: linear-gradient(135deg, var(--blue), var(--info));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .calendar-module h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .date-input {
+            background: white;
+            color: var(--text);
+            border: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            margin: 0 10px;
+            min-width: 200px;
+        }
+
+        .calculate-btn {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .calculate-btn:hover {
+            background: var(--orange-2);
+        }
+
+        .result {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .faq-section {
+            background: var(--surface-2);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--green);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--green), #20c997);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--green);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .internal-link {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted var(--blue);
+            transition: all 0.3s ease;
+        }
+
+        .internal-link:hover {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 193, 7, 0.3) 0%, rgba(255, 193, 7, 0.3) 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid var(--yellow);
+            border-left: 4px solid var(--yellow);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .success-box {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid var(--green);
+            border-left: 4px solid var(--green);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .info-box {
+            background: rgba(23, 162, 184, 0.1);
+            border: 1px solid var(--info);
+            border-left: 4px solid var(--info);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 16px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .intro-section, .calendar-module, .cta-section {
+                padding: 1.5rem;
+            }
+            
+            .date-input {
+                min-width: 150px;
+                margin: 5px;
+            }
+            
+            .calculate-btn {
+                margin: 5px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .container {
+                padding: 60px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- wp:bizfin/intro-section -->
+        <section class="intro-section">
+            <p><strong>Срок действия банковской гарантии на возврат аванса</strong> — это период времени, в течение которого банк-гарант обязуется вернуть заказчику авансовый платеж, если исполнитель не выполнит свои обязательства по контракту. Этот срок является критически важным параметром, который определяет финансовую безопасность сделки и требует тщательного планирования с учетом буферного времени.</p>
+            
+            <div class="example">
+                <p><strong>Например,</strong> Анна Петровна — директор по закупкам строительной компании "МегаСтрой". Компания выиграла тендер на строительство торгового центра на сумму 50 миллионов рублей с авансом 30%. Заказчик требует банковскую гарантию на возврат аванса сроком на 18 месяцев. Поэтому Анне Петровне нужна гарантия, которая покроет весь период строительства плюс буферное время. Чтобы обеспечить финансовую безопасность проекта, "МегаСтрой" получает у банка гарантию на 20 месяцев. По условиям гарантии банк вернет заказчику 15 миллионов рублей аванса, если подрядчик нарушит условия контракта.</p>
+            </div>
+        </section>
+        <!-- /wp:bizfin/intro-section -->
+
+        <!-- wp:bizfin/toc -->
+        <nav class="toc">
+            <strong>Содержание:</strong>
+            <ul>
+                <li><a href="#required-terms">Требуемые сроки банковской гарантии</a></li>
+                <li><a href="#buffer-time">Буферное время: зачем нужен запас</a></li>
+                <li><a href="#extension-process">Процедура продления гарантии</a></li>
+                <li><a href="#risk-management">Управление рисками и контроль сроков</a></li>
+                <li><a href="#calendar-calculator">Калькулятор сроков гарантии</a></li>
+                <li><a href="#faq-section">Часто задаваемые вопросы</a></li>
+                <li><a href="#cta-section">Согласование сроков с заказчиком</a></li>
+            </ul>
+        </nav>
+        <!-- /wp:bizfin/toc -->
+
+        <!-- wp:bizfin/article-image -->
+        <img src="/wp-content/uploads/2024/bank-guarantee-term-calculator.jpg" alt="Изображение для статьи: Срок действия банковской гарантии на возврат аванса" class="article-image">
+        <!-- /wp:bizfin/article-image -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="required-terms">
+            <h2>Требуемые сроки банковской гарантии на возврат аванса</h2>
+            
+            <p>Определение оптимального срока действия банковской гарантии на возврат аванса требует комплексного анализа множества факторов. В первую очередь необходимо учитывать специфику контракта, сложность выполняемых работ и возможные форс-мажорные обстоятельства.</p>
+
+            <h3>Основные принципы расчета сроков</h3>
+            
+            <p>При расчете срока действия гарантии банки и заказчики руководствуются следующими принципами:</p>
+            
+            <ul>
+                <li><strong>Период выполнения контракта</strong> — базовая основа для определения срока гарантии</li>
+                <li><strong>Время на приемку работ</strong> — обычно составляет 30-90 дней после завершения</li>
+                <li><strong>Гарантийный период</strong> — время, в течение которого подрядчик несет ответственность за качество</li>
+                <li><strong>Буферное время</strong> — запас на случай задержек и непредвиденных обстоятельств</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Важно:</strong> Срок гарантии должен превышать срок выполнения контракта минимум на 30 дней. Это обеспечивает защиту интересов заказчика в период приемки и оформления документов.</p>
+            </div>
+
+            <h3>Типовые сроки по отраслям</h3>
+            
+            <p>В зависимости от отрасли и сложности проекта сроки банковских гарантий на возврат аванса могут существенно отличаться:</p>
+
+            <ul>
+                <li><strong>Строительство:</strong> 12-36 месяцев (в зависимости от сложности объекта)</li>
+                <li><strong>Поставка оборудования:</strong> 6-18 месяцев</li>
+                <li><strong>IT-проекты:</strong> 3-12 месяцев</li>
+                <li><strong>Консалтинговые услуги:</strong> 3-6 месяцев</li>
+                <li><strong>Производство:</strong> 6-24 месяца</li>
+            </ul>
+
+            <p>Для крупных инфраструктурных проектов сроки могут достигать 5-7 лет, что требует особого подхода к структурированию гарантийных обязательств.</p>
+
+            <div class="warning-box">
+                <p><strong>Внимание:</strong> Слишком короткий срок гарантии может привести к отказу в участии в тендере, а слишком длинный — к увеличению стоимости гарантии и дополнительным рискам для банка.</p>
+            </div>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="buffer-time">
+            <h2>Буферное время: зачем нужен запас</h2>
+            
+            <p>Буферное время в сроке действия банковской гарантии на возврат аванса — это критически важный элемент, который обеспечивает финансовую безопасность сделки. Этот запас времени учитывает возможные задержки, форс-мажорные обстоятельства и административные процедуры.</p>
+
+            <h3>Факторы, влияющие на размер буфера</h3>
+            
+            <p>Размер буферного времени определяется множеством факторов, каждый из которых может существенно повлиять на сроки выполнения контракта:</p>
+
+            <ul>
+                <li><strong>Сезонность работ</strong> — климатические условия могут задержать строительные работы</li>
+                <li><strong>Сложность проекта</strong> — инновационные решения требуют дополнительного времени на тестирование</li>
+                <li><strong>Зависимость от поставщиков</strong> — задержки в поставке материалов или оборудования</li>
+                <li><strong>Административные процедуры</strong> — получение разрешений и согласований</li>
+                <li><strong>Изменения в законодательстве</strong> — новые требования могут потребовать корректировки проекта</li>
+            </ul>
+
+            <h3>Рекомендуемые размеры буферного времени</h3>
+            
+            <p>Эксперты рекомендуют следующие размеры буферного времени в зависимости от типа проекта:</p>
+
+            <ul>
+                <li><strong>Простые проекты (до 6 месяцев):</strong> 15-20% от срока контракта</li>
+                <li><strong>Средние проекты (6-18 месяцев):</strong> 20-25% от срока контракта</li>
+                <li><strong>Сложные проекты (свыше 18 месяцев):</strong> 25-30% от срока контракта</li>
+                <li><strong>Инновационные проекты:</strong> 30-40% от срока контракта</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Практический совет:</strong> При расчете буферного времени учитывайте опыт выполнения аналогичных проектов и статистику задержек в вашей отрасли. Это поможет более точно определить необходимый запас времени.</p>
+            </div>
+
+            <h3>Стратегии управления буферным временем</h3>
+            
+            <p>Эффективное управление буферным временем требует комплексного подхода:</p>
+
+            <ol>
+                <li><strong>Детальное планирование</strong> — разбивка проекта на этапы с учетом возможных рисков</li>
+                <li><strong>Мониторинг прогресса</strong> — регулярный контроль выполнения плановых показателей</li>
+                <li><strong>Гибкость в управлении</strong> — возможность перераспределения ресурсов между этапами</li>
+                <li><strong>Коммуникация с заказчиком</strong> — своевременное информирование о возможных задержках</li>
+            </ol>
+
+            <p>Правильно рассчитанное буферное время не только защищает от финансовых рисков, но и повышает репутацию компании как надежного партнера.</p>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="extension-process">
+            <h2>Процедура продления гарантии</h2>
+            
+            <p>Продление срока действия банковской гарантии на возврат аванса — это сложная процедура, которая требует тщательной подготовки и соблюдения всех формальных требований. Успешное продление зависит от множества факторов, включая финансовое состояние компании, качество выполнения контракта и отношения с банком.</p>
+
+            <h3>Условия для продления гарантии</h3>
+            
+            <p>Банки рассматривают заявки на продление гарантии при соблюдении следующих условий:</p>
+
+            <ul>
+                <li><strong>Отсутствие нарушений</strong> — компания не имеет просроченных обязательств перед банком</li>
+                <li><strong>Финансовая стабильность</strong> — положительная динамика финансовых показателей</li>
+                <li><strong>Качественное выполнение контракта</strong> — отсутствие претензий от заказчика</li>
+                <li><strong>Обоснованность продления</strong> — документальное подтверждение необходимости</li>
+                <li><strong>Согласие заказчика</strong> — письменное подтверждение готовности к продлению</li>
+            </ul>
+
+            <h3>Документы для продления</h3>
+            
+            <p>Для подачи заявки на продление гарантии необходимо подготовить следующий пакет документов:</p>
+
+            <ol>
+                <li><strong>Заявление на продление</strong> — с обоснованием причин и нового срока</li>
+                <li><strong>Актуальная отчетность</strong> — баланс и отчет о прибылях и убытках</li>
+                <li><strong>Справка о выполнении контракта</strong> — от заказчика с указанием процента готовности</li>
+                <li><strong>Письмо от заказчика</strong> — о согласии на продление гарантии</li>
+                <li><strong>Обновленный бизнес-план</strong> — с прогнозом завершения проекта</li>
+                <li><strong>Документы по обеспечению</strong> — при необходимости дополнительного залога</li>
+            </ol>
+
+            <div class="info-box">
+                <p><strong>Важно:</strong> Подавать заявку на продление необходимо минимум за 30 дней до истечения текущего срока гарантии. Это обеспечивает достаточное время для рассмотрения и принятия решения.</p>
+            </div>
+
+            <h3>Процесс рассмотрения заявки</h3>
+            
+            <p>Рассмотрение заявки на продление гарантии проходит в несколько этапов:</p>
+
+            <ol>
+                <li><strong>Первичная проверка документов</strong> — соответствие требованиям банка</li>
+                <li><strong>Анализ финансового состояния</strong> — оценка платежеспособности заявителя</li>
+                <li><strong>Проверка выполнения контракта</strong> — контакт с заказчиком для подтверждения</li>
+                <li><strong>Оценка рисков</strong> — анализ факторов, влияющих на завершение проекта</li>
+                <li><strong>Принятие решения</strong> — утверждение или отказ в продлении</li>
+            </ol>
+
+            <h3>Стоимость продления</h3>
+            
+            <p>Стоимость продления банковской гарантии зависит от нескольких факторов:</p>
+
+            <ul>
+                <li><strong>Срок продления</strong> — чем дольше период, тем выше стоимость</li>
+                <li><strong>Размер гарантии</strong> — процент от суммы гарантийного обязательства</li>
+                <li><strong>Кредитная история</strong> — репутация компании влияет на тарифы</li>
+                <li><strong>Тип обеспечения</strong> — наличие залога снижает стоимость</li>
+                <li><strong>Срочность</strong> — ускоренное рассмотрение стоит дороже</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>Внимание:</strong> Стоимость продления может составлять 0.5-2% от суммы гарантии в год. При отказе в продлении компания рискует потерять контракт и понести значительные убытки.</p>
+            </div>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="risk-management">
+            <h2>Управление рисками и контроль сроков</h2>
+            
+            <p>Эффективное управление рисками, связанными со сроком действия банковской гарантии на возврат аванса, является ключевым фактором успешного выполнения контракта. Комплексный подход к риск-менеджменту позволяет минимизировать финансовые потери и поддерживать репутацию компании.</p>
+
+            <h3>Основные риски и способы их минимизации</h3>
+            
+            <p>При работе с банковскими гарантиями на возврат аванса компании сталкиваются со следующими основными рисками:</p>
+
+            <h4>1. Риск истечения срока гарантии</h4>
+            <p>Самый критический риск — истечение срока гарантии до завершения контракта. Для его минимизации необходимо:</p>
+            <ul>
+                <li>Регулярный мониторинг сроков (еженедельно)</li>
+                <li>Заблаговременная подготовка документов для продления</li>
+                <li>Создание резервного плана на случай отказа в продлении</li>
+                <li>Поддержание хороших отношений с банком</li>
+            </ul>
+
+            <h4>2. Риск изменения условий контракта</h4>
+            <p>Изменения в контракте могут потребовать корректировки гарантии:</p>
+            <ul>
+                <li>Мониторинг всех изменений в контракте</li>
+                <li>Своевременное уведомление банка об изменениях</li>
+                <li>Подготовка дополнительных документов при необходимости</li>
+                <li>Согласование новых условий с заказчиком</li>
+            </ul>
+
+            <h4>3. Финансовые риски</h4>
+            <p>Ухудшение финансового положения может повлиять на возможность продления:</p>
+            <ul>
+                <li>Поддержание стабильного денежного потока</li>
+                <li>Диверсификация источников финансирования</li>
+                <li>Создание финансовых резервов</li>
+                <li>Регулярный анализ финансовых показателей</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Практический совет:</strong> Создайте календарь контроля сроков гарантии с напоминаниями за 60, 30 и 15 дней до истечения. Это поможет избежать критических ситуаций.</p>
+            </div>
+
+            <h3>Система контроля и мониторинга</h3>
+            
+            <p>Эффективная система контроля включает следующие элементы:</p>
+
+            <ol>
+                <li><strong>Еженедельные отчеты</strong> — о прогрессе выполнения контракта</li>
+                <li><strong>Месячные сводки</strong> — о финансовом состоянии проекта</li>
+                <li><strong>Квартальные обзоры</strong> — анализ рисков и корректировка планов</li>
+                <li><strong>Экстренные уведомления</strong> — при возникновении критических ситуаций</li>
+            </ol>
+
+            <h3>Планирование действий в критических ситуациях</h3>
+            
+            <p>При возникновении критических ситуаций необходимо иметь четкий план действий:</p>
+
+            <ul>
+                <li><strong>Немедленное уведомление</strong> — всех заинтересованных сторон</li>
+                <li><strong>Анализ ситуации</strong> — оценка масштаба проблемы</li>
+                <li><strong>Разработка решения</strong> — поиск альтернативных вариантов</li>
+                <li><strong>Реализация плана</strong> — выполнение согласованных действий</li>
+                <li><strong>Контроль результатов</strong> — мониторинг эффективности принятых мер</li>
+            </ul>
+
+            <p>Правильно организованное управление рисками не только защищает от финансовых потерь, но и повышает доверие партнеров и улучшает репутацию компании на рынке.</p>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/calendar-module -->
+        <section class="calendar-module" id="calendar-calculator">
+            <h3>Калькулятор сроков банковской гарантии</h3>
+            <p>Рассчитайте оптимальный срок действия гарантии с учетом буферного времени</p>
+            
+            <div style="margin: 1rem 0;">
+                <label for="contract-start">Дата начала контракта:</label>
+                <input type="date" id="contract-start" class="date-input">
+            </div>
+            
+            <div style="margin: 1rem 0;">
+                <label for="contract-end">Планируемая дата завершения:</label>
+                <input type="date" id="contract-end" class="date-input">
+            </div>
+            
+            <div style="margin: 1rem 0;">
+                <label for="buffer-percent">Буферное время (%):</label>
+                <select id="buffer-percent" class="date-input">
+                    <option value="15">15% (простые проекты)</option>
+                    <option value="20">20% (средние проекты)</option>
+                    <option value="25">25% (сложные проекты)</option>
+                    <option value="30">30% (инновационные проекты)</option>
+                </select>
+            </div>
+            
+            <button onclick="calculateGuaranteeTerm()" class="calculate-btn">Рассчитать срок гарантии</button>
+            
+            <div id="result" class="result" style="display: none;"></div>
+        </section>
+        <!-- /wp:bizfin/calendar-module -->
+
+        <!-- wp:bizfin/faq-section -->
+        <section class="faq-section" id="faq-section">
+            <h2>Часто задаваемые вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Что делать, если меняется график выполнения контракта?</div>
+                <div class="faq-answer">
+                    <p>При изменении графика выполнения контракта необходимо:</p>
+                    <ol>
+                        <li><strong>Немедленно уведомить банк</strong> — в течение 5 рабочих дней с момента изменения</li>
+                        <li><strong>Получить согласие заказчика</strong> — письменное подтверждение новых сроков</li>
+                        <li><strong>Подать заявку на корректировку</strong> — с обоснованием причин изменения</li>
+                        <li><strong>Предоставить обновленные документы</strong> — скорректированный план выполнения</li>
+                        <li><strong>Ожидать решения банка</strong> — обычно рассматривается в течение 10-15 дней</li>
+                    </ol>
+                    <p>Важно помнить, что изменение графика может повлиять на стоимость гарантии и потребовать дополнительного обеспечения. <!-- INTERNAL_LINK: документы для получения гарантии --><a href="/documents/" class="internal-link">Подготовка документов</a> для корректировки должна быть максимально полной и обоснованной.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Можно ли продлить гарантию несколько раз?</div>
+                <div class="faq-answer">
+                    <p>Да, банковскую гарантию можно продлевать несколько раз, но каждый случай рассматривается индивидуально. При повторном продлении банк особенно тщательно анализирует:</p>
+                    <ul>
+                        <li>Причины предыдущих продлений</li>
+                        <li>Качество выполнения контракта</li>
+                        <li>Финансовое состояние компании</li>
+                        <li>Прогнозы завершения проекта</li>
+                    </ul>
+                    <p>Стоимость повторного продления может быть выше первоначальной, так как банк учитывает повышенные риски.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Что происходит, если гарантия истекает до завершения контракта?</div>
+                <div class="faq-answer">
+                    <p>Истечение гарантии до завершения контракта является критической ситуацией, которая может привести к:</p>
+                    <ul>
+                        <li>Расторжению контракта заказчиком</li>
+                        <li>Требованию возврата аванса</li>
+                        <li>Потере репутации и исключению из реестра поставщиков</li>
+                        <li>Финансовым санкциям и штрафам</li>
+                    </ul>
+                    <p>В такой ситуации необходимо немедленно связаться с банком и заказчиком для поиска решения. Возможны варианты экстренного продления или замены гарантии.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Как рассчитать оптимальный размер буферного времени?</div>
+                <div class="faq-answer">
+                    <p>Для расчета оптимального буферного времени используйте следующий алгоритм:</p>
+                    <ol>
+                        <li><strong>Проанализируйте историю проектов</strong> — средние задержки в вашей отрасли</li>
+                        <li><strong>Учтите специфику проекта</strong> — сложность, инновационность, зависимости</li>
+                        <li><strong>Оцените внешние факторы</strong> — сезонность, законодательные изменения</li>
+                        <li><strong>Добавьте административный резерв</strong> — время на согласования и документооборот</li>
+                    </ol>
+                    <p>Используйте <!-- INTERNAL_LINK: калькулятор банковских гарантий --><a href="/calculator/" class="internal-link">калькулятор банковских гарантий</a> для точного расчета с учетом всех факторов.</p>
+                </div>
+            </div>
+        </section>
+        <!-- /wp:bizfin/faq-section -->
+
+        <!-- wp:bizfin/cta-section -->
+        <section class="cta-section" id="cta-section">
+            <h3>Согласуем срок с заказчиком</h3>
+            <p>Правильное согласование срока действия банковской гарантии на возврат аванса — это залог успешного выполнения контракта. Наши эксперты помогут вам рассчитать оптимальные сроки, подготовить необходимые документы и согласовать условия с заказчиком.</p>
+            
+            <p>Мы обеспечиваем:</p>
+            <ul style="text-align: left; display: inline-block; margin: 1rem 0;">
+                <li>Профессиональный расчет сроков с учетом всех рисков</li>
+                <li>Подготовку полного пакета документов</li>
+                <li>Ведение переговоров с заказчиком</li>
+                <li>Сопровождение процесса получения гарантии</li>
+                <li>Контроль сроков и своевременное продление</li>
+            </ul>
+            
+            <button class="cta-button" onclick="window.location.href='/contacts/'">Получить консультацию</button>
+        </section>
+        <!-- /wp:bizfin/cta-section -->
+
+        <!-- Дополнительные внутренние ссылки -->
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+            <!-- INTERNAL_LINK: стоимость банковских гарантий -->
+            Узнайте больше о <a href="/cost/" class="internal-link">стоимости банковских гарантий</a> и <!-- INTERNAL_LINK: рейтинг банков по гарантиям -->
+            <a href="/bank-rating/" class="internal-link">рейтинге банков</a> для выбора оптимального партнера. <!-- INTERNAL_LINK: образцы документов для гарантии -->
+            <a href="/sample-documents/" class="internal-link">Образцы документов</a> помогут ускорить процесс получения гарантии.
+        </p>
+    </div>
+
+    <script>
+        function calculateGuaranteeTerm() {
+            const startDate = document.getElementById('contract-start').value;
+            const endDate = document.getElementById('contract-end').value;
+            const bufferPercent = parseInt(document.getElementById('buffer-percent').value);
+            
+            if (!startDate || !endDate) {
+                alert('Пожалуйста, заполните все поля');
+                return;
+            }
+            
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            
+            if (end <= start) {
+                alert('Дата завершения должна быть позже даты начала');
+                return;
+            }
+            
+            const contractDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+            const bufferDays = Math.ceil(contractDays * bufferPercent / 100);
+            const totalDays = contractDays + bufferDays;
+            
+            const guaranteeEnd = new Date(start);
+            guaranteeEnd.setDate(guaranteeEnd.getDate() + totalDays);
+            
+            const result = document.getElementById('result');
+            result.innerHTML = `
+                <strong>Результат расчета:</strong><br>
+                Срок контракта: ${contractDays} дней<br>
+                Буферное время: ${bufferDays} дней (${bufferPercent}%)<br>
+                <strong>Рекомендуемый срок гарантии: ${totalDays} дней</strong><br>
+                Дата истечения гарантии: ${guaranteeEnd.toLocaleDateString('ru-RU')}
+            `;
+            result.style.display = 'block';
+        }
+        
+        // Устанавливаем текущую дату как дату начала
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const nextMonth = new Date(today);
+            nextMonth.setMonth(nextMonth.getMonth() + 1);
+            
+            document.getElementById('contract-start').value = today.toISOString().split('T')[0];
+            document.getElementById('contract-end').value = nextMonth.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+</html>

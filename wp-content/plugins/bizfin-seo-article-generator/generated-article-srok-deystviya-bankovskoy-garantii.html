@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Срок действия банковской гарантии: минимум, максимум и практические рекомендации</title>
+    <meta name="description" content="Срок действия банковской гарантии: от минимальных до максимальных периодов, буферы к контракту, продление и риски просрочки. Полное руководство для бизнеса.">
+    <meta name="keywords" content="срок действия банковской гарантии, срок банковской гарантии, продление банковской гарантии, замена банковской гарантии">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        h4 {
+            font-size: 1.25rem;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .intro-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            margin-bottom: 30px;
+        }
+        .toc {
+            background: #ffffff;
+            border: 1px solid #e1e8ed;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .article-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            margin: 20px 0;
+        }
+        .example-box {
+            background: #e8f4fd;
+            border: 1px solid #3498db;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .info-box {
+            background: #d1ecf1;
+            border: 1px solid #17a2b8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            background: #fff;
+            color: #667eea;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .faq-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .faq-item {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .faq-answer {
+            color: #555;
+        }
+        .calendar-widget {
+            background: #fff;
+            border: 2px solid #3498db;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .calendar-input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 1rem;
+        }
+        .calendar-button {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e1e8ed;
+        }
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background: #f8f9fa;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            .intro-section, .toc, .faq-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Срок действия банковской гарантии: полное руководство по временным рамкам</h1>
+        
+        <div class="intro-section">
+            <p><strong>Срок действия банковской гарантии</strong> — это период, в течение которого банк обязуется выполнить свои обязательства по гарантии. Понимание временных рамок поможет вам правильно спланировать получение гарантии и избежать просрочек.</p>
+            
+            <p>Например, строительная компания "Монолит" получила контракт на возведение торгового центра сроком на 18 месяцев. Для участия в тендере им потребовалась банковская гарантия исполнения контракта. Банк выдал гарантию сроком на 20 месяцев — это даёт компании буфер в 2 месяца на случай возможных задержек в выполнении работ.</p>
+        </div>
+
+        <nav class="toc">
+            <strong>Содержание:</strong>
+            <ul>
+                <li><a href="#minimum-maximum">Минимальные и максимальные сроки банковских гарантий</a></li>
+                <li><a href="#contract-buffers">Буферы к сроку контракта: зачем нужны и как рассчитать</a></li>
+                <li><a href="#extension-replacement">Продление и замена банковской гарантии</a></li>
+                <li><a href="#overdue-risks">Риски просрочки и их последствия</a></li>
+                <li><a href="#calendar-calculator">Калькулятор сроков банковской гарантии</a></li>
+                <li><a href="#practical-recommendations">Практические рекомендации по планированию сроков</a></li>
+                <li><a href="#faq">Часто задаваемые вопросы</a></li>
+            </ul>
+        </nav>
+
+        <img src="https://via.placeholder.com/800x400/3498db/ffffff?text=Срок+действия+банковской+гарантии" alt="Изображение для статьи: Срок действия банковской гарантии" class="article-image">
+
+        <section id="minimum-maximum">
+            <h2>Минимальные и максимальные сроки банковских гарантий</h2>
+            
+            <p>Банковские гарантии имеют определённые временные ограничения, которые зависят от типа гарантии, требований заказчика и политики банка. Понимание этих рамок поможет вам правильно спланировать получение гарантии.</p>
+
+            <h3>Минимальные сроки действия</h3>
+            <p>Большинство банков устанавливают минимальный срок действия гарантии от <strong>1 месяца</strong>. Это связано с необходимостью проведения процедур по выдаче и регистрации гарантии в соответствующих реестрах.</p>
+
+            <div class="example-box">
+                <strong>Пример минимального срока:</strong> Для участия в небольшом тендере на поставку канцелярских товаров (срок выполнения контракта — 30 дней) банк может выдать гарантию на 2 месяца, что покрывает период выполнения контракта плюс небольшой буфер.
+            </div>
+
+            <h3>Максимальные сроки действия</h3>
+            <p>Максимальные сроки банковских гарантий варьируются в зависимости от банка и типа гарантии:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Тип гарантии</th>
+                            <th>Максимальный срок</th>
+                            <th>Особенности</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Гарантия исполнения контракта</td>
+                            <td>5 лет</td>
+                            <td>Для долгосрочных проектов</td>
+                        </tr>
+                        <tr>
+                            <td>Гарантия возврата аванса</td>
+                            <td>3 года</td>
+                            <td>До полного выполнения контракта</td>
+                        </tr>
+                        <tr>
+                            <td>Гарантия участия в торгах</td>
+                            <td>6 месяцев</td>
+                            <td>До подписания контракта</td>
+                        </tr>
+                        <tr>
+                            <td>Гарантия качества</td>
+                            <td>2 года</td>
+                            <td>После завершения работ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <strong>Важно:</strong> Некоторые банки могут устанавливать собственные ограничения по максимальным срокам, которые могут отличаться от указанных в таблице. Всегда уточняйте актуальные условия в выбранном банке.
+            </div>
+        </section>
+
+        <section id="contract-buffers">
+            <h2>Буферы к сроку контракта: зачем нужны и как рассчитать</h2>
+            
+            <p>Буфер к сроку контракта — это дополнительное время, которое добавляется к основному сроку выполнения обязательств. Этот буфер необходим для покрытия возможных задержек и обеспечения полного выполнения контракта.</p>
+
+            <h3>Зачем нужны буферы</h3>
+            <p>Буферы к сроку контракта выполняют несколько важных функций:</p>
+            <ul>
+                <li><strong>Покрытие задержек:</strong> Компенсируют возможные задержки в выполнении работ</li>
+                <li><strong>Время на исправления:</strong> Дают возможность устранить выявленные недостатки</li>
+                <li><strong>Процедурные задержки:</strong> Учитывают время на согласования и документооборот</li>
+                <li><strong>Форс-мажорные обстоятельства:</strong> Обеспечивают защиту от непредвиденных ситуаций</li>
+            </ul>
+
+            <h3>Как рассчитать оптимальный буфер</h3>
+            <p>Размер буфера зависит от нескольких факторов:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Тип проекта</th>
+                            <th>Рекомендуемый буфер</th>
+                            <th>Обоснование</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Строительные работы</td>
+                            <td>10-20% от срока контракта</td>
+                            <td>Высокая вероятность задержек из-за погодных условий</td>
+                        </tr>
+                        <tr>
+                            <td>Поставка оборудования</td>
+                            <td>5-10% от срока контракта</td>
+                            <td>Возможные задержки в производстве и логистике</td>
+                        </tr>
+                        <tr>
+                            <td>IT-разработка</td>
+                            <td>15-25% от срока контракта</td>
+                            <td>Сложность проектов и возможные доработки</td>
+                        </tr>
+                        <tr>
+                            <td>Консалтинговые услуги</td>
+                            <td>5-15% от срока контракта</td>
+                            <td>Зависит от сложности и объёма работ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="example-box">
+                <strong>Пример расчёта буфера:</strong><br>
+                Контракт на строительство офисного здания сроком на 24 месяца.<br>
+                Рекомендуемый буфер: 20% от 24 месяцев = 4.8 месяца ≈ 5 месяцев<br>
+                <strong>Итоговый срок гарантии:</strong> 24 + 5 = 29 месяцев
+            </div>
+
+            <div class="warning-box">
+                <strong>Внимание:</strong> Слишком большой буфер может увеличить стоимость гарантии, а слишком маленький — не покрыть возможные задержки. Ищите оптимальный баланс между безопасностью и экономией.
+            </div>
+        </section>
+
+        <section id="extension-replacement">
+            <h2>Продление и замена банковской гарантии</h2>
+            
+            <p>В процессе выполнения контракта может возникнуть необходимость в продлении или замене банковской гарантии. Понимание процедур и условий поможет вам избежать проблем с заказчиком.</p>
+
+            <h3>Продление банковской гарантии</h3>
+            <p>Продление гарантии возможно в следующих случаях:</p>
+            <ul>
+                <li>Задержка в выполнении контракта по объективным причинам</li>
+                <li>Изменение условий контракта с увеличением срока</li>
+                <li>Форс-мажорные обстоятельства</li>
+                <li>Дополнительные работы, не предусмотренные изначально</li>
+            </ul>
+
+            <h4>Процедура продления</h4>
+            <ol>
+                <li><strong>Подача заявления:</strong> Обращение в банк с заявлением о продлении</li>
+                <li><strong>Предоставление документов:</strong> Обоснование необходимости продления</li>
+                <li><strong>Пересмотр условий:</strong> Банк может изменить условия гарантии</li>
+                <li><strong>Дополнительная комиссия:</strong> Уплата комиссии за продление</li>
+                <li><strong>Выдача дополнения:</strong> Оформление дополнения к гарантии</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Стоимость продления:</strong> Обычно составляет 0.5-1% от суммы гарантии за каждый месяц продления. Некоторые банки предлагают льготные условия для постоянных клиентов.
+            </div>
+
+            <h3>Замена банковской гарантии</h3>
+            <p>Замена гарантии может потребоваться в следующих ситуациях:</p>
+            <ul>
+                <li>Изменение банка-гаранта</li>
+                <li>Существенное изменение условий контракта</li>
+                <li>Увеличение суммы гарантии</li>
+                <li>Изменение типа гарантии</li>
+            </ul>
+
+            <h4>Процедура замены</h4>
+            <ol>
+                <li><strong>Согласование с заказчиком:</strong> Получение согласия на замену</li>
+                <li><strong>Оформление новой гарантии:</strong> Получение гарантии в новом банке</li>
+                <li><strong>Отзыв старой гарантии:</strong> Официальный отзыв предыдущей гарантии</li>
+                <li><strong>Уведомление заказчика:</strong> Предоставление новой гарантии</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong>Важно:</strong> Процедура замены гарантии может занять 5-10 рабочих дней. Планируйте замену заранее, чтобы избежать просрочек по контракту.
+            </div>
+        </section>
+
+        <section id="overdue-risks">
+            <h2>Риски просрочки и их последствия</h2>
+            
+            <p>Просрочка банковской гарантии может привести к серьёзным финансовым и репутационным потерям. Понимание рисков поможет вам принять превентивные меры.</p>
+
+            <h3>Основные риски просрочки</h3>
+            
+            <h4>Финансовые риски</h4>
+            <ul>
+                <li><strong>Штрафы и пени:</strong> Заказчик может взыскать штрафы за просрочку</li>
+                <li><strong>Исполнение гарантии:</strong> Банк может потребовать исполнения обязательств</li>
+                <li><strong>Потеря залога:</strong> Возможна потеря предоставленного залога</li>
+                <li><strong>Дополнительные расходы:</strong> Судебные издержки и проценты</li>
+            </ul>
+
+            <h4>Репутационные риски</h4>
+            <ul>
+                <li><strong>Чёрные списки:</strong> Попадание в реестр недобросовестных поставщиков</li>
+                <li><strong>Потеря рейтинга:</strong> Снижение кредитного рейтинга</li>
+                <li><strong>Ограничения в торгах:</strong> Запрет на участие в тендерах</li>
+                <li><strong>Проблемы с банками:</strong> Усложнение получения кредитов</li>
+            </ul>
+
+            <h3>Последствия для бизнеса</h3>
+            <p>Просрочка банковской гарантии может иметь долгосрочные последствия:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Последствие</th>
+                            <th>Срок действия</th>
+                            <th>Влияние на бизнес</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Исключение из реестра поставщиков</td>
+                            <td>2 года</td>
+                            <td>Невозможность участия в госзакупках</td>
+                        </tr>
+                        <tr>
+                            <td>Снижение кредитного рейтинга</td>
+                            <td>3 года</td>
+                            <td>Усложнение получения кредитов</td>
+                        </tr>
+                        <tr>
+                            <td>Репутационные потери</td>
+                            <td>5+ лет</td>
+                            <td>Сложности в работе с новыми клиентами</td>
+                        </tr>
+                        <tr>
+                            <td>Судебные разбирательства</td>
+                            <td>До 3 лет</td>
+                            <td>Дополнительные расходы и время</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Как минимизировать риски</h3>
+            <ol>
+                <li><strong>Мониторинг сроков:</strong> Регулярно отслеживайте сроки действия гарантий</li>
+                <li><strong>Заблаговременное планирование:</strong> Начинайте процедуры продления за 2-3 месяца</li>
+                <li><strong>Резервные планы:</strong> Имейте альтернативные варианты получения гарантии</li>
+                <li><strong>Страхование рисков:</strong> Рассмотрите возможность страхования</li>
+                <li><strong>Профессиональная поддержка:</strong> Обращайтесь к специалистам по банковским гарантиям</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong>Критично:</strong> Никогда не дожидайтесь последнего дня действия гарантии. Начинайте процедуры продления или замены минимум за 30 дней до истечения срока.
+            </div>
+        </section>
+
+        <section id="calendar-calculator">
+            <h2>Калькулятор сроков банковской гарантии</h2>
+            
+            <div class="calendar-widget">
+                <h3>Рассчитайте оптимальный срок гарантии</h3>
+                <p>Введите параметры вашего контракта для расчёта рекомендуемого срока банковской гарантии:</p>
+                
+                <div style="margin: 20px 0;">
+                    <label for="contract-start">Дата начала контракта:</label><br>
+                    <input type="date" id="contract-start" class="calendar-input">
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <label for="contract-duration">Срок выполнения контракта (месяцы):</label><br>
+                    <input type="number" id="contract-duration" class="calendar-input" min="1" max="60" placeholder="12">
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <label for="project-type">Тип проекта:</label><br>
+                    <select id="project-type" class="calendar-input">
+                        <option value="construction">Строительные работы</option>
+                        <option value="supply">Поставка оборудования</option>
+                        <option value="it">IT-разработка</option>
+                        <option value="consulting">Консалтинговые услуги</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <button onclick="calculateGuaranteeTerm()" class="calendar-button">Рассчитать срок гарантии</button>
+                
+                <div id="calculation-result" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; display: none;">
+                    <h4>Рекомендуемые параметры гарантии:</h4>
+                    <div id="result-content"></div>
+                </div>
+            </div>
+
+            <script>
+                function calculateGuaranteeTerm() {
+                    const contractStart = document.getElementById('contract-start').value;
+                    const contractDuration = parseInt(document.getElementById('contract-duration').value);
+                    const projectType = document.getElementById('project-type').value;
+                    
+                    if (!contractStart || !contractDuration) {
+                        alert('Пожалуйста, заполните все поля');
+                        return;
+                    }
+                    
+                    // Коэффициенты буфера по типам проектов
+                    const bufferCoefficients = {
+                        'construction': 0.20,
+                        'supply': 0.10,
+                        'it': 0.25,
+                        'consulting': 0.15,
+                        'other': 0.15
+                    };
+                    
+                    const bufferCoeff = bufferCoefficients[projectType];
+                    const bufferMonths = Math.ceil(contractDuration * bufferCoeff);
+                    const totalGuaranteeMonths = contractDuration + bufferMonths;
+                    
+                    // Рассчитываем даты
+                    const startDate = new Date(contractStart);
+                    const contractEndDate = new Date(startDate);
+                    contractEndDate.setMonth(contractEndDate.getMonth() + contractDuration);
+                    
+                    const guaranteeEndDate = new Date(startDate);
+                    guaranteeEndDate.setMonth(guaranteeEndDate.getMonth() + totalGuaranteeMonths);
+                    
+                    // Форматируем даты
+                    const formatDate = (date) => {
+                        return date.toLocaleDateString('ru-RU', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                    };
+                    
+                    const resultContent = `
+                        <p><strong>Срок выполнения контракта:</strong> ${contractDuration} месяцев</p>
+                        <p><strong>Рекомендуемый буфер:</strong> ${bufferMonths} месяцев (${Math.round(bufferCoeff * 100)}%)</p>
+                        <p><strong>Общий срок гарантии:</strong> ${totalGuaranteeMonths} месяцев</p>
+                        <p><strong>Дата окончания контракта:</strong> ${formatDate(contractEndDate)}</p>
+                        <p><strong>Дата окончания гарантии:</strong> ${formatDate(guaranteeEndDate)}</p>
+                        <p><strong>Рекомендация:</strong> Начните процедуру получения гарантии за 2-3 месяца до начала контракта</p>
+                    `;
+                    
+                    document.getElementById('result-content').innerHTML = resultContent;
+                    document.getElementById('calculation-result').style.display = 'block';
+                }
+            </script>
+        </section>
+
+        <section id="practical-recommendations">
+            <h2>Практические рекомендации по планированию сроков</h2>
+            
+            <p>Правильное планирование сроков банковской гарантии — залог успешного выполнения контракта. Следуйте этим рекомендациям для минимизации рисков.</p>
+
+            <h3>До получения контракта</h3>
+            <ol>
+                <li><strong>Анализ требований:</strong> Изучите все требования к гарантии в документации тендера</li>
+                <li><strong>Выбор банка:</strong> Определитесь с банком-гарантом заранее</li>
+                <li><strong>Подготовка документов:</strong> Соберите все необходимые документы</li>
+                <li><strong>Расчёт сроков:</strong> Рассчитайте оптимальный срок гарантии с учётом буферов</li>
+            </ol>
+
+            <h3>В процессе выполнения контракта</h3>
+            <ol>
+                <li><strong>Мониторинг сроков:</strong> Регулярно отслеживайте оставшийся срок гарантии</li>
+                <li><strong>Контроль выполнения:</strong> Следите за темпами выполнения контракта</li>
+                <li><strong>Заблаговременное продление:</strong> Начинайте процедуры продления за 2-3 месяца</li>
+                <li><strong>Документирование задержек:</strong> Фиксируйте все объективные причины задержек</li>
+            </ol>
+
+            <h3>При возникновении проблем</h3>
+            <ol>
+                <li><strong>Немедленное уведомление:</strong> Сразу уведомите банк и заказчика о проблемах</li>
+                <li><strong>Поиск решений:</strong> Активно ищите способы решения проблем</li>
+                <li><strong>Профессиональная помощь:</strong> Обращайтесь к специалистам при необходимости</li>
+                <li><strong>Альтернативные варианты:</strong> Рассмотрите возможность замены гарантии</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Золотое правило:</strong> Лучше получить гарантию с небольшим запасом по сроку, чем столкнуться с просрочкой. Небольшая переплата за дополнительное время окупится спокойствием и отсутствием рисков.
+            </div>
+
+            <h3>Чек-лист для планирования сроков</h3>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>За 3 месяца до начала контракта:</h4>
+                <ul>
+                    <li>☐ Выбрать банк-гаранта</li>
+                    <li>☐ Подготовить документы</li>
+                    <li>☐ Рассчитать срок гарантии</li>
+                    <li>☐ Подать заявку в банк</li>
+                </ul>
+                
+                <h4>За 2 месяца до истечения гарантии:</h4>
+                <ul>
+                    <li>☐ Оценить темпы выполнения контракта</li>
+                    <li>☐ Определить необходимость продления</li>
+                    <li>☐ Подготовить документы для продления</li>
+                    <li>☐ Уведомить заказчика о планах</li>
+                </ul>
+                
+                <h4>За 1 месяц до истечения гарантии:</h4>
+                <ul>
+                    <li>☐ Подать заявление на продление</li>
+                    <li>☐ Уплатить комиссию за продление</li>
+                    <li>☐ Получить дополнение к гарантии</li>
+                    <li>☐ Уведомить заказчика о продлении</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2>Часто задаваемые вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Можно ли сократить срок банковской гарантии после её получения?</div>
+                <div class="faq-answer">
+                    Да, срок банковской гарантии можно сократить, но только с согласия всех сторон: банка-гаранта, принципала (вас) и бенефициара (заказчика). Для этого необходимо оформить дополнение к гарантии. Однако учтите, что сокращение срока может повлечь дополнительные расходы и не всегда выгодно с точки зрения рисков.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Что делать, если срок гарантии истекает, а контракт ещё не выполнен?</div>
+                <div class="faq-answer">
+                    В такой ситуации необходимо немедленно обратиться в банк для продления гарантии. Параллельно уведомите заказчика о сложившейся ситуации и предоставьте обоснование задержки. Если продление невозможно, рассмотрите возможность замены гарантии в другом банке. Помните: просрочка гарантии может привести к серьёзным финансовым потерям.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Какой минимальный срок гарантии может установить банк?</div>
+                <div class="faq-answer">
+                    Минимальный срок банковской гарантии обычно составляет 1 месяц, но может варьироваться в зависимости от банка и типа гарантии. Некоторые банки устанавливают минимальный срок в 3 месяца. Всегда уточняйте актуальные условия в выбранном банке перед подачей заявки.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Влияет ли срок гарантии на её стоимость?</div>
+                <div class="faq-answer">
+                    Да, срок действия банковской гарантии напрямую влияет на её стоимость. Чем дольше срок, тем выше комиссия банка. Обычно комиссия рассчитывается как процент от суммы гарантии за каждый месяц действия. Например, при комиссии 1% в месяц, гарантия на 12 месяцев будет стоить 12% от суммы, а на 24 месяца — 24%.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Можно ли получить гарантию на срок больше максимального по контракту?</div>
+                <div class="faq-answer">
+                    Да, банк может выдать гарантию на срок, превышающий срок контракта. Это часто практикуется для создания буфера на случай задержек. Однако заказчик может не принять такую гарантию, если в документации тендера указаны конкретные требования к сроку. Всегда согласовывайте срок гарантии с заказчиком.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Что происходит с гарантией после досрочного выполнения контракта?</div>
+                <div class="faq-answer">
+                    После досрочного выполнения контракта и подписания актов приёмки работ, банковская гарантия может быть досрочно отозвана. Для этого необходимо подать заявление в банк с приложением документов, подтверждающих выполнение контракта. Банк вернёт часть уплаченной комиссии пропорционально неиспользованному сроку гарантии.
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Рассчитайте срок банковской гарантии под ваш график работ</h2>
+            <p>Получите персональный расчёт оптимального срока банковской гарантии с учётом специфики вашего проекта и рекомендациями по минимизации рисков.</p>
+            <a href="#" class="cta-button">Рассчитать срок гарантии</a>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.9;">Бесплатная консультация специалиста по банковским гарантиям</p>
+        </section>
+
+        <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+            <p><strong>Итоги:</strong> Правильное планирование срока действия банковской гарантии — это основа успешного выполнения контракта. Учитывайте буферы, мониторьте сроки и не бойтесь обращаться за профессиональной помощью. Помните: лучше перестраховаться, чем столкнуться с просрочкой.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1859 @@
+<style>
+* { box-sizing: border-box; } 
+body {margin: 0;}
+
+:root{
+--gjs-t-color-primary:#1A5CE0;
+--gjs-t-color-secondary:#E85A00;
+--gjs-t-color-accent:#22c55e;
+--gjs-t-color-success:#16a34a;
+--gjs-t-color-warning:#f59e0b;
+--gjs-t-color-error:#ef4444;
+}
+
+.gjs-t-body{
+background-color:#ffffff;
+color:#0f172a;
+font-size:16px;
+line-height:1.6;
+font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.gjs-t-h1{
+color:#0f172a;
+font-size:48px;
+line-height:1.15;
+font-family:Poppins, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;
+}
+
+.gjs-t-h2{
+color:#0f172a;
+font-size:32px;
+line-height:1.25;
+font-family:Poppins, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;
+}
+
+.gjs-t-button{
+background-color:var(--gjs-t-color-primary);
+color:#ffffff;
+border-radius:12px;
+}
+
+.gjs-t-link{
+color:var(--gjs-t-color-primary);
+text-decoration:none;
+}
+
+.gjs-t-border{
+border-radius:16px;
+border:1px solid rgba(2,6,23,0.08);
+border-color:#e0e0e0;
+}
+
+*, ::before, ::after{
+box-sizing:border-box;
+border-width:0;
+border-style:solid;
+border-color:#e5e7eb;
+}
+
+html, :host{
+line-height:1.5;
+-webkit-text-size-adjust:100%;
+-moz-tab-size:4;
+tab-size:4;
+font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+font-feature-settings:normal;
+font-variation-settings:normal;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+margin:0;
+line-height:inherit;
+}
+
+hr{
+height:0;
+color:inherit;
+border-top-width:1px;
+}
+
+abbr:where([title]){
+text-decoration:underline dotted;
+}
+
+h1, h2, h3, h4, h5, h6{
+font-size:inherit;
+font-weight:inherit;
+}
+
+a{
+color:inherit;
+text-decoration:inherit;
+}
+
+b, strong{
+font-weight:bolder;
+}
+
+code, kbd, samp, pre{
+font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+font-feature-settings:normal;
+font-variation-settings:normal;
+font-size:1em;
+}
+
+small{
+font-size:80%;
+}
+
+sub, sup{
+font-size:75%;
+line-height:0;
+position:relative;
+vertical-align:baseline;
+}
+
+sub{
+bottom:-0.25em;
+}
+
+sup{
+top:-0.5em;
+}
+
+table{
+text-indent:0;
+border-color:inherit;
+border-collapse:collapse;
+}
+
+button, input, optgroup, select, textarea{
+font-family:inherit;
+font-feature-settings:inherit;
+font-variation-settings:inherit;
+font-size:100%;
+font-weight:inherit;
+line-height:inherit;
+letter-spacing:inherit;
+color:inherit;
+margin:0;
+padding:0;
+}
+
+button, select{
+text-transform:none;
+}
+
+button, input:where([type='button']), input:where([type='reset']), input:where([type='submit']){
+-webkit-appearance:button;
+background-color:transparent;
+background-image:none;
+}
+
+:-moz-focusring{
+outline:auto;
+}
+
+:-moz-ui-invalid{
+box-shadow:none;
+}
+
+progress{
+vertical-align:baseline;
+}
+
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+height:auto;
+}
+
+[type='search']{
+-webkit-appearance:textfield;
+outline-offset:-2px;
+}
+
+::-webkit-search-decoration{
+-webkit-appearance:none;
+}
+
+::-webkit-file-upload-button{
+-webkit-appearance:button;
+font:inherit;
+}
+
+summary{
+display:list-item;
+}
+
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre{
+margin:0;
+}
+
+fieldset{
+margin:0;
+padding:0;
+}
+
+legend{
+padding:0;
+}
+
+ol, ul, menu{
+list-style:none;
+margin:0;
+padding:0;
+}
+
+dialog{
+padding:0;
+}
+
+textarea{
+resize:vertical;
+}
+
+input::placeholder, textarea::placeholder{
+opacity:1;
+color:#9ca3af;
+}
+
+button, [role="button"]{
+cursor:pointer;
+}
+
+:disabled{
+cursor:default;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object{
+display:block;
+vertical-align:middle;
+}
+
+img, video{
+max-width:100%;
+height:auto;
+}
+
+[hidden]{
+display:none;
+}
+
+.cls-s7i9f7{
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+
+.hero-section{
+width:100%;
+}
+
+.hero-container{
+margin-left:auto;
+margin-right:auto;
+max-width:80rem;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:4rem;
+padding-bottom:4rem;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:3rem;
+}
+
+.hero-content{
+width:50%;
+}
+
+.hero-title{
+font-weight:800;
+margin-bottom:1.25rem;
+}
+
+.hero-subtitle{
+color:rgb(71 85 105 / 1);
+font-size:1.125rem;
+line-height:1.75rem;
+margin-bottom:2rem;
+}
+
+.hero-actions{
+display:flex;
+align-items:center;
+gap:1rem;
+}
+
+.hero-primary-cta{
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+font-size:1rem;
+line-height:1.5rem;
+font-weight:600;
+box-shadow:0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration:150ms;
+}
+
+.hero-primary-cta:hover{
+opacity:0.9;
+}
+
+.hero-secondary-cta{
+font-size:1rem;
+line-height:1.5rem;
+font-weight:500;
+display:flex;
+align-items:center;
+gap:0.5rem;
+}
+
+.arrow-icon{
+width:1.25rem;
+height:1.25rem;
+}
+
+.hero-trust-bullets{
+margin-top:2rem;
+display:grid;
+grid-template-columns:repeat(3, minmax(0, 1fr));
+gap:1rem;
+}
+
+.trust-item{
+display:flex;
+align-items:center;
+gap:0.75rem;
+}
+
+.trust-icon-shield{
+width:1.25rem;
+height:1.25rem;
+color:rgb(22 163 74 / 1);
+}
+
+.trust-text{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(71 85 105 / 1);
+}
+
+.trust-icon-clock{
+width:1.25rem;
+height:1.25rem;
+}
+
+.trust-icon-lock{
+width:1.25rem;
+height:1.25rem;
+}
+
+.hero-image-wrapper{
+width:50%;
+}
+
+.hero-image{
+width:100%;
+height:auto;
+border-radius:1rem;
+box-shadow:0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.benefits-section{
+width:100%;
+background-color:rgb(248 250 252 / 1);
+}
+
+.benefits-container{
+margin-left:auto;
+margin-right:auto;
+max-width:80rem;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:4rem;
+padding-bottom:4rem;
+}
+
+.benefits-header{
+max-width:48rem;
+margin-bottom:2.5rem;
+}
+
+.benefits-title{
+font-weight:700;
+margin-bottom:0.75rem;
+}
+
+.benefits-subtitle{
+color:rgb(71 85 105 / 1);
+}
+
+.benefits-grid{
+display:grid;
+grid-template-columns:repeat(4, minmax(0, 1fr));
+gap:1.5rem;
+}
+
+.benefit-card{
+padding:1.5rem;
+background-color:rgb(255 255 255 / 1);
+display:flex;
+flex-direction:column;
+gap:1rem;
+}
+
+.benefit-icon-wrap{
+width:3rem;
+height:3rem;
+border-radius:0.75rem;
+background-color:rgb(239 246 255 / 1);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.benefit-icon{
+width:1.5rem;
+height:1.5rem;
+}
+
+.benefit-title{
+font-size:1.125rem;
+line-height:1.75rem;
+font-weight:600;
+}
+
+.benefit-text{
+color:rgb(71 85 105 / 1);
+}
+
+.process-section{
+width:100%;
+}
+
+.process-container{
+margin-left:auto;
+margin-right:auto;
+max-width:80rem;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:4rem;
+padding-bottom:4rem;
+}
+
+.process-header{
+max-width:48rem;
+margin-bottom:2.5rem;
+}
+
+.process-title{
+font-weight:700;
+margin-bottom:0.75rem;
+}
+
+.process-subtitle{
+color:rgb(71 85 105 / 1);
+}
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4, minmax(0, 1fr));
+gap:1.5rem;
+}
+
+.process-step-card{
+padding:1.5rem;
+background-color:rgb(255 255 255 / 1);
+display:flex;
+align-items:flex-start;
+gap:1rem;
+}
+
+.process-step-icon-wrap{
+width:3rem;
+height:3rem;
+border-radius:0.75rem;
+background-color:rgb(240 253 244 / 1);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.process-step-icon{
+width:1.5rem;
+height:1.5rem;
+}
+
+.process-step-content{
+flex:1 1 0%;
+}
+
+.process-step-title{
+font-size:1rem;
+line-height:1.5rem;
+font-weight:600;
+margin-bottom:0.25rem;
+}
+
+.process-step-text{
+color:rgb(71 85 105 / 1);
+}
+
+.process-cta-banner{
+margin-top:2.5rem;
+padding:1.5rem;
+background-image:linear-gradient(to right, #eff6ff   , rgb(239 246 255 / 0)   
+);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:1.5rem;
+}
+
+.process-cta-text-block{
+max-width:42rem;
+}
+
+.process-cta-title{
+font-size:1.125rem;
+line-height:1.75rem;
+font-weight:600;
+margin-bottom:0.25rem;
+}
+
+.process-cta-text{
+color:rgb(71 85 105 / 1);
+}
+
+.process-cta-button{
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+font-weight:600;
+box-shadow:0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration:150ms;
+}
+
+.process-cta-button:hover{
+opacity:0.9;
+}
+
+.calculator-section{
+width:100%;
+background-color:rgb(248 250 252 / 1);
+}
+
+.calculator-container{
+margin-left:auto;
+margin-right:auto;
+max-width:80rem;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:4rem;
+padding-bottom:4rem;
+}
+
+.calculator-header{
+max-width:48rem;
+margin-bottom:2.5rem;
+}
+
+.calculator-title{
+font-weight:700;
+margin-bottom:0.75rem;
+}
+
+.calculator-subtitle{
+color:rgb(71 85 105 / 1);
+}
+
+.calculator-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:2.5rem;
+}
+
+.calculator-form{
+background-color:rgb(255 255 255 / 1);
+padding:1.5rem;
+display:flex;
+flex-direction:column;
+gap:1.25rem;
+}
+
+.calc-row{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:1rem;
+}
+
+.calc-field{
+display:flex;
+flex-direction:column;
+gap:0.5rem;
+}
+
+.calc-label{
+font-size:0.875rem;
+line-height:1.25rem;
+font-weight:500;
+}
+
+.calc-input{
+width:100%;
+border-radius:0.75rem;
+border-width:1px;
+border-style:solid;
+border-color:rgb(226 232 240 / 1);
+padding-left:1rem;
+padding-right:1rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+outline:2px solid transparent;
+outline-offset:2px;
+}
+
+.calc-select{
+width:100%;
+border-radius:0.75rem;
+border-width:1px;
+border-style:solid;
+border-color:rgb(226 232 240 / 1);
+padding-left:1rem;
+padding-right:1rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+outline:2px solid transparent;
+outline-offset:2px;
+}
+
+.calc-input:focus{
+border-color:rgb(59 130 246 / 1);
+}
+
+.calc-select:focus{
+border-color:rgb(59 130 246 / 1);
+}
+
+.input-with-icon{
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.input-with-icon img{
+position:absolute;
+left:0.75rem;
+width:1rem;
+height:1rem;
+opacity:0.7;
+}
+
+.input-with-icon .calc-input{
+padding-left:2rem;
+}
+
+.calc-hint{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(71 85 105 / 1);
+}
+
+.calc-actions{
+display:flex;
+align-items:center;
+gap:1rem;
+margin-top:0.25rem;
+}
+
+.calc-button{
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+font-weight:600;
+box-shadow:0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration:150ms;
+}
+
+.calc-button:hover{
+opacity:0.9;
+}
+
+.calc-reset{
+font-size:0.875rem;
+line-height:1.25rem;
+font-weight:500;
+display:flex;
+align-items:center;
+gap:0.375rem;
+}
+
+.calc-reset img{
+width:1rem;
+height:1rem;
+}
+
+.calc-error{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(239 68 68 / 1);
+display:none;
+}
+
+.calculator-result{
+background-color:rgb(255 255 255 / 1);
+padding:1.5rem;
+display:flex;
+flex-direction:column;
+gap:1rem;
+}
+
+.result-header{
+display:flex;
+align-items:center;
+gap:0.5rem;
+}
+
+.result-title{
+font-size:1rem;
+line-height:1.5rem;
+font-weight:600;
+}
+
+.result-icon{
+width:1.25rem;
+height:1.25rem;
+color:rgb(37 99 235 / 1);
+}
+
+.result-value{
+font-size:1.875rem;
+line-height:2.25rem;
+font-weight:800;
+color:rgb(15 23 42 / 1);
+}
+
+.result-meta{
+display:grid;
+grid-template-columns:repeat(3, minmax(0, 1fr));
+gap:0.75rem;
+}
+
+.meta-chip{
+display:flex;
+align-items:center;
+gap:0.5rem;
+padding:0.5rem;
+background-color:rgb(248 250 252 / 1);
+border-radius:12px;
+}
+
+.meta-chip img{
+width:1rem;
+height:1rem;
+}
+
+.meta-text{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(51 65 85 / 1);
+}
+
+.breakdown{
+margin-top:0.25rem;
+display:flex;
+flex-direction:column;
+gap:0.5rem;
+}
+
+.breakdown-row{
+display:flex;
+align-items:flex-start;
+gap:0.5rem;
+color:rgb(71 85 105 / 1);
+font-size:0.95rem;
+}
+
+.breakdown-row img{
+width:1rem;
+height:1rem;
+margin-top:0.15rem;
+}
+
+.disclaimer{
+margin-top:0.25rem;
+color:rgb(100 116 139 / 1);
+font-size:0.875rem;
+}
+
+.result-cta{
+margin-top:0.5rem;
+display:flex;
+align-items:center;
+gap:0.75rem;
+flex-wrap:wrap;
+}
+
+.result-cta .gjs-t-button{
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+font-weight:600;
+box-shadow:0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration:150ms;
+}
+
+.result-cta .gjs-t-button:hover{
+opacity:0.9;
+}
+
+.why-us-section{
+width:100%;
+background-color:rgb(248 250 252 / 1);
+}
+
+.why-us-container{
+margin-left:auto;
+margin-right:auto;
+max-width:80rem;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:4rem;
+padding-bottom:4rem;
+}
+
+.why-us-header{
+max-width:48rem;
+margin-bottom:2.5rem;
+}
+
+.why-us-title{
+font-weight:700;
+margin-bottom:0.75rem;
+}
+
+.why-us-subtitle{
+color:rgb(71 85 105 / 1);
+}
+
+.why-us-content{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:2.5rem;
+}
+
+.why-us-stats-and-logos{
+display:flex;
+flex-direction:column;
+gap:1.5rem;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(3, minmax(0, 1fr));
+gap:1.5rem;
+}
+
+.stat-card{
+padding:1.25rem;
+background-color:rgb(255 255 255 / 1);
+}
+
+.stat-number{
+font-size:1.875rem;
+line-height:2.25rem;
+font-weight:800;
+color:rgb(15 23 42 / 1);
+}
+
+.stat-label{
+color:rgb(71 85 105 / 1);
+}
+
+.partners-block{
+padding:1.5rem;
+background-color:rgb(255 255 255 / 1);
+}
+
+.partners-title{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(100 116 139 / 1);
+margin-bottom:1rem;
+}
+
+.partners-logos-row{
+display:grid;
+grid-template-columns:repeat(5, minmax(0, 1fr));
+gap:1rem;
+align-items:center;
+}
+
+.partner-logo{
+width:100%;
+height:auto;
+filter:grayscale(100%);
+opacity:0.8;
+}
+
+.testimonials-column{
+display:flex;
+flex-direction:column;
+gap:1.5rem;
+}
+
+.testimonial-card{
+padding:1.5rem;
+background-color:rgb(255 255 255 / 1);
+display:flex;
+align-items:flex-start;
+gap:1rem;
+}
+
+.testimonial-avatar{
+width:4rem;
+height:4rem;
+border-radius:9999px;
+object-fit:cover;
+}
+
+.testimonial-content{
+flex:1 1 0%;
+}
+
+.testimonial-quote{
+color:rgb(51 65 85 / 1);
+}
+
+.testimonial-meta{
+margin-top:0.75rem;
+display:flex;
+align-items:center;
+gap:0.5rem;
+}
+
+.testimonial-name{
+font-size:0.875rem;
+line-height:1.25rem;
+font-weight:600;
+}
+
+.testimonial-role{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(100 116 139 / 1);
+}
+
+.faq-section{
+width:100%;
+}
+
+.faq-container{
+margin-left:auto;
+margin-right:auto;
+max-width:80rem;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:4rem;
+padding-bottom:4rem;
+}
+
+.faq-header{
+max-width:48rem;
+margin-bottom:2.5rem;
+}
+
+.faq-title{
+font-weight:700;
+margin-bottom:0.75rem;
+}
+
+.faq-subtitle{
+color:rgb(71 85 105 / 1);
+}
+
+.faq-list{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:1.5rem;
+}
+
+.faq-item{
+background-color:rgb(255 255 255 / 1);
+padding:1.25rem;
+}
+
+.faq-question{
+display:flex;
+align-items:center;
+justify-content:space-between;
+cursor:pointer;
+font-size:1rem;
+line-height:1.5rem;
+font-weight:600;
+}
+
+.faq-icon{
+width:1.25rem;
+height:1.25rem;
+}
+
+.faq-answer{
+color:rgb(71 85 105 / 1);
+margin-top:0.75rem;
+}
+
+.contact-section{
+width:100%;
+background-color:rgb(248 250 252 / 1);
+}
+
+.contact-container{
+margin-left:auto;
+margin-right:auto;
+max-width:80rem;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:4rem;
+padding-bottom:4rem;
+}
+
+.contact-header{
+max-width:48rem;
+margin-bottom:2.5rem;
+}
+
+.contact-title{
+font-weight:700;
+margin-bottom:0.75rem;
+}
+
+.contact-subtitle{
+color:rgb(71 85 105 / 1);
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:2.5rem;
+}
+
+.contact-form{
+background-color:rgb(255 255 255 / 1);
+padding:1.5rem;
+display:flex;
+flex-direction:column;
+gap:1.25rem;
+}
+
+.form-row{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:1rem;
+}
+
+.form-field{
+display:flex;
+flex-direction:column;
+gap:0.5rem;
+}
+
+.label-name{
+font-size:0.875rem;
+line-height:1.25rem;
+font-weight:500;
+}
+
+.input-name{
+width:100%;
+border-radius:0.75rem;
+border-width:1px;
+border-color:rgb(226 232 240 / 1);
+padding-left:1rem;
+padding-right:1rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+outline:2px solid transparent;
+outline-offset:2px;
+}
+
+.input-name:focus{
+border-color:rgb(59 130 246 / 1);
+}
+
+.label-phone{
+font-size:0.875rem;
+line-height:1.25rem;
+font-weight:500;
+}
+
+.input-phone{
+width:100%;
+border-radius:0.75rem;
+border-width:1px;
+border-color:rgb(226 232 240 / 1);
+padding-left:1rem;
+padding-right:1rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+outline:2px solid transparent;
+outline-offset:2px;
+}
+
+.input-phone:focus{
+border-color:rgb(59 130 246 / 1);
+}
+
+.label-email{
+font-size:0.875rem;
+line-height:1.25rem;
+font-weight:500;
+}
+
+.input-email{
+width:100%;
+border-radius:0.75rem;
+border-width:1px;
+border-color:rgb(226 232 240 / 1);
+padding-left:1rem;
+padding-right:1rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+outline:2px solid transparent;
+outline-offset:2px;
+}
+
+.input-email:focus{
+border-color:rgb(59 130 246 / 1);
+}
+
+.label-message{
+font-size:0.875rem;
+line-height:1.25rem;
+font-weight:500;
+}
+
+.textarea-message{
+width:100%;
+border-radius:0.75rem;
+border-width:1px;
+border-color:rgb(226 232 240 / 1);
+padding-left:1rem;
+padding-right:1rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+outline:2px solid transparent;
+outline-offset:2px;
+}
+
+.textarea-message:focus{
+border-color:rgb(59 130 246 / 1);
+}
+
+.consent-row{
+display:flex;
+align-items:flex-start;
+gap:0.75rem;
+}
+
+.checkbox-policy{
+margin-top:0.25rem;
+width:1rem;
+height:1rem;
+}
+
+.consent-label{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(71 85 105 / 1);
+}
+
+.consent-policy-link{
+text-decoration-line:underline;
+}
+
+.submit-button{
+width:100%;
+padding-left:1.5rem;
+padding-right:1.5rem;
+padding-top:0.75rem;
+padding-bottom:0.75rem;
+font-weight:600;
+box-shadow:0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration:150ms;
+}
+
+.submit-button:hover{
+opacity:0.9;
+}
+
+.contact-aside{
+display:flex;
+flex-direction:column;
+gap:1.5rem;
+}
+
+.contact-card{
+background-color:rgb(255 255 255 / 1);
+padding:1.5rem;
+display:flex;
+flex-direction:column;
+gap:1rem;
+}
+
+.contact-row{
+display:flex;
+align-items:center;
+gap:1rem;
+}
+
+.contact-icon-phone{
+width:1.25rem;
+height:1.25rem;
+}
+
+.contact-phone-link{
+font-size:1rem;
+line-height:1.5rem;
+font-weight:600;
+}
+
+.contact-icon-mail{
+width:1.25rem;
+height:1.25rem;
+}
+
+.contact-mail-link{
+font-size:1rem;
+line-height:1.5rem;
+font-weight:600;
+}
+
+.contact-icon-map{
+width:1.25rem;
+height:1.25rem;
+}
+
+.contact-address-text{
+font-size:1rem;
+line-height:1.5rem;
+color:rgb(51 65 85 / 1);
+}
+
+.advisor-card{
+background-color:rgb(255 255 255 / 1);
+padding:1.5rem;
+display:flex;
+align-items:center;
+gap:1rem;
+}
+
+.advisor-photo{
+width:4rem;
+height:4rem;
+border-radius:9999px;
+object-fit:cover;
+}
+
+.advisor-info{
+flex:1 1 0%;
+}
+
+.advisor-name{
+font-weight:600;
+}
+
+.advisor-note{
+font-size:0.875rem;
+line-height:1.25rem;
+color:rgb(71 85 105 / 1);
+}
+
+@media (max-width: 992px){
+.hero-container{
+flex-direction:column;
+gap:2.5rem;
+padding-top:3rem;
+padding-bottom:3rem;
+}
+.hero-content{
+width:100%;
+}
+.hero-trust-bullets{
+grid-template-columns:repeat(3, minmax(0, 1fr));
+}
+.hero-image-wrapper{
+width:100%;
+}
+.benefits-grid{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+.process-grid{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+.process-cta-banner{
+flex-direction:column;
+}
+.why-us-content{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.partners-logos-row{
+grid-template-columns:repeat(3, minmax(0, 1fr));
+}
+.faq-list{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.contact-grid{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.form-row{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.calculator-grid{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.result-meta{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 480px){
+.hero-trust-bullets{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.benefits-grid{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.process-grid{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.stats-grid{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.partners-logos-row{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+.calc-row{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+.result-meta{
+grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<div class="gjs-t-body cls-s7i9f7">
+<main>
+<section class="hero-section">
+<div class="hero-container">
+<div class="hero-content">
+<h1 class="gjs-t-h1 hero-title">
+            Гарантируем возврат аванса — надежно и быстро
+          </h1>
+<p class="hero-subtitle">
+            Банковская гарантия защитит ваши авансовые платежи от рисков. Оформление от 24 часов, прозрачные условия, поддержка на каждом этапе.
+          </p>
+<div class="hero-actions">
+<a href="#contact" class="gjs-t-button hero-primary-cta">
+              Получить консультацию
+            </a>
+<a href="#process" class="gjs-t-link hero-secondary-cta">
+              Как это работает
+              <img src="https://api.iconify.design/lucide-arrow-right.svg" alt="Подробнее" loading="eager" class="arrow-icon"/>
+</a>
+</div>
+<ul class="hero-trust-bullets">
+<li class="trust-item">
+<img src="https://api.iconify.design/lucide-badge-check.svg" alt="Одобрено банками" loading="eager" class="trust-icon-shield"/>
+<span class="trust-text">Работаем с ТОП-банками</span>
+</li>
+<li class="trust-item">
+<img src="https://api.iconify.design/lucide-clock.svg" alt="Быстро" loading="eager" class="trust-icon-clock"/>
+<span class="trust-text">Оформление от 24 часов</span>
+</li>
+<li class="trust-item">
+<img src="https://api.iconify.design/lucide-lock.svg" alt="Безопасно" loading="eager" class="trust-icon-lock"/>
+<span class="trust-text">Юридическая защита</span>
+</li>
+</ul>
+</div>
+<figure class="hero-image-wrapper">
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22business%20handshake%20secure%20finance%20bank%20guarantee%22&amp;w=1200&amp;h=800" alt="Надежная банковская гарантия на возврат аванса" loading="eager" class="hero-image"/>
+</figure>
+</div>
+</section>
+
+<section id="benefits" class="benefits-section">
+<div class="benefits-container">
+<div class="benefits-header">
+<h2 class="gjs-t-h2 benefits-title">Почему это выгодно</h2>
+<p class="benefits-subtitle">
+            Вы получаете финансовую защиту и уверенность в исполнении обязательств ваших контрагентов.
+          </p>
+</div>
+<div class="benefits-grid">
+<div class="gjs-t-border benefit-card">
+<div class="benefit-icon-wrap">
+<img src="https://api.iconify.design/lucide-shield-check.svg" alt="Надежность" loading="lazy" class="benefit-icon"/>
+</div>
+<h3 class="benefit-title">Надежность и безопасность</h3>
+<p class="benefit-text">Гарантия, подкрепленная банком, снижает риски срыва обязательств и потери средств.</p>
+</div>
+<div class="gjs-t-border benefit-card">
+<div class="benefit-icon-wrap">
+<img src="https://api.iconify.design/lucide-clock.svg" alt="Скорость" loading="lazy" class="benefit-icon"/>
+</div>
+<h3 class="benefit-title">Быстрое оформление</h3>
+<p class="benefit-text">Подготовка документов и выпуск гарантии от 24 часов при готовности пакета.</p>
+</div>
+<div class="gjs-t-border benefit-card">
+<div class="benefit-icon-wrap">
+<img src="https://api.iconify.design/lucide-badge-check.svg" alt="Гарантия возврата" loading="lazy" class="benefit-icon"/>
+</div>
+<h3 class="benefit-title">Гарантия возврата средств</h3>
+<p class="benefit-text">Если контрагент не исполнил условия — банк возвращает аванс по гарантии.</p>
+</div>
+<div class="gjs-t-border benefit-card">
+<div class="benefit-icon-wrap">
+<img src="https://api.iconify.design/lucide-user-cog.svg" alt="Индивидуальный подход" loading="lazy" class="benefit-icon"/>
+</div>
+<h3 class="benefit-title">Индивидуальный подход</h3>
+<p class="benefit-text">Подбираем условия под ваш договор и требования заказчика.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="process" class="process-section">
+<div class="process-container">
+<div class="process-header">
+<h2 class="gjs-t-h2 process-title">Как это работает</h2>
+<p class="process-subtitle">Простой и прозрачный путь к получению банковской гарантии на возврат аванса.</p>
+</div>
+<div class="process-grid">
+<div class="gjs-t-border process-step-card">
+<div class="process-step-icon-wrap">
+<img src="https://api.iconify.design/lucide-file-check.svg" alt="Заявка и документы" loading="lazy" class="process-step-icon"/>
+</div>
+<div class="process-step-content">
+<h3 class="process-step-title">1. Заявка и пакет документов</h3>
+<p class="process-step-text">Вы оставляете заявку, мы помогаем собрать документы и проверяем условия договора.</p>
+</div>
+</div>
+<div class="gjs-t-border process-step-card">
+<div class="process-step-icon-wrap">
+<img src="https://api.iconify.design/lucide-building-2.svg" alt="Одобрение банка" loading="lazy" class="process-step-icon"/>
+</div>
+<div class="process-step-content">
+<h3 class="process-step-title">2. Рассмотрение банком</h3>
+<p class="process-step-text">Передаем документы в банк-партнер. Срок рассмотрения — от 1 рабочего дня.</p>
+</div>
+</div>
+<div class="gjs-t-border process-step-card">
+<div class="process-step-icon-wrap">
+<img src="https://api.iconify.design/lucide-shield-check.svg" alt="Выпуск гарантии" loading="lazy" class="process-step-icon"/>
+</div>
+<div class="process-step-content">
+<h3 class="process-step-title">3. Выпуск гарантии</h3>
+<p class="process-step-text">После одобрения банк выпускает гарантию в пользу вашего заказчика.</p>
+</div>
+</div>
+<div class="gjs-t-border process-step-card">
+<div class="process-step-icon-wrap">
+<img src="https://api.iconify.design/lucide-badge-check.svg" alt="Поддержка" loading="lazy" class="process-step-icon"/>
+</div>
+<div class="process-step-content">
+<h3 class="process-step-title">4. Сопровождение</h3>
+<p class="process-step-text">Сопровождаем до закрытия обязательств и при необходимости продлеваем гарантию.</p>
+</div>
+</div>
+</div>
+<div class="gjs-t-border process-cta-banner">
+<div class="process-cta-text-block">
+<h3 class="process-cta-title">Нужно быстро? Подготовим пакет сегодня</h3>
+<p class="process-cta-text">Оставьте контакты — свяжемся в течение 15 минут в рабочее время.</p>
+</div>
+<a href="#contact" class="gjs-t-button process-cta-button">Оставить заявку</a>
+</div>
+
+<section id="calculator" class="calculator-section">
+<div class="calculator-container" id="i7lrk8">
+<div class="calculator-header">
+<h2 class="gjs-t-h2 calculator-title">Конструктор расчета стоимости банковской гарантии</h2>
+<p class="calculator-subtitle">Укажите параметры договора, и мы мгновенно рассчитаем ориентировочную стоимость гарантии на возврат аванса.</p>
+</div>
+<div class="calculator-grid">
+<form method="get" id="calcForm" novalidate="" class="gjs-t-border calculator-form">
+<div class="calc-field">
+<label for="amount" class="calc-label">Сумма аванса, ₽</label>
+<div class="input-with-icon">
+<img src="https://api.iconify.design/lucide-wallet.svg" alt="Сумма аванса"/>
+<input type="number" id="amount" inputmode="decimal" min="1" step="1" required placeholder="Например, 5 000 000" aria-describedby="amountHint amountError" class="calc-input"/>
+</div>
+<small id="amountHint" class="calc-hint">Укажите сумму аванса по договору (без копеек).</small>
+<small id="amountError" class="calc-error">Введите корректную сумму (больше 0).</small>
+</div>
+<div class="calc-row">
+<div class="calc-field">
+<label for="term" class="calc-label">Срок гарантии, месяцев</label>
+<select type="text" id="term" required aria-describedby="termHint" class="calc-select">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3" selected>3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+<small id="termHint" class="calc-hint">Выберите срок действия гарантии по договору.</small>
+</div>
+<div class="calc-field">
+<label for="rating" class="calc-label">Кредитный рейтинг / показатель</label>
+<div class="input-with-icon">
+<img src="https://api.iconify.design/lucide-badge-check.svg" alt="Кредитный рейтинг"/>
+<input type="text" id="rating" placeholder="Например: &quot;высокий&quot;, &quot;средний&quot;, &quot;низкий&quot; или A/BBB/B" aria-describedby="ratingHint" class="calc-input"/>
+</div>
+<small id="ratingHint" class="calc-hint">От рейтинга зависит ставка: высокий ≈ 1%, средний ≈ 2%, низкий ≈ 3%.</small>
+</div>
+</div>
+<div class="calc-actions">
+<button type="submit" class="gjs-t-button calc-button">
+            Рассчитать
+          </button>
+<a href="#" id="resetCalc" class="gjs-t-link calc-reset">
+<img src="https://api.iconify.design/lucide-rotate-ccw.svg" alt="Сбросить"/>
+            Сбросить
+          </a>
+</div>
+</form>
+<aside aria-live="polite" class="gjs-t-border calculator-result">
+<div class="result-header">
+<img src="https://api.iconify.design/lucide-calculator.svg" alt="Результат расчета" class="result-icon"/>
+<span class="result-title">Предварительная стоимость гарантии</span>
+</div>
+<div id="resultValue" class="result-value">—</div>
+<div class="result-meta">
+<div class="meta-chip">
+<img src="https://api.iconify.design/lucide-percent.svg" alt="Ставка"/>
+<span id="rateLabel" class="meta-text">Ставка: —</span>
+</div>
+<div class="meta-chip">
+<img src="https://api.iconify.design/lucide-clock-3.svg" alt="Срок"/>
+<span id="termLabel" class="meta-text">Срок: 3 мес.</span>
+</div>
+<div class="meta-chip">
+<img src="https://api.iconify.design/lucide-wallet.svg" alt="Сумма"/>
+<span id="amountLabel" class="meta-text">Аванс: —</span>
+</div>
+</div>
+<div class="breakdown">
+<div class="breakdown-row">
+<img src="https://api.iconify.design/lucide-info.svg" alt="Формула"/>
+<span id="formulaText">Формула: сумма × ставка × срок / 12</span>
+</div>
+<div class="breakdown-row">
+<img src="https://api.iconify.design/lucide-lightbulb.svg" alt="Пояснение"/>
+<span id="noteText">Уточните рейтинг, чтобы точнее подобрать ставку.</span>
+</div>
+</div>
+<p class="disclaimer">Расчет носит ориентировочный характер. Финальные условия определяются банком после анализа документов.</p>
+<div class="result-cta">
+<a href="#contact" class="gjs-t-button">Получить точное предложение</a>
+<a href="#process" class="gjs-t-link">Как это работает</a>
+</div>
+</aside>
+</div>
+</div>
+</section>
+</div>
+</section>
+
+<section id="about" class="why-us-section">
+<div class="why-us-container">
+<div class="why-us-header">
+<h2 class="gjs-t-h2 why-us-title">Почему выбирают нас</h2>
+<p class="why-us-subtitle">Опытная команда, партнерства с надежными банками и реальный фокус на результате клиентов.</p>
+</div>
+<div class="why-us-content">
+<div class="why-us-stats-and-logos">
+<div class="stats-grid">
+<div class="gjs-t-border stat-card">
+<p class="stat-number">8+ лет</p>
+<p class="stat-label">на рынке гарантий</p>
+</div>
+<div class="gjs-t-border stat-card">
+<p class="stat-number">50+</p>
+<p class="stat-label">банков-партнеров</p>
+</div>
+<div class="gjs-t-border stat-card">
+<p class="stat-number">98%</p>
+<p class="stat-label">одобренных заявок</p>
+</div>
+</div>
+<div class="gjs-t-border partners-block">
+<p class="partners-title">Нам доверяют</p>
+<div class="partners-logos-row">
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22minimal%20corporate%20logo%22&amp;w=220&amp;h=80" alt="Логотип партнера" loading="lazy" class="partner-logo"/>
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22finance%20logo%20minimal%22&amp;w=220&amp;h=80" alt="Логотип партнера" loading="lazy" class="partner-logo"/>
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22bank%20logo%20simple%22&amp;w=220&amp;h=80" alt="Логотип партнера" loading="lazy" class="partner-logo"/>
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22corporate%20finance%20logo%22&amp;w=220&amp;h=80" alt="Логотип партнера" loading="lazy" class="partner-logo"/>
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22business%20logo%20clean%22&amp;w=220&amp;h=80" alt="Логотип партнера" loading="lazy" class="partner-logo"/>
+</div>
+</div>
+</div>
+<div class="testimonials-column">
+<article class="gjs-t-border testimonial-card">
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22male%20CFO%20portrait%20corporate%20headshot%20in%20office%22&amp;w=96&amp;h=96" alt="Алексей — Финансовый директор" loading="lazy" class="testimonial-avatar"/>
+<div class="testimonial-content">
+<p class="testimonial-quote">Оформили гарантию для возврата аванса за два дня. Все прозрачно, условия соответствовали договору с заказчиком.</p>
+<div class="testimonial-meta">
+<strong class="testimonial-name">Алексей</strong>
+<span class="testimonial-role">Финансовый директор</span>
+</div>
+</div>
+</article>
+<article class="gjs-t-border testimonial-card">
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22female%20CEO%20portrait%20professional%20headshot%22&amp;w=96&amp;h=96" alt="Марина — Генеральный директор" loading="lazy" class="testimonial-avatar"/>
+<div class="testimonial-content">
+<p class="testimonial-quote">Команда быстро согласовала условия с банком, и наш заказчик сразу принял гарантию без правок.</p>
+<div class="testimonial-meta">
+<strong class="testimonial-name">Марина</strong>
+<span class="testimonial-role">Генеральный директор</span>
+</div>
+</div>
+</article>
+<article class="gjs-t-border testimonial-card">
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22male%20project%20manager%20portrait%22&amp;w=96&amp;h=96" alt="Игорь — Руководитель проектов" loading="lazy" class="testimonial-avatar"/>
+<div class="testimonial-content">
+<p class="testimonial-quote">Получили гарантию на аванс по госконтракту. Все сроки и ставки соблюдены, поддержка отличная.</p>
+<div class="testimonial-meta">
+<strong class="testimonial-name">Игорь</strong>
+<span class="testimonial-role">Руководитель проектов</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq" class="faq-section">
+<div class="faq-container">
+<div class="faq-header">
+<h2 class="gjs-t-h2 faq-title">Часто задаваемые вопросы</h2>
+<p class="faq-subtitle">Коротко о главном — условия, сроки и требования к получению гарантии.</p>
+</div>
+<div class="faq-list">
+<details class="gjs-t-border faq-item">
+<summary class="faq-question">
+              Какие документы нужны?
+              <img src="https://api.iconify.design/lucide-help-circle.svg" alt="Подробнее" loading="lazy" class="faq-icon"/>
+</summary>
+<p class="faq-answer">Учредительные документы, финансовая отчетность, договор с авансом и проект гарантии. Перечень может отличаться в зависимости от банка.</p>
+</details>
+<details class="gjs-t-border faq-item">
+<summary class="faq-question">
+              Сколько занимает оформление?
+              <img src="https://api.iconify.design/lucide-clock.svg" alt="Сроки" loading="lazy" class="faq-icon"/>
+</summary>
+<p class="faq-answer">От 24 часов при полном пакете документов. Сложные случаи — до 3–5 рабочих дней.</p>
+</details>
+<details class="gjs-t-border faq-item">
+<summary class="faq-question">
+              Как рассчитывается стоимость?
+              <img src="https://api.iconify.design/lucide-calculator.svg" alt="Стоимость" loading="lazy" class="faq-icon"/>
+</summary>
+<p class="faq-answer">Комиссия зависит от суммы аванса, срока гарантии и финансовых показателей компании. Предложим лучшие ставки у партнеров.</p>
+</details>
+<details class="gjs-t-border faq-item">
+<summary class="faq-question">
+              Работаете с госконтрактами?
+              <img src="https://api.iconify.design/lucide-badge-check.svg" alt="Госконтракты" loading="lazy" class="faq-icon"/>
+</summary>
+<p class="faq-answer">Да, оформляем гарантии в соответствии с 44‑ФЗ/223‑ФЗ, учитываем требования заказчика и казначейства.</p>
+</details>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact-section">
+<div class="contact-container">
+<div class="contact-header">
+<h2 class="gjs-t-h2 contact-title">Оставьте заявку — начнем сегодня</h2>
+<p class="contact-subtitle">Заполните форму, и мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
+</div>
+<div class="contact-grid">
+<form method="get" class="gjs-t-border contact-form">
+<div class="form-row">
+<div class="form-field">
+<label for="name" class="label-name">Ваше имя</label>
+<input type="text" id="name" name="name" required placeholder="Иван Иванов" class="input-name"/>
+</div>
+<div class="form-field">
+<label for="phone" class="label-phone">Телефон</label>
+<input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___‑__‑__" class="input-phone"/>
+</div>
+</div>
+<div class="form-field">
+<label for="email" class="label-email">Email</label>
+<input type="email" id="email" name="email" required placeholder="name@company.ru" class="input-email"/>
+</div>
+<div class="form-field">
+<label for="message" class="label-message">Кратко опишите задачу</label>
+<textarea id="message" name="message" rows="4" placeholder="Сумма аванса, срок, требования заказчика" class="textarea-message"></textarea>
+</div>
+<div class="consent-row">
+<input type="checkbox" id="consent" required class="checkbox-policy"/>
+<label for="consent" class="consent-label">Соглашаюсь с <a href="#policy" class="gjs-t-link consent-policy-link">политикой конфиденциальности</a></label>
+</div>
+<button type="submit" class="gjs-t-button submit-button">Отправить заявку</button>
+</form>
+<aside class="contact-aside">
+<div class="gjs-t-border contact-card">
+<div class="contact-row">
+<img src="https://api.iconify.design/lucide-phone.svg" alt="Телефон" loading="lazy" class="contact-icon-phone"/>
+<a href="tel:+74999112437" class="gjs-t-link contact-phone-link">+7 (499) 911-24-37</a>
+</div>
+<div class="contact-row">
+<img src="https://api.iconify.design/lucide-mail.svg" alt="Email" loading="lazy" class="contact-icon-mail"/>
+<a href="mailto:zayavka@bizfin.ru" class="gjs-t-link contact-mail-link">zayavka@bizfin.ru</a>
+</div>
+<div class="contact-row">
+<img src="https://api.iconify.design/lucide-map-pin.svg" alt="Адрес" loading="lazy" class="contact-icon-map"/>
+<span class="contact-address-text">г.Заволжье, пр.Дзержинского, д.3а</span>
+</div>
+</div>
+<div class="gjs-t-border advisor-card">
+<img src="https://app.grapesjs.com/api/assets/random-image?query=%22founder%20at%20desk%20using%20laptop%20in%20co-working%20space%22&amp;w=120&amp;h=120" alt="Консультант — Руководитель направления" loading="lazy" class="advisor-photo"/>
+<div class="advisor-info">
+<p class="advisor-name">Дмитрий — Руководитель направления</p>
+<p class="advisor-note">Ответим на вопросы и подберем банк под ваш договор.</p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+</main>
+</div>
+
+<script>
+    (function(){
+      const form = document.getElementById('calcForm');
+      const amountInput = document.getElementById('amount');
+      const termSelect = document.getElementById('term');
+      const ratingInput = document.getElementById('rating');
+      const resetLink = document.getElementById('resetCalc');
+
+      const amountError = document.getElementById('amountError');
+
+      const resultValue = document.getElementById('resultValue');
+      const rateLabel = document.getElementById('rateLabel');
+      const termLabel = document.getElementById('termLabel');
+      const amountLabel = document.getElementById('amountLabel');
+      const formulaText = document.getElementById('formulaText');
+      const noteText = document.getElementById('noteText');
+
+      const fmtRub0 = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', maximumFractionDigits: 0 });
+      const fmtPct = new Intl.NumberFormat('ru-RU', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      function normalizeText(v){ return (v || '').toString().trim(); }
+
+      function detectRate(src){
+        const raw = normalizeText(src);
+        const lower = raw.toLowerCase();
+        const upper = raw.toUpperCase();
+
+        // Keywords in Russian
+        if (lower.includes('выс')) return { rate: 0.01, label: 'Высокий (≈1%)' };
+        if (lower.includes('сред')) return { rate: 0.02, label: 'Средний (≈2%)' };
+        if (lower.includes('низ')) return { rate: 0.03, label: 'Низкий (≈3%)' };
+
+        // Common letter ratings
+        if (/^(AAA|AA\+?|A\+?)$/.test(upper)) return { rate: 0.01, label: `${upper} (≈1%)` };
+        if (/^(BBB\+?|BB\+?)$/.test(upper)) return { rate: 0.02, label: `${upper} (≈2%)` };
+        if (/^(B\+?|CCC|CC|C|D)$/.test(upper)) return { rate: 0.03, label: `${upper} (≈3%)` };
+
+        // Default medium if unspecified
+        return { rate: 0.02, label: 'Средний (по умолчанию, 2%)', isDefault: true };
+      }
+
+      function validateAmount(){
+        const val = Number(amountInput.value.replace(/\s/g, ''));
+        const ok = Number.isFinite(val) && val > 0;
+        amountError.style.display = ok ? 'none' : 'block';
+        return ok ? val : null;
+      }
+
+      function updateLabels({amount, months, rateInfo, cost}){
+        termLabel.textContent = `Срок: ${months} мес.`;
+        amountLabel.textContent = amount ? `Аванс: ${fmtRub0.format(amount)}` : 'Аванс: —';
+        rateLabel.textContent = `Ставка: ${fmtPct.format(rateInfo.rate)}`;
+
+        if (Number.isFinite(cost)){
+          resultValue.textContent = fmtRub0.format(cost);
+        } else {
+          resultValue.textContent = '—';
+        }
+
+        formulaText.textContent = 'Формула: сумма × ставка × срок / 12';
+        noteText.textContent = rateInfo.isDefault
+          ? 'Ставка выбрана по умолчанию. Укажите рейтинг точнее (например: высокий/средний/низкий или A/BBB/B).'
+          : `Рейтинг распознан: ${rateInfo.label}.`;
+      }
+
+      function calculate(){
+        const amount = validateAmount();
+        const months = Number(termSelect.value) || 0;
+        const rateInfo = detectRate(ratingInput.value);
+
+        let cost = null;
+        if (amount && months > 0){
+          cost = amount * rateInfo.rate * months / 12;
+        }
+        updateLabels({amount, months, rateInfo, cost});
+      }
+
+      // Real-time updates
+      amountInput.addEventListener('input', calculate);
+      termSelect.addEventListener('change', calculate);
+      ratingInput.addEventListener('input', calculate);
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        calculate();
+      });
+
+      resetLink.addEventListener('click', function(e){
+        e.preventDefault();
+        form.reset();
+        amountError.style.display = 'none';
+        calculate();
+      });
+
+      // Initialize with defaults
+      calculate();
+    })();
+  </script>

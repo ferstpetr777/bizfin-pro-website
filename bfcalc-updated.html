@@ -1,0 +1,511 @@
+<!-- ====================== BF CALC v2 (Elementor HTML widget) - UPDATED WITH LIVE RATES ====================== -->
+<section id="bfcalc2" class="bfcalc" aria-label="Онлайн-калькулятор банковской гарантии">
+  <div class="bfcalc__container">
+
+    <!-- ЛЕВАЯ ЧАСТЬ: ФОРМА -->
+    <form class="bfcalc__form" id="bfcalc2-form" onsubmit="return false">
+
+      <!-- Вкладки режимов -->
+      <div class="tabs" role="tablist" aria-label="Режим гарантии">
+        <button class="tab is-active" role="tab" aria-selected="true" data-mode="44fz">44-ФЗ</button>
+        <button class="tab" role="tab" data-mode="223fz">223-ФЗ</button>
+        <button class="tab" role="tab" data-mode="185fz">185-ФЗ</button>
+        <button class="tab" role="tab" data-mode="comm">Коммерческий</button>
+      </div>
+
+      <!-- Тип гарантии -->
+      <fieldset class="gtype">
+        <legend>Тип гарантии</legend>
+        <label class="radio"><input type="radio" name="gtype" value="participation" checked> Участие</label>
+        <label class="radio"><input type="radio" name="gtype" value="performance"> Исполнение</label>
+        <label class="radio"><input type="radio" name="gtype" value="warranty"> Гарантийные обязательства</label>
+        <label class="radio"><input type="radio" name="gtype" value="advance"> Возврат аванса</label>
+      </fieldset>
+
+      <!-- Основные поля -->
+      <div class="grid">
+        <div class="field">
+          <label for="sum">Сумма обеспечения, ₽</label>
+          <input id="sum" inputmode="numeric" placeholder="5 000 000">
+          <small class="hint">от 100 000 до 1 000 000 000 ₽</small>
+        </div>
+
+        <div class="field">
+          <label for="dateStart">Начало</label>
+          <input id="dateStart" type="date">
+        </div>
+
+        <div class="field">
+          <label for="dateEnd">Окончание</label>
+          <input id="dateEnd" type="date">
+        </div>
+
+        <div class="field field--span2">
+          <label class="check">
+            <input id="unknownTerm" type="checkbox"> Неизвестный срок действия (указать длительность)
+          </label>
+          <div class="termWrap" id="termWrap" hidden>
+            <label for="termMonths">Срок, мес.</label>
+            <input id="termMonths" type="number" min="1" max="60" step="1" value="12">
+          </div>
+        </div>
+      </div>
+
+      <!-- Дополнительные параметры -->
+      <fieldset class="extra">
+        <legend>Дополнительные параметры</legend>
+
+        <label class="check"><input id="opt-noacc" type="checkbox"> Без открытия р/с</label>
+        <label class="check"><input id="opt-nocoll" type="checkbox"> Без залога</label>
+        <label class="check"><input id="opt-customerform" type="checkbox"> Форма гарантии от заказчика</label>
+        <label class="check"><input id="opt-installment" type="checkbox"> Рассрочка по оплате</label>
+
+        <label class="check"><input id="opt-loss" type="checkbox"> Убыточная деятельность</label>
+        <label class="check"><input id="opt-noexp" type="checkbox"> Отсутствие опыта</label>
+        <label class="check"><input id="opt-court" type="checkbox"> Наличие судебных дел</label>
+
+        <label class="check"><input id="opt-block" type="checkbox"> Блокировка расчётного счёта</label>
+        <label class="check"><input id="opt-closed" type="checkbox"> Закрытый аукцион</label>
+        <label class="check"><input id="opt-courier" type="checkbox"> Доставка курьером</label>
+      </fieldset>
+
+      <div class="actions">
+        <button id="calcBtn" class="btn btn--primary" type="button">Рассчитать</button>
+      </div>
+    </form>
+
+    <!-- ПРАВАЯ ЧАСТЬ: РЕЗУЛЬТАТ -->
+    <aside class="res" id="bfcalc2-result" aria-live="polite">
+      <header class="res__head">
+        <h3>Итог расчёта</h3>
+        <div class="res__live">
+          <span class="res__live-dot" title="Источник ставок"></span>
+          <span>Ставки: <strong id="liveScheme">локальная матрица</strong>. Обновлено: <span id="liveUpdated">—</span></span>
+        </div>
+      </header>
+
+      <div class="res__cards">
+        <div class="card">
+          <div class="label">Ориентировочная комиссия</div>
+          <div class="value" id="r-commission">—</div>
+          <div class="sub">Без НДС.<br>Минимальная комиссия банка учитывается.</div>
+        </div>
+
+        <div class="card">
+          <div class="label">Эффективная ставка</div>
+          <div class="value" id="r-effrate">—</div>
+          <div class="sub">за выбранный срок</div>
+        </div>
+
+        <div class="card">
+          <div class="label">Срок гарантии</div>
+          <div class="value" id="r-term">—</div>
+          <div class="sub">календарных месяцев</div>
+        </div>
+
+        <div class="card">
+          <div class="label">Сумма гарантии</div>
+          <div class="value" id="r-sum">—</div>
+        </div>
+      </div>
+
+      <div class="res__line" id="r-breakdown">Базовая ставка: —</div>
+
+      <div class="res__need">
+        <h4>Что может потребоваться</h4>
+        <ul>
+          <li>Учредительные документы</li>
+          <li>Бухгалтерская отчётность</li>
+          <li>Копия договора/извещения</li>
+          <li>Справки/выписки по запросу банка</li>
+        </ul>
+      </div>
+
+      <a class="btn btn--cta" href="https://t.me/+rLQzBD4rLjU0OTk6" target="_blank" rel="noopener nofollow">Консультация в 1 клик</a>
+
+      <p class="res__note">
+        Расчёт носит ориентировочный характер. Итоговые условия определяются банком после скоринга и проверки документов.
+        Обновление ставок — автоматически, при наличии соединения с нашим эндпойнтом.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<style>
+/* ====== компактная стиль-матрица, родная типографика, адаптив ====== */
+#bfcalc2.bfcalc{--bg:#fff;--muted:#667085;--text:#0F172A;--line:#E5E7EB;--accent:#FF6B00;--accent2:#FF8A1A;--radius:14px;--shadow:0 12px 40px rgba(15,23,42,.08)}
+#bfcalc2 *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Helvetica Neue",sans-serif}
+#bfcalc2 .bfcalc__container{max-width:1200px;margin:0 auto;padding:28px 18px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+
+/* Вкладки */
+#bfcalc2 .tabs{display:flex;gap:8px;flex-wrap:wrap}
+#bfcalc2 .tab{border:1px solid var(--line);background:#f8fafc;border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:700;color:#111}
+#bfcalc2 .tab.is-active{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(255,107,0,.24)}
+
+/* Блоки формы */
+#bfcalc2 fieldset{border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px 10px;margin-top:14px;background:#fff;box-shadow:var(--shadow)}
+#bfcalc2 legend{padding:0 6px;font-weight:800}
+#bfcalc2 .radio{display:inline-flex;align-items:center;gap:8px;margin:8px 12px 0 0}
+#bfcalc2 .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+#bfcalc2 .field{display:flex;flex-direction:column;gap:6px}
+#bfcalc2 .field--span2{grid-column:1/-1}
+#bfcalc2 label{font-size:12px;color:#111;font-weight:700}
+#bfcalc2 .hint{color:var(--muted);font-size:12px}
+#bfcalc2 input[type="date"],
+#bfcalc2 input[type="number"],
+#bfcalc2 .field input{appearance:none;border:1px solid var(--line);border-radius:12px;padding:14px 12px;font-size:16px}
+#bfcalc2 .check{display:inline-flex;align-items:center;gap:8px;margin:6px 14px 2px 0;color:#111}
+#bfcalc2 .actions{margin-top:10px}
+#bfcalc2 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 22px;font-weight:800;cursor:pointer;text-decoration:none;border:1px solid transparent;transition:.2s}
+#bfcalc2 .btn--primary{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#fff;box-shadow:0 16px 44px rgba(255,107,0,.22)}
+#bfcalc2 .btn--primary:hover{transform:translateY(-1px);box-shadow:0 20px 54px rgba(255,107,0,.30)}
+#bfcalc2 .btn--cta{background:#fff;border-color:var(--accent);color:var(--accent);margin-top:8px}
+#bfcalc2 .btn--cta:hover{background:#FFF6EF}
+
+/* Результат */
+#bfcalc2 .res{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:18px;box-shadow:var(--shadow);align-self:start;position:sticky;top:12px}
+#bfcalc2 .res__head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#bfcalc2 .res__head h3{margin:0;font-size:18px}
+#bfcalc2 .res__live{font-size:12px;color:#444;display:flex;align-items:center;gap:8px}
+#bfcalc2 .res__live-dot{width:8px;height:8px;border-radius:50%;background:#bbb;display:inline-block}
+#bfcalc2 .res__live--ok .res__live-dot{background:#22c55e}
+#bfcalc2 .res__live--warn .res__live-dot{background:#ff9800}
+
+#bfcalc2 .res__cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+#bfcalc2 .card{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+#bfcalc2 .card .label{font-size:12px;color:#777}
+#bfcalc2 .card .value{font-size:24px;font-weight:900;margin-top:2px}
+#bfcalc2 .card .sub{font-size:12px;color:#666;margin-top:4px}
+
+#bfcalc2 .res__line{margin:12px 0 8px;color:#111;font-size:13px}
+#bfcalc2 .res__need h4{margin:10px 0 6px;font-size:14px}
+#bfcalc2 .res__need ul{margin:0 0 8px 18px;padding:0}
+#bfcalc2 .res__need li{margin:4px 0}
+#bfcalc2 .res__note{margin:10px 0 0;color:#6b7280;font-size:12px;line-height:1.45}
+
+/* Адаптив */
+@media (max-width:1024px){
+  #bfcalc2 .bfcalc__container{grid-template-columns:1fr}
+  #bfcalc2 .res{position:relative;top:auto}
+}
+@media (max-width:768px){
+  #bfcalc2 .grid{grid-template-columns:1fr 1fr}
+  #bfcalc2 .res__cards{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  #bfcalc2 .grid{grid-template-columns:1fr}
+}
+</style>
+
+<script>
+(function(){
+  const $  = (sel, root=document)=>root.querySelector(sel);
+  const $$ = (sel, root=document)=>Array.from(root.querySelectorAll(sel));
+
+  /* ==================== КОНФИГ (fallback) ==================== */
+  const CFG = {
+    // базовые годовые ставки, % (fallback) - обновлены на основе garantolog.ru
+    baseRates: {
+      '44fz': { participation: 1.95, performance: 2.8, warranty: 3.2, advance: 2.9 },
+      '223fz':{ participation: 2.45, performance: 3.2, warranty: 3.4, advance: 3.2 },
+      '185fz':{ participation: 2.95, performance: 3.6, warranty: 4.0, advance: 3.6 },
+      'comm': { participation: 3.15, performance: 4.0, warranty: 4.7, advance: 3.9 },
+    },
+    // надбавки (процентные пункты к годовой ставке)
+    deltas: {
+      unknownTerm: 0.2,
+      noAccount:   0.0,   // «без открытия р/с» – чаще нейтрально
+      noCollateral:0.4,
+      customerForm:0.3,
+      installment: 0.3,
+      loss:        0.6,
+      noExp:       0.3,
+      court:       0.3,
+      block:       0.7,
+      closed:      0.4
+    },
+    minCommission: 20000, // минимальная комиссия банка, ₽
+    limits: { minSum: 100000, maxSum: 1_000_000_000 }
+  };
+
+  /* ==================== ЭЛЕМЕНТЫ ==================== */
+  const root = document.getElementById('bfcalc2');
+  if (!root) return;
+
+  const tabs = $$('.tab', root);
+  let mode = '44fz';
+
+  tabs.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      tabs.forEach(b=>b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      mode = btn.dataset.mode;
+      compute();
+    });
+  });
+
+  const sumInput        = $('#sum', root);
+  const dStart          = $('#dateStart', root);
+  const dEnd            = $('#dateEnd', root);
+  const unknownTerm     = $('#unknownTerm', root);
+  const termWrap        = $('#termWrap', root);
+  const termMonthsInput = $('#termMonths', root);
+
+  const rCommission = $('#r-commission', root);
+  const rEffRate    = $('#r-effrate', root);
+  const rTerm       = $('#r-term', root);
+  const rSum        = $('#r-sum', root);
+  const rBreakdown  = $('#r-breakdown', root);
+
+  const liveStatus   = $('.res__live', root);
+  const liveSchemeEl = $('#liveScheme', root);
+  const liveUpdEl    = $('#liveUpdated', root);
+
+  const calcBtn = $('#calcBtn', root);
+
+  /* ==================== LIVE RATES INTEGRATION ==================== */
+  async function loadLiveRates() {
+    try {
+      // Проверяем кеш в localStorage (24 часа)
+      const cacheKey = 'bfcalc_live_rates_cache_v1';
+      const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+      const now = Date.now();
+
+      if (cached && (now - cached.ts) < 23.5*3600*1000) {
+        console.log('BFCalc: Using cached rates');
+        applyLiveRates(cached.data);
+        paintLiveStatus(true, cached.data.scheme, cached.data.updated);
+        return;
+      }
+
+      console.log('BFCalc: Fetching fresh rates from API');
+      const resp = await fetch('/wp-json/bfcalc/v1/rates?scheme=avg', {
+        credentials: 'same-origin',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (!resp.ok) {
+        throw new Error('HTTP ' + resp.status + ': ' + resp.statusText);
+      }
+      
+      const data = await resp.json();
+      
+      if (!data.ok || !data.baseRates) {
+        throw new Error('Invalid API response: ' + JSON.stringify(data));
+      }
+
+      console.log('BFCalc: Successfully loaded rates for', data.banks_count, 'banks');
+      
+      // Применяем новые ставки
+      applyLiveRates(data);
+      
+      // Сохраняем в кеш
+      localStorage.setItem(cacheKey, JSON.stringify({
+        ts: now, 
+        data: data
+      }));
+      
+      paintLiveStatus(true, data.scheme, data.updated);
+      
+    } catch (error) {
+      console.warn('BFCalc: Failed to load live rates:', error.message);
+      paintLiveStatus(false);
+      // Остаемся на локальной матрице
+    } finally {
+      compute(); // Пересчитываем с доступными ставками
+    }
+  }
+
+  function applyLiveRates(apiData) {
+    if (!apiData || !apiData.baseRates) return;
+    
+    console.log('BFCalc: Applying live rates:', apiData.baseRates);
+    
+    // Подменяем базовые ставки
+    ['44fz','223fz','185fz','comm'].forEach(modeKey => {
+      if (apiData.baseRates[modeKey]) {
+        CFG.baseRates[modeKey] = { ...CFG.baseRates[modeKey], ...apiData.baseRates[modeKey] };
+      }
+    });
+  }
+
+  function paintLiveStatus(ok, scheme = 'локальная матрица', updated = '—') {
+    if (!liveStatus) return;
+    
+    liveStatus.classList.toggle('res__live--ok', !!ok);
+    liveStatus.classList.toggle('res__live--warn', !ok);
+    
+    if (liveSchemeEl) {
+      liveSchemeEl.textContent = ok ? scheme : 'локальная матрица';
+    }
+    
+    if (liveUpdEl) {
+      if (ok && updated && updated !== '—') {
+        try {
+          // Парсим дату и форматируем
+          const date = new Date(updated.replace(' ', 'T') + 'Z');
+          liveUpdEl.textContent = date.toLocaleString('ru-RU', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+        } catch (e) {
+          liveUpdEl.textContent = updated;
+        }
+      } else {
+        liveUpdEl.textContent = '—';
+      }
+    }
+  }
+
+  /* ==================== ПОВЕДЕНИЕ СРОКА ==================== */
+  unknownTerm.addEventListener('change', ()=>{
+    termWrap.hidden = !unknownTerm.checked;
+    compute();
+  });
+
+  [dStart, dEnd, termMonthsInput].forEach(el=>el.addEventListener('input', compute));
+
+  /* ==================== ПАРАМЕТРЫ ==================== */
+  const extras = {
+    noacc : $('#opt-noacc', root),
+    nocoll: $('#opt-nocoll', root),
+    cust  : $('#opt-customerform', root),
+    inst  : $('#opt-installment', root),
+    loss  : $('#opt-loss', root),
+    noexp : $('#opt-noexp', root),
+    court : $('#opt-court', root),
+    block : $('#opt-block', root),
+    closed: $('#opt-closed', root),
+    courier:$('#opt-courier', root) // на ставку не влияет
+  };
+  Object.values(extras).forEach(el=>el.addEventListener('change', compute));
+
+  // Тип гарантии
+  let gtype = 'participation';
+  $$('input[name="gtype"]', root).forEach(el=>{
+    el.addEventListener('change', ()=>{ gtype = el.value; compute(); });
+  });
+
+  // Сумма с форматированием
+  sumInput.addEventListener('input', ()=>{
+    // Разрешаем только цифры и пробелы, приводим к числу
+    let digits = sumInput.value.replace(/[^\d]/g, '');
+    if (digits.length>1 && digits[0]==='0') digits = digits.replace(/^0+/,'');
+    sumInput.dataset.raw = digits;
+    sumInput.value = formatMoney(toNumber(digits));
+    compute();
+  });
+
+  function toNumber(v){ const n = +v; return isFinite(n)? n : 0; }
+  function formatMoney(n){ return n.toLocaleString('ru-RU'); }
+
+  /* ==================== ЛОГИКА СРОКА ==================== */
+  function monthsDiff(a,b){
+    // округление вверх до месяцев
+    const d1 = new Date(a.getFullYear(), a.getMonth(), a.getDate());
+    const d2 = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+    let months = (d2.getFullYear()-d1.getFullYear())*12 + (d2.getMonth()-d1.getMonth());
+    // если день конца > начала — добавим дробную часть
+    const dayDelta = d2.getDate() - d1.getDate();
+    if (dayDelta>0) months += 1;
+    if (months<1) months = 1;
+    return months;
+  }
+
+  function getTermMonths(){
+    if (unknownTerm.checked){
+      const m = Math.max(1, Math.min(60, +termMonthsInput.value||12));
+      return m;
+    }
+    const s = dStart.value ? new Date(dStart.value) : null;
+    const e = dEnd.value   ? new Date(dEnd.value)   : null;
+    if (!s || !e || isNaN(s)||isNaN(e)) return 12;
+    return monthsDiff(s,e);
+  }
+
+  /* ==================== РАСЧЁТ ==================== */
+  function getBaseRate(){
+    const table = CFG.baseRates[mode] || CFG.baseRates['44fz'];
+    return table[gtype];
+  }
+
+  function getDeltas(){
+    let add = 0;
+    if (unknownTerm.checked) add += CFG.deltas.unknownTerm;
+    if (extras.nocoll.checked) add += CFG.deltas.noCollateral;
+    if (extras.cust.checked)   add += CFG.deltas.customerForm;
+    if (extras.inst.checked)   add += CFG.deltas.installment;
+    if (extras.loss.checked)   add += CFG.deltas.loss;
+    if (extras.noexp.checked)  add += CFG.deltas.noExp;
+    if (extras.court.checked)  add += CFG.deltas.court;
+    if (extras.block.checked)  add += CFG.deltas.block;
+    if (extras.closed.checked) add += CFG.deltas.closed;
+    // noacc / courier — на ставку не влияет (можете включить, если требуется)
+    return add;
+  }
+
+  function compute(){
+    const amount = Math.max(CFG.limits.minSum, Math.min(CFG.limits.maxSum, toNumber(sumInput.dataset.raw||sumInput.value.replace(/[^\d]/g,''))));
+    const months = getTermMonths();
+
+    const base = getBaseRate(); // в %
+    const add  = getDeltas();   // в п.п.
+    const annual = Math.max(0, base + add) / 100;
+
+    // Комиссия = Сумма * Ставка_годовая * (Месяцы/12)
+    let fee = amount * annual * (months/12);
+    if (fee < CFG.minCommission) fee = CFG.minCommission;
+
+    const effRate = (fee/amount) / (months/12) * 100;
+
+    // Вывод
+    rCommission.textContent = formatMoney(Math.round(fee)) + ' ₽';
+    rEffRate.textContent    = effRate.toFixed(1).replace('.',',') + ' %';
+    rTerm.textContent       = months.toString();
+    rSum.textContent        = formatMoney(amount) + ' ₽';
+
+    const breakdown = `Базовая ставка: ${base.toFixed(1)} %  + надбавки: ${add>0?('+'+add.toFixed(1)):'0.0'} п.п.  →  расчётная: ${(base+add).toFixed(1)} % годовых.`;
+    rBreakdown.textContent = breakdown;
+  }
+
+  // Кнопка «Рассчитать» — прокрутка к результату на мобильных
+  calcBtn.addEventListener('click', ()=>{
+    compute();
+    if (window.innerWidth < 1024){
+      document.getElementById('bfcalc2-result').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
+  /* ==================== ИНИЦИАЛИЗАЦИЯ ==================== */
+  async function init(){
+    console.log('BFCalc: Initializing calculator...');
+    
+    // Проставим сегодняшний день +/- полгода для примера
+    const today = new Date();
+    const in12  = new Date(); in12.setMonth(in12.getMonth()+12);
+    dStart.value = today.toISOString().slice(0,10);
+    dEnd.value   = in12.toISOString().slice(0,10);
+
+    // Дефолтная сумма
+    if (!sumInput.value) { 
+      sumInput.value = '5 000 000'; 
+      sumInput.dataset.raw = '5000000'; 
+    }
+
+    // Загрузка live-ставок
+    await loadLiveRates();
+    
+    console.log('BFCalc: Calculator initialized successfully');
+  }
+
+  // Запуск инициализации
+  init();
+})();
+</script>
+<!-- ====================== /BF CALC v2 - UPDATED WITH LIVE RATES ====================== -->

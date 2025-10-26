@@ -1,0 +1,131 @@
+{
+  "articles": {
+    "bank-guarantees": {
+      "2833": {
+        "title": "Банковская гарантия: что это, как работает и когда нужна",
+        "slug": "bankovskaya-garantiya-chto-eto-kak-rabotaet-i-kogda-nuzhna",
+        "url": "/bankovskaya-garantiya-chto-eto-kak-rabotaet-i-kogda-nuzhna/",
+        "keywords": ["банковская гарантия", "гарантия", "банк", "финансы"]
+      },
+      "2830": {
+        "title": "Виды банковских гарантий: полное руководство для руководителей проектов",
+        "slug": "vidy-bankovskih-garantij",
+        "url": "/vidy-bankovskih-garantij/",
+        "keywords": ["виды банковских гарантий", "типы гарантий", "гарантия исполнения", "гарантия заявки"]
+      },
+      "2803": {
+        "title": "Банковские гарантии: полное руководство по получению и использованию в 2024 году",
+        "slug": "bankovskie-garantii-polnoe-rukovodstvo-po-polucheniyu-i-ispolzovaniyu-v-2024-godu",
+        "url": "/bankovskie-garantii-polnoe-rukovodstvo-po-polucheniyu-i-ispolzovaniyu-v-2024-godu/",
+        "keywords": ["банковские гарантии", "получение гарантии", "руководство"]
+      },
+      "2520": {
+        "title": "Тендерная гарантия: полное руководство по банковским гарантиям, участию в тендерах и обеспечению конкурсных заявок в 2024 году",
+        "slug": "tendernaya-garantiya",
+        "url": "/tendernaya-garantiya/",
+        "keywords": ["тендерная гарантия", "тендеры", "госзакупки", "44-ФЗ"]
+      },
+      "2067": {
+        "title": "Тендерная гарантия: полное руководство по получению в 2024 году",
+        "slug": "tender-guarantee",
+        "url": "/tender-guarantee/",
+        "keywords": ["тендерная гарантия", "получение", "руководство"]
+      }
+    },
+    "banking": {
+      "2438": {
+        "title": "Автокредит: полное руководство по покупке автомобиля в кредит в 2024 году",
+        "slug": "avtokredit",
+        "url": "/avtokredit/",
+        "keywords": ["автокредит", "кредит на авто", "покупка автомобиля"]
+      },
+      "2488": {
+        "title": "Ипотека: полное руководство по ипотечному кредитованию и покупке недвижимости в 2024 году",
+        "slug": "ipoteka",
+        "url": "/ipoteka/",
+        "keywords": ["ипотека", "ипотечный кредит", "недвижимость"]
+      },
+      "2497": {
+        "title": "Кредитные карты: полное руководство по выбору, использованию и управлению кредитными картами в 2024 году",
+        "slug": "kreditnye-karty",
+        "url": "/kreditnye-karty/",
+        "keywords": ["кредитные карты", "банковские карты", "кредит"]
+      },
+      "2434": {
+        "title": "Банковский вклад: полное руководство по размещению и управлению в 2024 году",
+        "slug": "bankovskiy-vklad",
+        "url": "/bankovskiy-vklad/",
+        "keywords": ["банковский вклад", "депозит", "сбережения"]
+      }
+    },
+    "business": {
+      "2455": {
+        "title": "Индивидуальный предприниматель (ИП): полное руководство по открытию и ведению бизнеса в 2024 году",
+        "slug": "individualnyy-predprinimatel-ip",
+        "url": "/individualnyy-predprinimatel-ip/",
+        "keywords": ["ИП", "индивидуальный предприниматель", "бизнес", "открытие ИП"]
+      },
+      "2425": {
+        "title": "Финансовое планирование для малого бизнеса",
+        "slug": "finansovoe-planirovanie-dlya-malogo-biznesa",
+        "url": "/finansovoe-planirovanie-dlya-malogo-biznesa/",
+        "keywords": ["финансовое планирование", "малый бизнес", "бизнес-планирование"]
+      }
+    }
+  },
+  "pages": {
+    "services": {
+      "14": {
+        "title": "Калькулятор банковских гарантий",
+        "slug": "kalkulyator_bankovskikh_garantiy",
+        "url": "/kalkulyator_bankovskikh_garantiy/",
+        "keywords": ["калькулятор", "банковские гарантии", "расчет", "стоимость"]
+      },
+      "596": {
+        "title": "Коммерческие банковские гарантии",
+        "slug": "why-choose-me",
+        "url": "/why-choose-me/",
+        "keywords": ["коммерческие гарантии", "банковские гарантии", "услуги"]
+      },
+      "128": {
+        "title": "Банковская гарантия на возврат аванса",
+        "slug": "bankovskaya_garantiya_na_vozvrat_avansa",
+        "url": "/bankovskaya_garantiya_na_vozvrat_avansa/",
+        "keywords": ["гарантия на возврат аванса", "аванс", "гарантия"]
+      }
+    },
+    "company": {
+      "127": {
+        "title": "Бизнес Финанс",
+        "slug": "biznes_finans",
+        "url": "/biznes_finans/",
+        "keywords": ["бизнес финанс", "компания", "услуги"]
+      },
+      "597": {
+        "title": "Контакты",
+        "slug": "contact",
+        "url": "/contact/",
+        "keywords": ["контакты", "связь", "обратная связь"]
+      }
+    }
+  },
+  "external_links": {
+    "legal": {
+      "44-fz": {
+        "title": "ФЗ №44-ФЗ - О контрактной системе",
+        "url": "https://www.consultant.ru/document/cons_doc_LAW_144624/",
+        "keywords": ["44-ФЗ", "контрактная система", "госзакупки"]
+      },
+      "223-fz": {
+        "title": "ФЗ №223-ФЗ - О закупках отдельными видами юридических лиц",
+        "url": "https://www.consultant.ru/document/cons_doc_LAW_52144/",
+        "keywords": ["223-ФЗ", "закупки", "юридические лица"]
+      },
+      "zakupki": {
+        "title": "ЕИС в сфере закупок",
+        "url": "https://zakupki.gov.ru",
+        "keywords": ["ЕИС", "закупки", "тендеры"]
+      }
+    }
+  }
+}

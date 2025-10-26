@@ -1,0 +1,166 @@
+/* Исправление рамок изображений в Safari с сохранением стильных теней */
+
+/* Общее правило для всех изображений */
+img {
+  border: none !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Специальное правило для изображений с рамками */
+img[style*="border"],
+.elementor-widget-image img,
+.wp-image,
+.attachment-full {
+  border: 1px solid #ffffff !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Стильная тень для изображений директора */
+img[alt*="Анастасия"],
+img[alt*="Борисова"],
+img[src*="borisova"],
+img[src*="Борисова"],
+img[src*="директор"],
+img[src*="Директор"] {
+  border: 1px solid #ffffff !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  
+  /* Стильная многослойная тень в стиле Apple */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.06),
+    0 16px 80px rgba(0, 0, 0, 0.04) !important;
+  
+  -webkit-box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.06),
+    0 16px 80px rgba(0, 0, 0, 0.04) !important;
+  
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  border-radius: 12px !important;
+}
+
+/* Hover эффект */
+img[alt*="Анастасия"]:hover,
+img[alt*="Борисова"]:hover,
+img[src*="borisova"]:hover,
+img[src*="Борисова"]:hover,
+img[src*="директор"]:hover,
+img[src*="Директор"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 16px 60px rgba(0, 0, 0, 0.08),
+    0 32px 120px rgba(0, 0, 0, 0.06) !important;
+  
+  -webkit-box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 16px 60px rgba(0, 0, 0, 0.08),
+    0 32px 120px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Исправление для Safari WebKit */
+@supports (-webkit-appearance: none) {
+  img[alt*="Анастасия"],
+  img[alt*="Борисова"],
+  img[src*="borisova"],
+  img[src*="Борисова"],
+  img[src*="директор"],
+  img[src*="Директор"] {
+    border: 1px solid #ffffff !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    
+    /* Сохраняем стильную тень даже в Safari */
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+    
+    -webkit-box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+    
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    border-radius: 12px !important;
+  }
+  
+  /* Убираем стандартные рамки браузера */
+  img[alt*="Анастасия"]:focus,
+  img[alt*="Борисова"]:focus,
+  img[src*="borisova"]:focus,
+  img[src*="Борисова"]:focus,
+  img[src*="директор"]:focus,
+  img[src*="Директор"]:focus {
+    border: 1px solid #ffffff !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+    
+    -webkit-box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+  }
+}
+
+/* Дополнительное исправление для старых версий Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  img[alt*="Анастасия"],
+  img[alt*="Борисова"],
+  img[src*="borisova"],
+  img[src*="Борисова"],
+  img[src*="директор"],
+  img[src*="Директор"] {
+    border: 1px solid #ffffff !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+    
+    -webkit-box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+    
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Мобильная адаптивность для теней */
+@media (max-width: 768px) {
+  img[alt*="Анастасия"],
+  img[alt*="Борисова"],
+  img[src*="borisova"],
+  img[src*="Борисова"],
+  img[src*="директор"],
+  img[src*="Директор"] {
+    box-shadow: 
+      0 2px 10px rgba(0, 0, 0, 0.06),
+      0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    
+    -webkit-box-shadow: 
+      0 2px 10px rgba(0, 0, 0, 0.06),
+      0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    
+    border-radius: 8px !important;
+  }
+}

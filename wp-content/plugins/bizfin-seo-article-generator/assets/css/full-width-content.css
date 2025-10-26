@@ -1,0 +1,154 @@
+/* Reasonable Width Content Styles for BizFin Articles */
+
+/* Set reasonable max-width for better readability */
+.single-post .ast-container,
+.single-post .ast-separate-container,
+.single-post .ast-article-single {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Reasonable width for article content */
+.single-post .entry-content,
+.single-post .ast-article-single .entry-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Full width for article header */
+.single-post .entry-header,
+.single-post .ast-article-single .entry-header {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Ensure full width for all article elements */
+.single-post .ast-article-single {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Full width for article wrapper */
+.single-post .ast-article-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Override any theme-specific width constraints */
+.single-post .site-content,
+.single-post .content-area {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Reasonable width for all containers */
+.single-post .ast-container,
+.single-post .ast-separate-container,
+.single-post .ast-article-single,
+.single-post .ast-article-inner,
+.single-post .entry-content,
+.single-post .entry-header {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Remove extra padding from content since container already has it */
+.single-post .entry-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Normalize heading sizes to match theme */
+.single-post .entry-title,
+.single-post h1.entry-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+.single-post h2 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: 600 !important;
+}
+
+.single-post h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+    font-weight: 600 !important;
+}
+
+.single-post h4 {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 768px) {
+    .single-post .entry-content,
+    .single-post .ast-article-single .entry-content,
+    .single-post .entry-header,
+    .single-post .ast-article-single .entry-header {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .single-post .entry-title,
+    .single-post h1.entry-title {
+        font-size: 2rem !important;
+    }
+    
+    .single-post h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .single-post h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Override Elementor container width if present */
+.single-post .elementor-container {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Ensure full width for any custom containers */
+.single-post .container,
+.single-post .wp-container {
+    max-width: 100% !important;
+    width: 100% !important;
+}

@@ -1,0 +1,384 @@
+/* Стили для статей плагина BizFin SEO Article Generator */
+
+:root {
+    --orange: #FF6B00;
+    --orange-2: #FF9A3C;
+    --text: #0F172A;
+    --text-muted: #556070;
+    --surface: #FFFFFF;
+    --surface-2: #F7F7F7;
+    --blue: #3498db;
+    --green: #28a745;
+    --yellow: #ffc107;
+    --red: #dc3545;
+    --cyan: #17a2b8;
+}
+
+/* Базовые стили для статей */
+.bsag-article {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;
+    line-height: 1.6;
+    color: var(--text);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bsag-article h1 {
+    color: var(--text);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.bsag-article h2 {
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--orange);
+}
+
+.bsag-article h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.bsag-article h4 {
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.bsag-article p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Вводная секция */
+.intro-section {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-2) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.intro-section p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Примеры */
+.example {
+    background: var(--blue);
+    color: white;
+    border-left: 4px solid #2980b9;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.example p {
+    margin: 0;
+    color: white;
+}
+
+/* Оглавление */
+.toc {
+    background: var(--surface-2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc li {
+    margin: 0.5rem 0;
+}
+
+.toc a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.toc a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+/* Изображения статей */
+.article-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    margin: 2rem auto;
+    display: block;
+}
+
+/* Чек-листы */
+.checklist {
+    background: var(--green);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.checklist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.checklist li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Цветные блоки */
+.warning {
+    background: var(--yellow);
+    color: #000;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid #e0a800;
+}
+
+.info {
+    background: var(--cyan);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.error {
+    background: var(--red);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.success {
+    background: var(--green);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+/* Структурные элементы */
+.structure-item {
+    background: var(--surface-2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--blue);
+}
+
+/* Пошаговые руководства */
+.step-guide {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.step-guide ol {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.step-guide li {
+    margin: 0.5rem 0;
+}
+
+/* Образцы документов */
+.sample-document {
+    background: #f8f9fa;
+    border: 2px dashed var(--blue);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+/* Секции скачивания */
+.download-section {
+    background: var(--green);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.download-section a {
+    background: white;
+    color: var(--green);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.download-section a:hover {
+    background: var(--surface-2);
+}
+
+/* CTA секции */
+.cta-section {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-2) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.cta-section a {
+    background: white;
+    color: var(--orange);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.cta-section a:hover {
+    background: var(--surface-2);
+}
+
+/* FAQ секции */
+.faq-section {
+    background: var(--surface-2);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.faq-item {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--blue);
+}
+
+.faq-question {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+    color: var(--text-muted);
+}
+
+/* Таблицы */
+.bsag-article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bsag-article th,
+.bsag-article td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.bsag-article th {
+    background: var(--orange);
+    color: white;
+    font-weight: 600;
+}
+
+.bsag-article tr:hover {
+    background: var(--surface-2);
+}
+
+/* Внутренние ссылки */
+.internal-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.internal-link:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .bsag-article {
+        padding: 16px;
+    }
+    
+    .bsag-article h1 {
+        font-size: 2rem;
+    }
+    
+    .bsag-article h2 {
+        font-size: 1.75rem;
+    }
+    
+    .intro-section,
+    .cta-section,
+    .download-section {
+        padding: 1.5rem;
+    }
+    
+    .toc,
+    .faq-section {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bsag-article {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .bsag-article {
+        padding: 40px;
+    }
+}

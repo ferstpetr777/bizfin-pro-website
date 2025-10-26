@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковская гарантия на возврат аванса: полное руководство</title>
+    <meta name="description" content="Банковская гарантия на возврат аванса защищает заказчика при предоплате. Узнайте, когда требуется, как работает и как получить гарантию на возврат аванса.">
+    <meta name="keywords" content="банковская гарантия на возврат аванса, гарантия возврата аванса, авансовая гарантия, банковская гарантия аванс">
+    <style>
+        /* Фирменные цвета темы */
+        :root {
+            --orange: #FF6B00;           /* Основной акцент */
+            --orange-2: #FF9A3C;         /* Градиент */
+            --text: #0F172A;             /* Основной текст */
+            --text-muted: #556070;       /* Вторичный текст */
+            --surface: #FFFFFF;          /* Фон карточек */
+            --surface-2: #F7F7F7;        /* Вторичный фон */
+            --blue: #3498db;             /* Основные элементы, ссылки */
+            --green: #28a745;            /* Успех, скачивание */
+            --yellow: #ffc107;           /* Предупреждения */
+            --red: #dc3545;              /* Ошибки */
+            --cyan: #17a2b8;             /* Информация */
+        }
+
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--surface);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--orange);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--text);
+            margin: 2rem 0 1rem 0;
+            border-bottom: 3px solid var(--orange);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Структурные блоки */
+        .intro-section {
+            background: linear-gradient(135deg, var(--orange), var(--orange-2));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .example {
+            background-color: var(--surface-2);
+            border-left: 4px solid var(--blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .example p {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc {
+            background-color: var(--surface-2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid var(--orange);
+        }
+
+        .toc strong {
+            color: var(--orange);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--orange);
+            text-decoration: underline;
+        }
+
+        /* Цветные блоки */
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* Интерактивные элементы */
+        .structure-item {
+            background-color: var(--surface);
+            border: 2px solid var(--blue);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .structure-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(52, 152, 219, 0.2);
+        }
+
+        .step-guide {
+            background-color: var(--surface-2);
+            border-left: 4px solid var(--green);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .step-guide h4 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .checklist {
+            background-color: var(--surface);
+            border: 2px solid var(--green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .checklist h4 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            color: var(--green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Таблицы и документы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--surface);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th {
+            background-color: var(--orange);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: var(--surface-2);
+        }
+
+        .sample-document {
+            background-color: var(--surface-2);
+            border: 2px solid var(--cyan);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .sample-document h4 {
+            color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+
+        /* Специальные модули */
+        .download-section {
+            background: linear-gradient(135deg, var(--green), #20c997);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .download-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            background-color: white;
+            color: var(--green);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--orange), var(--orange-2));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-btn {
+            background-color: white;
+            color: var(--orange);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            background-color: var(--surface-2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .faq-section h3 {
+            color: var(--orange);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background-color: var(--surface);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            background-color: var(--blue);
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Изображение статьи */
+        .article-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            margin: 2rem auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        /* Схема потоков */
+        .flow-diagram {
+            background-color: var(--surface);
+            border: 2px solid var(--blue);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .flow-step {
+            background-color: var(--blue);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem;
+            display: inline-block;
+            min-width: 150px;
+        }
+
+        .flow-arrow {
+            color: var(--orange);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+        }
+
+        /* Адаптивные стили */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .intro-section {
+                padding: 1.5rem;
+            }
+
+            .toc {
+                padding: 1rem;
+            }
+
+            .flow-step {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .flow-arrow {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 30px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .container {
+                padding: 40px;
+            }
+        }
+
+        /* Внутренние ссылки */
+        .internal-link {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted var(--blue);
+            transition: all 0.3s ease;
+        }
+
+        .internal-link:hover {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Вводная секция -->
+        <section class="intro-section">
+            <p><strong>Банковская гарантия на возврат аванса</strong> — это финансовый инструмент, который защищает заказчика от рисков при перечислении предоплаты исполнителю. Банк обязуется вернуть аванс заказчику, если исполнитель не выполнит свои обязательства по договору.</p>
+            
+            <div class="example">
+                <p><strong>Например,</strong> Анна — директор строительной компании "СтройПроект". Ей нужно закупить материалы на 5 млн рублей, но поставщик требует 50% предоплаты. Анна переживает, что поставщик может не выполнить обязательства после получения аванса. Поэтому Анне нужна защита от рисков. Чтобы обезопасить предоплату, Анна получает у банка гарантию на возврат аванса. По условиям гарантии банк вернет аванс Анне, если поставщик не поставит материалы в срок или нарушит условия договора.</p>
+            </div>
+        </section>
+
+        <!-- Кликабельное оглавление -->
+        <nav class="toc">
+            <strong>Содержание:</strong>
+            <ul>
+                <li><a href="#concept">Понятие банковской гарантии на возврат аванса</a></li>
+                <li><a href="#when-required">Когда требуется гарантия на возврат аванса</a></li>
+                <li><a href="#participants">Участники процесса</a></li>
+                <li><a href="#payment-scenarios">Сценарии выплат по гарантии</a></li>
+                <li><a href="#risks">Риски и их минимизация</a></li>
+                <li><a href="#cases">Практические кейсы</a></li>
+                <li><a href="#flow-diagram">Схема денежных потоков</a></li>
+                <li><a href="#documents">Документы для получения</a></li>
+                <li><a href="#cost">Стоимость и сроки</a></li>
+                <li><a href="#faq">Часто задаваемые вопросы</a></li>
+            </ul>
+        </nav>
+
+        <!-- Изображение статьи -->
+        <img src="https://via.placeholder.com/800x450/FF6B00/FFFFFF?text=Банковская+гарантия+на+возврат+аванса" alt="Изображение для статьи: Банковская гарантия на возврат аванса" class="article-image">
+
+        <!-- Основной контент -->
+        <section id="concept" class="content-section">
+            <h2>Понятие банковской гарантии на возврат аванса</h2>
+            
+            <p>Банковская гарантия на возврат аванса представляет собой письменное обязательство банка-гаранта перед заказчиком-бенефициаром вернуть перечисленный аванс в случае неисполнения или ненадлежащего исполнения исполнителем-принципалом своих обязательств по договору.</p>
+
+            <div class="info">
+                <h4>Ключевые особенности:</h4>
+                <ul>
+                    <li>Защищает интересы заказчика при предоплате</li>
+                    <li>Обеспечивает возврат аванса при нарушении договора</li>
+                    <li>Не требует залогового обеспечения от заказчика</li>
+                    <li>Действует независимо от основного договора</li>
+                </ul>
+            </div>
+
+            <p>Данный вид гарантии особенно актуален в сферах, где практикуется предоплата: строительство, поставка оборудования, IT-разработка, консалтинг. Заказчик получает уверенность в том, что его денежные средства защищены, а исполнитель может привлечь клиентов, предлагая выгодные условия оплаты.</p>
+
+            <div class="structure-item">
+                <h4>Правовая основа</h4>
+                <p>Банковская гарантия на возврат аванса регулируется Гражданским кодексом РФ (ст. 368-379), банковским законодательством и внутренними положениями банков-гарантов. Гарантия является безотзывной и безусловной, что означает невозможность ее отзыва банком и обязательность выплаты при предъявлении соответствующих документов.</p>
+            </div>
+        </section>
+
+        <section id="when-required" class="content-section">
+            <h2>Когда требуется гарантия на возврат аванса</h2>
+            
+            <p>Необходимость в банковской гарантии на возврат аванса возникает в различных ситуациях, связанных с предоплатой по договорам. Рассмотрим основные случаи применения этого финансового инструмента.</p>
+
+            <div class="step-guide">
+                <h4>Основные сценарии применения:</h4>
+                <ol>
+                    <li><strong>Строительные контракты</strong> — при закупке материалов и оборудования</li>
+                    <li><strong>Поставка товаров</strong> — при заказе крупных партий продукции</li>
+                    <li><strong>IT-проекты</strong> — при разработке программного обеспечения</li>
+                    <li><strong>Консалтинговые услуги</strong> — при долгосрочных проектах</li>
+                    <li><strong>Производственные заказы</strong> — при изготовлении под заказ</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <h4>Критичные условия для применения:</h4>
+                <ul>
+                    <li>Размер аванса превышает 30% от стоимости договора</li>
+                    <li>Срок выполнения работ более 3 месяцев</li>
+                    <li>Исполнитель не имеет длительной истории сотрудничества</li>
+                    <li>Высокая стоимость контракта (свыше 1 млн рублей)</li>
+                </ul>
+            </div>
+
+            <p>Особенно важно использовать гарантию на возврат аванса при работе с новыми партнерами или в случаях, когда исполнитель требует значительную предоплату. Это позволяет заказчику минимизировать финансовые риски и обеспечить выполнение договорных обязательств.</p>
+
+            <div class="success">
+                <h4>Преимущества для заказчика:</h4>
+                <ul>
+                    <li>Защита от потери аванса при неисполнении договора</li>
+                    <li>Возможность получить выгодные условия оплаты</li>
+                    <li>Ускорение процесса заключения договоров</li>
+                    <li>Повышение доверия к исполнителю</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="participants" class="content-section">
+            <h2>Участники процесса</h2>
+            
+            <p>В процессе оформления и использования банковской гарантии на возврат аванса участвуют три основные стороны, каждая из которых имеет свои права и обязанности.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Участник</th>
+                        <th>Роль</th>
+                        <th>Обязанности</th>
+                        <th>Права</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Заказчик (Бенефициар)</strong></td>
+                        <td>Получатель гарантии</td>
+                        <td>Перечисляет аванс, предъявляет требования</td>
+                        <td>Требовать возврат аванса при нарушении</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Исполнитель (Принципал)</strong></td>
+                        <td>Заявитель гарантии</td>
+                        <td>Выполняет договор, оплачивает комиссию</td>
+                        <td>Получает аванс, выполняет обязательства</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Банк (Гарант)</strong></td>
+                        <td>Выдает гарантию</td>
+                        <td>Выплачивает по требованию</td>
+                        <td>Проверяет документы, взимает комиссию</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="structure-item">
+                <h4>Взаимодействие участников</h4>
+                <p>Процесс начинается с обращения исполнителя в банк за получением гарантии. Банк анализирует финансовое состояние принципала, оценивает риски и принимает решение о выдаче гарантии. После оформления гарантии заказчик перечисляет аванс исполнителю, который обязуется выполнить условия договора. В случае нарушения обязательств заказчик предъявляет требование банку о возврате аванса.</p>
+            </div>
+
+            <div class="info">
+                <h4>Дополнительные участники:</h4>
+                <ul>
+                    <li><strong>Брокер</strong> — посредник в оформлении гарантии</li>
+                    <li><strong>Страховщик</strong> — при страховании рисков банка</li>
+                    <li><strong>Юридический консультант</strong> — при сложных договорах</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="payment-scenarios" class="content-section">
+            <h2>Сценарии выплат по гарантии</h2>
+            
+            <p>Банковская гарантия на возврат аванса предусматривает различные сценарии выплат в зависимости от характера нарушения договорных обязательств исполнителем.</p>
+
+            <div class="step-guide">
+                <h4>Основные сценарии выплат:</h4>
+                <ol>
+                    <li><strong>Полное неисполнение</strong> — исполнитель не приступил к работе</li>
+                    <li><strong>Частичное неисполнение</strong> — выполнена только часть работ</li>
+                    <li><strong>Ненадлежащее исполнение</strong> — работы выполнены с нарушениями</li>
+                    <li><strong>Просрочка исполнения</strong> — нарушены сроки выполнения</li>
+                    <li><strong>Отказ от исполнения</strong> — односторонний отказ исполнителя</li>
+                </ol>
+            </div>
+
+            <div class="checklist">
+                <h4>Документы для предъявления требования:</h4>
+                <ul>
+                    <li>Письменное требование о выплате</li>
+                    <li>Оригинал банковской гарантии</li>
+                    <li>Документы, подтверждающие нарушение</li>
+                    <li>Расчет суммы к возврату</li>
+                    <li>Документы о перечислении аванса</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>Важные условия выплаты:</h4>
+                <ul>
+                    <li>Срок предъявления требования — обычно 6 месяцев</li>
+                    <li>Банк проверяет документы в течение 5-10 дней</li>
+                    <li>Выплата производится в течение 3-5 дней после проверки</li>
+                    <li>Возможны споры о размере выплаты</li>
+                </ul>
+            </div>
+
+            <p>Размер выплаты по гарантии может составлять как полную сумму аванса, так и его часть в зависимости от степени нарушения обязательств. Банк имеет право требовать дополнительные документы и проводить собственную проверку обстоятельств дела.</p>
+
+            <div class="success">
+                <h4>Преимущества для заказчика:</h4>
+                <ul>
+                    <li>Быстрое получение компенсации</li>
+                    <li>Независимость от финансового состояния исполнителя</li>
+                    <li>Простота процедуры предъявления требования</li>
+                    <li>Минимальные документооборот</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="risks" class="content-section">
+            <h2>Риски и их минимизация</h2>
+            
+            <p>При использовании банковской гарантии на возврат аванса существуют различные риски, которые необходимо учитывать и минимизировать для всех участников процесса.</p>
+
+            <div class="structure-item">
+                <h4>Риски для заказчика:</h4>
+                <ul>
+                    <li><strong>Отказ банка в выплате</strong> — при недостатке документов</li>
+                    <li><strong>Задержка выплаты</strong> — при длительной проверке</li>
+                    <li><strong>Споры о размере выплаты</strong> — при частичном исполнении</li>
+                    <li><strong>Истечение срока гарантии</strong> — при позднем предъявлении</li>
+                </ul>
+            </div>
+
+            <div class="structure-item">
+                <h4>Риски для исполнителя:</h4>
+                <ul>
+                    <li><strong>Высокая стоимость гарантии</strong> — комиссия 2-5%</li>
+                    <li><strong>Требования к обеспечению</strong> — залог или поручительство</li>
+                    <li><strong>Ограничения по срокам</strong> — обычно до 2 лет</li>
+                    <li><strong>Сложность получения</strong> — для новых клиентов</li>
+                </ul>
+            </div>
+
+            <div class="error">
+                <h4>Критичные ошибки:</h4>
+                <ul>
+                    <li>Неправильное оформление документов</li>
+                    <li>Нарушение сроков предъявления требования</li>
+                    <li>Недостаточная проверка банка-гаранта</li>
+                    <li>Игнорирование условий гарантии</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>Способы минимизации рисков:</h4>
+                <ul>
+                    <li>Тщательная проверка банка-гаранта</li>
+                    <li>Правильное оформление всех документов</li>
+                    <li>Соблюдение сроков и процедур</li>
+                    <li>Консультация с юристом</li>
+                    <li>Страхование дополнительных рисков</li>
+                </ul>
+            </div>
+
+            <p>Для минимизации рисков рекомендуется выбирать надежные банки с высоким рейтингом, внимательно изучать условия гарантии и при необходимости привлекать профессиональных консультантов. Важно также правильно документировать все этапы выполнения договора.</p>
+        </section>
+
+        <section id="cases" class="content-section">
+            <h2>Практические кейсы</h2>
+            
+            <p>Рассмотрим реальные примеры использования банковской гарантии на возврат аванса в различных отраслях и ситуациях.</p>
+
+            <div class="sample-document">
+                <h4>Кейс 1: Строительная компания</h4>
+                <p><strong>Ситуация:</strong> Строительная компания "МегаСтрой" получила заказ на строительство торгового центра стоимостью 50 млн рублей. Заказчик требовал предоплату 30% (15 млн рублей) для закупки материалов.</p>
+                <p><strong>Решение:</strong> Компания оформила банковскую гарантию на возврат аванса в Сбербанке на сумму 15 млн рублей сроком на 18 месяцев.</p>
+                <p><strong>Результат:</strong> Проект выполнен в срок, заказчик получил качественный объект, аванс использован по назначению.</p>
+            </div>
+
+            <div class="sample-document">
+                <h4>Кейс 2: IT-разработка</h4>
+                <p><strong>Ситуация:</strong> IT-компания "ТехноСофт" получила заказ на разработку корпоративной системы управления стоимостью 8 млн рублей. Заказчик согласился на предоплату 50% при условии гарантии возврата.</p>
+                <p><strong>Решение:</strong> Оформлена гарантия в ВТБ на сумму 4 млн рублей сроком на 12 месяцев.</p>
+                <p><strong>Результат:</strong> Система разработана и внедрена, заказчик доволен результатом, долгосрочное сотрудничество продолжается.</p>
+            </div>
+
+            <div class="sample-document">
+                <h4>Кейс 3: Поставка оборудования</h4>
+                <p><strong>Ситуация:</strong> Производитель оборудования "ПромТех" получил заказ на поставку производственной линии стоимостью 25 млн рублей. Заказчик требовал предоплату 40% для начала производства.</p>
+                <p><strong>Решение:</strong> Оформлена гарантия в Альфа-Банке на сумму 10 млн рублей сроком на 15 месяцев.</p>
+                <p><strong>Результат:</strong> Оборудование поставлено в срок, заказчик получил качественную продукцию, поставщик расширил клиентскую базу.</p>
+            </div>
+
+            <div class="info">
+                <h4>Уроки из кейсов:</h4>
+                <ul>
+                    <li>Гарантия повышает доверие между партнерами</li>
+                    <li>Позволяет получить выгодные условия оплаты</li>
+                    <li>Снижает риски для обеих сторон</li>
+                    <li>Способствует развитию долгосрочных отношений</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="flow-diagram" class="content-section">
+            <h2>Схема денежных потоков при авансе</h2>
+            
+            <div class="flow-diagram">
+                <h3>Схема денежных потоков</h3>
+                <div class="flow-step">1. Заключение договора</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">2. Оформление гарантии</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">3. Перечисление аванса</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">4. Выполнение работ</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">5. Приемка результатов</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">6. Окончательный расчет</div>
+            </div>
+
+            <div class="step-guide">
+                <h4>Детальное описание этапов:</h4>
+                <ol>
+                    <li><strong>Заключение договора</strong> — стороны согласовывают условия, включая размер аванса и сроки выполнения</li>
+                    <li><strong>Оформление гарантии</strong> — исполнитель обращается в банк за получением гарантии на возврат аванса</li>
+                    <li><strong>Перечисление аванса</strong> — заказчик перечисляет предоплату исполнителю после получения гарантии</li>
+                    <li><strong>Выполнение работ</strong> — исполнитель использует аванс для выполнения договорных обязательств</li>
+                    <li><strong>Приемка результатов</strong> — заказчик принимает выполненные работы или товары</li>
+                    <li><strong>Окончательный расчет</strong> — стороны производят окончательные расчеты по договору</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <h4>Возможные отклонения от схемы:</h4>
+                <ul>
+                    <li>При нарушении обязательств — возврат аванса по гарантии</li>
+                    <li>При частичном исполнении — пропорциональный расчет</li>
+                    <li>При просрочке — штрафные санкции</li>
+                    <li>При форс-мажоре — пересмотр условий</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="documents" class="content-section">
+            <h2>Документы для получения гарантии</h2>
+            
+            <p>Для оформления банковской гарантии на возврат аванса исполнителю необходимо подготовить пакет документов, подтверждающих его финансовую состоятельность и способность выполнить договорные обязательства.</p>
+
+            <div class="checklist">
+                <h4>Основные документы:</h4>
+                <ul>
+                    <li>Заявление на получение гарантии</li>
+                    <li>Учредительные документы компании</li>
+                    <li>Финансовая отчетность за последние 2 года</li>
+                    <li>Договор с заказчиком</li>
+                    <li>Бизнес-план выполнения работ</li>
+                    <li>Документы об обеспечении (при необходимости)</li>
+                </ul>
+            </div>
+
+            <div class="structure-item">
+                <h4>Финансовые документы:</h4>
+                <ul>
+                    <li>Баланс и отчет о прибылях и убытках</li>
+                    <li>Отчет о движении денежных средств</li>
+                    <li>Справка об отсутствии задолженности</li>
+                    <li>Выписки по банковским счетам</li>
+                    <li>Документы о дебиторской задолженности</li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <h4>Дополнительные требования:</h4>
+                <ul>
+                    <li>Опыт работы в отрасли не менее 2 лет</li>
+                    <li>Положительная кредитная история</li>
+                    <li>Отсутствие просроченной задолженности</li>
+                    <li>Достаточная ликвидность активов</li>
+                </ul>
+            </div>
+
+            <div class="download-section">
+                <h3>Образцы документов</h3>
+                <p>Скачайте готовые шаблоны документов для оформления гарантии</p>
+                <a href="#" class="download-btn">Скачать образцы</a>
+            </div>
+        </section>
+
+        <section id="cost" class="content-section">
+            <h2>Стоимость и сроки</h2>
+            
+            <p>Стоимость банковской гарантии на возврат аванса зависит от множества факторов, включая размер гарантии, срок действия, финансовое состояние заявителя и условия банка.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Банк</th>
+                        <th>Комиссия (% годовых)</th>
+                        <th>Минимальная сумма</th>
+                        <th>Максимальный срок</th>
+                        <th>Срок рассмотрения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Сбербанк</td>
+                        <td>2.5-4.0%</td>
+                        <td>100 000 руб.</td>
+                        <td>24 месяца</td>
+                        <td>3-5 дней</td>
+                    </tr>
+                    <tr>
+                        <td>ВТБ</td>
+                        <td>2.0-3.5%</td>
+                        <td>50 000 руб.</td>
+                        <td>36 месяцев</td>
+                        <td>2-4 дня</td>
+                    </tr>
+                    <tr>
+                        <td>Альфа-Банк</td>
+                        <td>3.0-5.0%</td>
+                        <td>200 000 руб.</td>
+                        <td>18 месяцев</td>
+                        <td>5-7 дней</td>
+                    </tr>
+                    <tr>
+                        <td>Газпромбанк</td>
+                        <td>2.8-4.2%</td>
+                        <td>150 000 руб.</td>
+                        <td>24 месяца</td>
+                        <td>4-6 дней</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="success">
+                <h4>Факторы, влияющие на стоимость:</h4>
+                <ul>
+                    <li>Размер гарантии — чем больше сумма, тем ниже процент</li>
+                    <li>Срок действия — длительные гарантии дороже</li>
+                    <li>Финансовое состояние — надежные клиенты получают скидки</li>
+                    <li>Обеспечение — наличие залога снижает стоимость</li>
+                    <li>История сотрудничества — постоянные клиенты имеют льготы</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>Дополнительные расходы:</h4>
+                <ul>
+                    <li>Комиссия за рассмотрение заявки — 5 000-15 000 руб.</li>
+                    <li>Комиссия за изменение условий — 1 000-5 000 руб.</li>
+                    <li>Комиссия за досрочное прекращение — 0.5-1% от суммы</li>
+                    <li>Услуги брокера — 0.5-1% от суммы гарантии</li>
+                </ul>
+            </div>
+
+            <p>Для получения наиболее выгодных условий рекомендуется обращаться в несколько банков, сравнивать предложения и вести переговоры о снижении комиссии. Многие банки предлагают специальные программы для малого и среднего бизнеса с льготными условиями.</p>
+        </section>
+
+        <!-- FAQ секция -->
+        <section id="faq" class="faq-section">
+            <h3>Часто задаваемые вопросы</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Чем отличается гарантия на возврат аванса от гарантии исполнения?
+                </div>
+                <div class="faq-answer">
+                    <p>Гарантия на возврат аванса защищает заказчика при предоплате и обеспечивает возврат перечисленных средств в случае неисполнения договора. Гарантия исполнения обеспечивает выполнение всех обязательств по договору, включая качество и сроки выполнения работ. Первая фокусируется на защите аванса, вторая — на полном исполнении договора.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Можно ли получить гарантию без залога?
+                </div>
+                <div class="faq-answer">
+                    <p>Да, многие банки выдают гарантии на возврат аванса без залога для надежных клиентов с хорошей кредитной историей. Однако беззалоговые гарантии обычно имеют более высокую стоимость и ограниченный срок действия. Для крупных сумм банки могут потребовать поручительство или частичное обеспечение.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Что делать, если банк отказывается выплачивать по гарантии?
+                </div>
+                <div class="faq-answer">
+                    <p>При отказе банка в выплате необходимо проверить соответствие предъявленных документов условиям гарантии. Если документы оформлены правильно, можно обратиться в суд с иском о принуждении к выплате. Также можно подать жалобу в Центральный банк РФ на неправомерные действия банка.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Какой срок действия гарантии оптимален?
+                </div>
+                <div class="faq-answer">
+                    <p>Срок действия гарантии должен превышать срок выполнения договора на 1-2 месяца для учета возможных задержек. Обычно гарантии выдаются на срок от 6 до 24 месяцев. Слишком длительный срок увеличивает стоимость, а короткий может не покрыть все риски.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Можно ли изменить условия гарантии после выдачи?
+                </div>
+                <div class="faq-answer">
+                    <p>Изменение условий гарантии возможно только с согласия всех сторон. Банк может увеличить сумму или продлить срок за дополнительную комиссию. Уменьшение суммы или сокращение срока обычно не допускается. Все изменения оформляются дополнительным соглашением.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA секция -->
+        <section class="cta-section">
+            <h3>Подобрать гарантию под аванс</h3>
+            <p>Получите персональное предложение по банковской гарантии на возврат аванса от ведущих банков России. Наши эксперты помогут выбрать оптимальные условия и оформить документы.</p>
+            <a href="/calculator/" class="cta-btn">Рассчитать стоимость</a>
+            <a href="/contacts/" class="cta-btn">Получить консультацию</a>
+        </section>
+
+        <!-- Внутренние ссылки -->
+        <div style="margin-top: 2rem; padding: 1rem; background-color: var(--surface-2); border-radius: 8px;">
+            <h4>Полезные материалы:</h4>
+            <p>
+                <!-- INTERNAL_LINK: калькулятор банковских гарантий -->
+                <a href="/calculator/" class="internal-link">калькулятор банковских гарантий</a> | 
+                <!-- INTERNAL_LINK: стоимость банковских гарантий -->
+                <a href="/cost/" class="internal-link">стоимость банковских гарантий</a> | 
+                <!-- INTERNAL_LINK: документы для получения гарантии -->
+                <a href="/documents/" class="internal-link">документы для получения гарантии</a> | 
+                <!-- INTERNAL_LINK: виды банковских гарантий -->
+                <a href="/types/" class="internal-link">виды банковских гарантий</a> | 
+                <!-- INTERNAL_LINK: как получить банковскую гарантию -->
+                <a href="/how-to-get/" class="internal-link">как получить банковскую гарантию</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Закрываем все открытые ответы
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Открываем текущий ответ, если он был закрыт
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

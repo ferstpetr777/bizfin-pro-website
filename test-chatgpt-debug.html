@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест ChatGPT Консультанта - Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .debug-info { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .error { background: #ffebee; color: #c62828; }
+        .success { background: #e8f5e8; color: #2e7d32; }
+        button { padding: 10px 20px; margin: 5px; background: #ff8c42; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #ff6b35; }
+        #result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Тест ChatGPT Консультанта - Debug</h1>
+    
+    <div class="debug-info">
+        <h3>Информация о загрузке:</h3>
+        <p>jQuery загружен: <span id="jquery-status">Проверяем...</span></p>
+        <p>bcc_ajax определен: <span id="ajax-status">Проверяем...</span></p>
+        <p>AJAX URL: <span id="ajax-url">Проверяем...</span></p>
+        <p>Nonce: <span id="nonce-status">Проверяем...</span></p>
+    </div>
+    
+    <div>
+        <h3>Тест AJAX запроса:</h3>
+        <input type="text" id="test-message" placeholder="Введите тестовое сообщение" value="Привет, как дела?" style="width: 300px; padding: 5px;">
+        <button onclick="testAjaxRequest()">Отправить тестовый запрос</button>
+        <button onclick="testWithCorrectNonce()">Тест с правильным nonce</button>
+    </div>
+    
+    <div id="result"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Проверяем jQuery
+            $('#jquery-status').text('Да').addClass('success');
+            
+            // Проверяем bcc_ajax
+            if (typeof bcc_ajax !== 'undefined') {
+                $('#ajax-status').text('Да').addClass('success');
+                $('#ajax-url').text(bcc_ajax.ajax_url).addClass('success');
+                $('#nonce-status').text(bcc_ajax.nonce ? 'Да' : 'Нет').addClass(bcc_ajax.nonce ? 'success' : 'error');
+            } else {
+                $('#ajax-status').text('Нет').addClass('error');
+                $('#ajax-url').text('Не определен').addClass('error');
+                $('#nonce-status').text('Нет').addClass('error');
+            }
+        });
+        
+        function testAjaxRequest() {
+            const message = $('#test-message').val();
+            
+            if (typeof bcc_ajax === 'undefined') {
+                $('#result').html('<div class="error">Ошибка: bcc_ajax не определен. Скрипты не загружены.</div>');
+                return;
+            }
+            
+            $('#result').html('<div>Отправляем запрос...</div>');
+            
+            $.post(bcc_ajax.ajax_url, {
+                action: 'bcc_send_message',
+                nonce: bcc_ajax.nonce,
+                message: message,
+                session_id: 'test-session-' + Date.now()
+            }, function(response) {
+                $('#result').html('<div class="success">Успех: ' + JSON.stringify(response) + '</div>');
+            }).fail(function(xhr, status, error) {
+                $('#result').html('<div class="error">Ошибка: ' + error + '<br>Статус: ' + status + '<br>Ответ: ' + xhr.responseText + '</div>');
+            });
+        }
+        
+        function testWithCorrectNonce() {
+            const message = $('#test-message').val();
+            
+            // Получаем правильный nonce через AJAX
+            $.post('https://bizfin-pro.ru/wp-admin/admin-ajax.php', {
+                action: 'wp_ajax_nopriv_bcc_get_nonce'
+            }, function(response) {
+                if (response.success) {
+                    $.post('https://bizfin-pro.ru/wp-admin/admin-ajax.php', {
+                        action: 'bcc_send_message',
+                        nonce: response.data.nonce,
+                        message: message,
+                        session_id: 'test-session-' + Date.now()
+                    }, function(response) {
+                        $('#result').html('<div class="success">Успех с правильным nonce: ' + JSON.stringify(response) + '</div>');
+                    }).fail(function(xhr, status, error) {
+                        $('#result').html('<div class="error">Ошибка с правильным nonce: ' + error + '<br>Ответ: ' + xhr.responseText + '</div>');
+                    });
+                } else {
+                    $('#result').html('<div class="error">Не удалось получить nonce</div>');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

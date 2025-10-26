@@ -1,0 +1,213 @@
+/**
+ * BizFin iOS Image Styles
+ * 
+ * Стили для изображений в iOS-стиле (16:9, белая рамка, тень)
+ */
+
+/* Основные стили для iOS-изображений */
+.ios-style-image {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    margin: 20px 0;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.ios-style-image:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.ios-style-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.ios-style-image figcaption {
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.02);
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-style: italic;
+}
+
+/* Стили для изображений в статьях */
+.article-featured-image {
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.article-featured-image.ios-style-image {
+    max-width: 960px;
+    margin: 20px auto;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .ios-style-image {
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+    
+    .ios-style-image img {
+        border-radius: 8px;
+    }
+    
+    .ios-style-image figcaption {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ios-style-image {
+        margin: 10px 0;
+        border-radius: 6px;
+    }
+    
+    .ios-style-image img {
+        border-radius: 6px;
+    }
+    
+    .ios-style-image figcaption {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Стили для редактора Gutenberg */
+.bizfin-intro-section-editor,
+.bizfin-article-image-editor {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    margin: 10px 0;
+}
+
+.bizfin-intro-section-editor h3,
+.bizfin-article-image-editor h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.bizfin-intro-section-editor textarea,
+.bizfin-article-image-editor input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.bizfin-intro-section-editor textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* Стили для кнопок управления блоками */
+.bsag-block-controls {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.bsag-block-controls button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.bsag-update-block {
+    background: #0073aa;
+    color: white;
+}
+
+.bsag-update-block:hover {
+    background: #005a87;
+}
+
+.bsag-remove-duplicates {
+    background: #dc3232;
+    color: white;
+}
+
+.bsag-remove-duplicates:hover {
+    background: #a00;
+}
+
+.bsag-apply-ios-styles {
+    background: #00a32a;
+    color: white;
+}
+
+.bsag-apply-ios-styles:hover {
+    background: #007a20;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ios-style-image {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Стили для уведомлений */
+.notice {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 4px solid;
+    border-radius: 4px;
+}
+
+.notice-success {
+    border-left-color: #00a32a;
+    background: #f0f8f0;
+    color: #00a32a;
+}
+
+.notice-error {
+    border-left-color: #dc3232;
+    background: #fdf0f0;
+    color: #dc3232;
+}
+
+.notice.is-dismissible {
+    position: relative;
+    padding-right: 38px;
+}
+
+.notice-dismiss {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    border: none;
+    margin: 0;
+    padding: 9px;
+    background: none;
+    color: #787c82;
+    cursor: pointer;
+}
+
+.notice-dismiss:hover {
+    color: #d63638;
+}
+

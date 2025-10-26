@@ -1,0 +1,52 @@
+/* CSS стили для органичного размера изображений в статьях */
+/* Эти стили применяются ТОЛЬКО к изображениям в статьях */
+
+/* Стили для изображений в статьях (single-post) - более органичный размер */
+.single-post .entry-content .wp-block-image img,
+.single-post .entry-content figure img,
+.single-post .entry-content .wp-block-image.size-large img,
+.single-post .entry-content .wp-block-image.alignwide img {
+    max-width: 75% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 20px auto !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+/* Стили для блока изображения - чтобы он тоже был органичного размера */
+.single-post .entry-content .wp-block-image.size-large,
+.single-post .entry-content .wp-block-image.alignwide {
+    max-width: 75% !important;
+    margin: 20px auto !important;
+    text-align: center !important;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .single-post .entry-content .wp-block-image img,
+    .single-post .entry-content figure img,
+    .single-post .entry-content .wp-block-image.size-large img,
+    .single-post .entry-content .wp-block-image.alignwide img {
+        max-width: 95% !important;
+        margin: 15px auto !important;
+    }
+    
+    .single-post .entry-content .wp-block-image.size-large,
+    .single-post .entry-content .wp-block-image.alignwide {
+        max-width: 95% !important;
+        margin: 15px auto !important;
+    }
+}
+
+/* Дополнительные стили для лучшего отображения */
+.single-post .entry-content .wp-block-image {
+    text-align: center !important;
+}
+
+.single-post .entry-content .wp-block-image figcaption {
+    font-size: 14px !important;
+    color: #666 !important;
+    margin-top: 10px !important;
+    text-align: center !important;
+}

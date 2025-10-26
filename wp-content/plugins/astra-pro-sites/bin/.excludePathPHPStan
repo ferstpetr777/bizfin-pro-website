@@ -1,0 +1,9 @@
+admin
+inc/classes/class-astra-sites-wp-cli.php
+inc/lib/gutenberg-templates
+inc/lib/bsf-quick-links
+inc/lib/astra-notices
+inc/lib/ai-builder
+inc/lib/starter-templates-importer
+inc/lib/zip-ai
+inc/lib/zipwp-images

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест ChatGPT Консультанта - Финальный</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .test-section { background: #f0f0f0; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #e8f5e8; color: #2e7d32; padding: 10px; border-radius: 5px; margin: 10px 0; }
+        .error { background: #ffebee; color: #c62828; padding: 10px; border-radius: 5px; margin: 10px 0; }
+        .info { background: #e3f2fd; color: #1565c0; padding: 10px; border-radius: 5px; margin: 10px 0; }
+        button { padding: 10px 20px; margin: 5px; background: #ff8c42; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #ff6b35; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        input[type="text"] { width: 300px; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+        #result { margin-top: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background: white; min-height: 100px; }
+        .chat-test { border: 2px solid #ff8c42; border-radius: 10px; padding: 20px; margin: 20px 0; }
+        .status { display: inline-block; padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+        .status.success { background: #4caf50; color: white; }
+        .status.error { background: #f44336; color: white; }
+        .status.warning { background: #ff9800; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Тест ChatGPT Консультанта - Финальный</h1>
+        
+        <div class="info">
+            <strong>Инструкция:</strong> Этот тест проверяет работу ChatGPT консультанта на сайте BizFin Pro. 
+            Откройте эту страницу в браузере и следуйте инструкциям.
+        </div>
+        
+        <div class="test-section">
+            <h3>1. Проверка загрузки скриптов</h3>
+            <p>jQuery: <span id="jquery-status" class="status">Проверяем...</span></p>
+            <p>bcc_ajax: <span id="ajax-status" class="status">Проверяем...</span></p>
+            <p>AJAX URL: <span id="ajax-url">Проверяем...</span></p>
+            <p>Nonce: <span id="nonce-status" class="status">Проверяем...</span></p>
+        </div>
+        
+        <div class="test-section">
+            <h3>2. Тест AJAX запроса</h3>
+            <input type="text" id="test-message" placeholder="Введите сообщение" value="Привет, как дела?" style="width: 300px; padding: 8px;">
+            <button onclick="testAjax()" id="test-btn">Отправить тест</button>
+            <button onclick="testWithRealKey()" id="real-key-btn">Тест с реальным API ключом</button>
+        </div>
+        
+        <div class="chat-test">
+            <h3>3. Тест чата на реальной странице</h3>
+            <p>Перейдите на страницу: <a href="https://bizfin-pro.ru/bankovskaya_garantiya_na_vozvrat_avansa/" target="_blank">https://bizfin-pro.ru/bankovskaya_garantiya_na_vozvrat_avansa/</a></p>
+            <p>Найдите чат-виджет и попробуйте отправить сообщение.</p>
+            <div class="info">
+                <strong>Ожидаемый результат:</strong> Чат должен отображаться с оранжевым дизайном и отвечать на сообщения.
+            </div>
+        </div>
+        
+        <div id="result"></div>
+        
+        <div class="test-section">
+            <h3>4. Статус исправлений</h3>
+            <ul>
+                <li>✅ Дизайн изменен на светло-оранжевые тона</li>
+                <li>✅ AJAX endpoint работает</li>
+                <li>✅ Таблицы базы данных созданы</li>
+                <li>✅ Плагин активирован</li>
+                <li>⚠️ API ключ OpenAI требует настройки</li>
+                <li>⚠️ Скрипты могут не загружаться в Elementor</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Проверяем jQuery
+            $('#jquery-status').text('Загружен ✓').removeClass().addClass('status success');
+            
+            // Проверяем bcc_ajax
+            if (typeof bcc_ajax !== 'undefined') {
+                $('#ajax-status').text('Загружен ✓').removeClass().addClass('status success');
+                $('#ajax-url').text(bcc_ajax.ajax_url);
+                $('#nonce-status').text(bcc_ajax.nonce ? 'Есть ✓' : 'Нет ✗').removeClass().addClass('status ' + (bcc_ajax.nonce ? 'success' : 'error'));
+            } else {
+                $('#ajax-status').text('НЕ загружен ✗').removeClass().addClass('status error');
+                $('#ajax-url').text('Не определен');
+                $('#nonce-status').text('Нет ✗').removeClass().addClass('status error');
+            }
+        });
+        
+        function testAjax() {
+            const message = $('#test-message').val();
+            const btn = $('#test-btn');
+            
+            if (typeof bcc_ajax === 'undefined') {
+                $('#result').html('<div class="error">❌ Ошибка: bcc_ajax не определен. Скрипты плагина не загружены.</div>');
+                return;
+            }
+            
+            btn.prop('disabled', true).text('Отправляем...');
+            $('#result').html('<div class="info">⏳ Отправляем запрос...</div>');
+            
+            $.post(bcc_ajax.ajax_url, {
+                action: 'bcc_send_message',
+                nonce: bcc_ajax.nonce,
+                message: message,
+                session_id: 'test-session-' + Date.now()
+            }, function(response) {
+                if (response.success && response.data.success) {
+                    $('#result').html('<div class="success">✅ Успех: ' + response.data.response + '</div>');
+                } else {
+                    $('#result').html('<div class="error">❌ Ошибка: ' + (response.data.error || 'Неизвестная ошибка') + '</div>');
+                }
+            }).fail(function(xhr, status, error) {
+                $('#result').html('<div class="error">❌ Ошибка соединения: ' + error + '<br>Статус: ' + status + '<br>Ответ: ' + xhr.responseText + '</div>');
+            }).always(function() {
+                btn.prop('disabled', false).text('Отправить тест');
+            });
+        }
+        
+        function testWithRealKey() {
+            $('#result').html('<div class="info">ℹ️ Для работы с реальным API ключом OpenAI необходимо:<br>1. Получить API ключ на platform.openai.com<br>2. Настроить его в админ-панели плагина<br>3. Перезагрузить страницу</div>');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+/* Улучшенные стили для статистических карточек - более компактные и кликабельные */
+
+/* Основные переменные для статистических карточек */
+.bfkpis {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --accent: #FF6B00;
+  --accent-light: #FF9950;
+  --radius: 16px;
+  --gap: 20px;
+  --pad: 20px;
+  --num: 28px;
+  --num-dual: 22px;
+  --title: 14px;
+  --sub: 12px;
+  --foot: 11px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bfkpis * {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Inter, Arial, sans-serif;
+}
+
+/* Сетка карточек - более компактная */
+.bfkpis__grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .bfkpis__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bfkpis__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Карточки - компактные и кликабельные */
+.bfkpis__card {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Верхняя полоса акцента */
+.bfkpis__card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  opacity: 0.9;
+  transition: var(--transition);
+}
+
+/* Hover эффекты */
+.bfkpis__card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-light);
+}
+
+.bfkpis__card:hover::before {
+  height: 4px;
+  opacity: 1;
+}
+
+/* Активное состояние */
+.bfkpis__card:active {
+  transform: translateY(-2px) scale(1.01);
+  transition: all 0.1s ease;
+}
+
+/* Заголовок карточки */
+.bfkpis__card header {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  font-size: var(--title);
+  color: var(--text);
+}
+
+.bfkpis__card header span {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: var(--sub);
+}
+
+/* Значения */
+.bfkpis__value {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  min-height: 40px;
+  margin-bottom: 8px;
+}
+
+.bfkpis__value .num {
+  font-size: var(--num);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.bfkpis__value .unit {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  opacity: 0.9;
+  color: var(--muted);
+}
+
+/* Подвал карточки */
+.bfkpis__card .tip,
+.bfkpis__card footer {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: var(--foot);
+  line-height: 1.3;
+}
+
+/* Dual блок (для карточки клиентов) */
+.bfkpis__card--dual .dual {
+  width: 100%;
+}
+
+.dual__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.dual__row:last-child {
+  margin-bottom: 0;
+}
+
+.dual .muted {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.dual .num {
+  font-size: var(--num-dual);
+  font-weight: 800;
+  color: var(--text);
+}
+
+.dual__divider {
+  height: 1px;
+  background: var(--line);
+  margin: 8px 0;
+  opacity: 0.6;
+}
+
+/* Анимация появления */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bfkpis__card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.bfkpis__card:nth-child(1) { animation-delay: 0.1s; }
+.bfkpis__card:nth-child(2) { animation-delay: 0.2s; }
+.bfkpis__card:nth-child(3) { animation-delay: 0.3s; }
+.bfkpis__card:nth-child(4) { animation-delay: 0.4s; }
+.bfkpis__card:nth-child(5) { animation-delay: 0.5s; }
+.bfkpis__card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Эффект пульсации для привлечения внимания */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: var(--shadow);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1), var(--shadow);
+  }
+}
+
+.bfkpis__card.highlight {
+  animation: pulse 2s infinite;
+}
+
+/* Улучшенная типографика */
+.bfkpis__card .num {
+  background: linear-gradient(135deg, var(--text), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Мобильная оптимизация */
+@media (max-width: 768px) {
+  .bfkpis {
+    --pad: 16px;
+    --gap: 16px;
+    --num: 24px;
+    --num-dual: 20px;
+    --title: 13px;
+  }
+  
+  .bfkpis__card {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bfkpis {
+    --pad: 14px;
+    --gap: 12px;
+    --num: 22px;
+    --num-dual: 18px;
+    --title: 12px;
+    --foot: 10px;
+  }
+  
+  .bfkpis__card {
+    min-height: 90px;
+  }
+  
+  .bfkpis__card:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+/* Дополнительные эффекты для интерактивности */
+.bfkpis__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.bfkpis__card:hover::after {
+  left: 100%;
+}
+
+/* Фокус для доступности */
+.bfkpis__card:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Состояние загрузки */
+.bfkpis__card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.bfkpis__card.loading .num::after {
+  content: "...";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: "."; }
+  40% { content: ".."; }
+  60%, 100% { content: "..."; }
+}

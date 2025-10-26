@@ -1,0 +1,632 @@
+/* BizFin ChatGPT Consultant - Frontend Styles */
+
+.bcc-chat-container {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Свернутый режим по умолчанию */
+.bcc-chat-container.bcc-collapsed {
+    height: 200px !important;
+    transition: height 0.3s ease-in-out;
+}
+.bcc-chat-container.bcc-collapsed .bcc-chat-messages {
+    max-height: 100px;
+    overflow: hidden;
+    padding: 12px 24px;
+}
+.bcc-chat-container.bcc-collapsed .bcc-chat-input-area {
+    padding: 12px 24px;
+    border-top: 1px solid #e1e5e9;
+}
+.bcc-chat-container.bcc-collapsed .bcc-welcome-message {
+    margin-bottom: 8px;
+}
+.bcc-chat-container.bcc-collapsed .bcc-message {
+    margin-bottom: 8px;
+}
+.bcc-chat-container.bcc-collapsed .bcc-message-text {
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+.bcc-chat-container.bcc-collapsed .bcc-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+}
+.bcc-chat-container.bcc-collapsed .bcc-message-time {
+    font-size: 10px;
+}
+
+/* Заголовок чата */
+.bcc-chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    color: white;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.bcc-chat-title h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bcc-chat-title p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.bcc-chat-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bcc-status-indicator {
+    font-size: 12px;
+    color: #4ade80;
+    animation: pulse 2s infinite;
+}
+
+.bcc-status-text {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Область сообщений */
+.bcc-chat-messages {
+    flex: 1;
+    padding: 20px 24px;
+    overflow-y: auto;
+    background: #f8fafc;
+    max-height: 400px;
+}
+
+.bcc-message {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+.bcc-message-user {
+    flex-direction: row-reverse;
+}
+
+.bcc-message-avatar {
+    flex-shrink: 0;
+}
+
+.bcc-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ff8c42;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bcc-message-user .bcc-avatar {
+    background: #ff6b35;
+}
+
+.bcc-message-content {
+    flex: 1;
+    max-width: 70%;
+}
+
+.bcc-message-user .bcc-message-content {
+    text-align: right;
+}
+
+.bcc-message-text {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+.bcc-message-text code {
+    background: #f3f4f6;
+    padding: 1px 4px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 90%;
+}
+
+/* Улучшенное форматирование контента сообщений */
+.bcc-message-text p {
+    margin: 0 0 10px 0;
+}
+.bcc-message-text p:last-child {
+    margin-bottom: 0;
+}
+.bcc-message-text ul {
+    margin: 0 0 10px 18px;
+    padding: 0 0 0 12px;
+}
+.bcc-message-text ol {
+    margin: 0 0 10px 18px;
+    padding: 0 0 0 12px;
+}
+.bcc-message-text li {
+    margin: 4px 0;
+    list-style: disc;
+}
+.bcc-chat-container[data-theme="dark"] .bcc-message-text { background: #1f2937; color: #f9fafb; }
+.bcc-chat-container[data-theme="dark"] .bcc-message-text code { background: #111827; }
+
+.bcc-message-user .bcc-message-text {
+    background: #ff8c42;
+    color: white;
+}
+
+.bcc-message-error .bcc-message-text {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.bcc-message-time {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+.bcc-message-user .bcc-message-time {
+    text-align: right;
+}
+
+/* Приветственное сообщение */
+.bcc-welcome-message {
+    margin-bottom: 20px;
+}
+
+/* Область ввода */
+.bcc-chat-input-area {
+    padding: 20px 24px;
+    background: white;
+    border-top: 1px solid #e1e5e9;
+}
+
+.bcc-file-upload-area {
+    margin-bottom: 12px;
+    padding: 12px;
+    background: #f8fafc;
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+}
+
+.bcc-file-list {
+    margin-bottom: 8px;
+}
+
+.bcc-file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+.bcc-file-name {
+    font-size: 14px;
+    color: #374151;
+    flex: 1;
+}
+
+.bcc-file-size {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 8px;
+}
+
+.bcc-file-remove {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.bcc-file-upload-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bcc-file-upload-btn {
+    background: #ff8c42;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.bcc-file-upload-btn:hover {
+    background: #ff6b35;
+}
+
+.bcc-file-info {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.bcc-input-container {
+    position: relative;
+}
+
+.bcc-input-wrapper {
+    display: flex;
+    align-items: flex-end;
+    background: #f8fafc;
+    border: 1px solid #d1d5db;
+    border-radius: 24px;
+    padding: 8px 12px;
+    transition: border-color 0.2s;
+}
+
+.bcc-input-wrapper:focus-within {
+    border-color: #ff8c42;
+    box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1);
+}
+
+.bcc-message-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+    min-height: 20px;
+    max-height: 120px;
+}
+
+.bcc-message-input::placeholder {
+    color: #9ca3af;
+}
+
+.bcc-input-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bcc-attach-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.bcc-attach-btn:hover {
+    background: #e5e7eb;
+}
+
+.bcc-send-btn {
+    background: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.bcc-send-btn:hover:not(:disabled) {
+    background: #ff6b35;
+}
+
+.bcc-send-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.bcc-send-text {
+    display: none;
+}
+
+.bcc-send-icon {
+    font-size: 16px;
+}
+
+.bcc-file-info-text {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.bcc-file-info-text small {
+    color: #6b7280;
+    font-size: 11px;
+}
+
+/* Индикатор загрузки */
+.bcc-loading-indicator {
+    position: absolute;
+    bottom: 80px;
+    left: 24px;
+    right: 24px;
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bcc-typing-indicator {
+    display: flex;
+    gap: 4px;
+}
+
+.bcc-typing-indicator span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff8c42;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.bcc-typing-indicator span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.bcc-typing-indicator span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typing {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.bcc-loading-text {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Темная тема */
+.bcc-chat-container[data-theme="dark"] {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-chat-messages {
+    background: #111827;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-message-text {
+    background: #374151;
+    color: #f9fafb;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-message-user .bcc-message-text {
+    background: #ff8c42;
+    color: white;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-chat-input-area {
+    background: #1f2937;
+    border-top-color: #374151;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-input-wrapper {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-message-input {
+    color: #f9fafb;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-message-input::placeholder {
+    color: #9ca3af;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-file-upload-area {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-file-item {
+    background: #1f2937;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+.bcc-chat-container[data-theme="dark"] .bcc-loading-indicator {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .bcc-chat-container {
+        border-radius: 0;
+        height: 100vh !important;
+        max-height: 100vh;
+    }
+    
+    .bcc-chat-header {
+        padding: 16px 20px;
+    }
+    
+    .bcc-chat-messages {
+        padding: 16px 20px;
+        max-height: calc(100vh - 200px);
+    }
+    
+    .bcc-chat-input-area {
+        padding: 16px 20px;
+    }
+    
+    .bcc-message-content {
+        max-width: 85%;
+    }
+    
+    .bcc-send-text {
+        display: inline;
+    }
+    
+    .bcc-send-icon {
+        display: none;
+    }
+    
+    .bcc-send-btn {
+        width: auto;
+        height: auto;
+        border-radius: 6px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bcc-chat-title h3 {
+        font-size: 16px;
+    }
+    
+    .bcc-chat-title p {
+        font-size: 12px;
+    }
+    
+    .bcc-message {
+        margin-bottom: 16px;
+    }
+    
+    .bcc-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .bcc-message-text {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* Анимации */
+.bcc-message {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Скроллбар */
+.bcc-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bcc-chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.bcc-chat-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.bcc-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Улучшения для BizFin Pro */
+.bcc-chat-container {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.bcc-chat-header {
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+}
+
+.bcc-send-btn {
+    background: #ff8c42;
+}
+
+.bcc-send-btn:hover:not(:disabled) {
+    background: #ff6b35;
+}
+
+.bcc-avatar {
+    background: #ff8c42;
+}
+
+.bcc-message-user .bcc-avatar {
+    background: #ff6b35;
+}
+
+.bcc-message-user .bcc-message-text {
+    background: #ff8c42;
+}
+
+.bcc-file-upload-btn {
+    background: #ff8c42;
+}
+
+.bcc-file-upload-btn:hover {
+    background: #ff6b35;
+}
+
+.bcc-typing-indicator span {
+    background: #ff8c42;
+}

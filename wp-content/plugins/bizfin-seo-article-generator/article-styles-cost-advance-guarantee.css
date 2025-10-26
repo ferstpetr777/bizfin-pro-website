@@ -1,0 +1,542 @@
+/**
+ * Стили для статьи "Стоимость банковской гарантии на возврат аванса"
+ * Соответствуют критериям матрицы плагина BizFin SEO Article Generator
+ * Применяются согласно принципам именования классов и цветовой логике
+ */
+
+/* Базовые стили */
+:root {
+    --orange: #FF6B00;           /* Основной акцент */
+    --orange-2: #FF9A3C;         /* Градиент */
+    --text: #0F172A;             /* Основной текст */
+    --text-muted: #556070;       /* Вторичный текст */
+    --surface: #FFFFFF;          /* Фон карточек */
+    --surface-2: #F7F7F7;        /* Вторичный фон */
+    --blue: #3498db;             /* Основные элементы, ссылки */
+    --green: #28a745;            /* Успех, скачивание, правильные формулировки */
+    --yellow: #ffc107;           /* Предупреждения, критичные условия */
+    --red: #dc3545;              /* Ошибки, плохие формулировки */
+    --cyan: #17a2b8;             /* Информация, подсказки */
+}
+
+/* 1. Базовые стили (body, h1-h4) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: #f8f9fa;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--text);
+    margin: 40px 0 20px 0;
+    border-bottom: 3px solid var(--orange);
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin: 30px 0 15px 0;
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin: 20px 0 10px 0;
+}
+
+/* 2. Структурные блоки (intro, toc, faq) */
+.intro-section {
+    background: linear-gradient(135deg, var(--orange), var(--orange-2));
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.intro-section h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.toc {
+    background: var(--surface);
+    border: 2px solid var(--orange);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.toc strong {
+    color: var(--orange);
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc li {
+    margin: 10px 0;
+}
+
+.toc a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.toc a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.faq-section {
+    background: var(--surface-2);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 15px;
+}
+
+.faq-question {
+    font-weight: 600;
+    color: var(--orange);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.faq-answer {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* 3. Цветные блоки (success, warning, info, error) */
+.success-box {
+    background: #d4edda;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.success-box h4 {
+    color: #155724;
+    margin-bottom: 10px;
+}
+
+.warning-box {
+    background: #fff3cd;
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.warning-box h4 {
+    color: #856404;
+    margin-bottom: 10px;
+}
+
+.info-box {
+    background: #d1ecf1;
+    border: 1px solid var(--cyan);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.info-box h4 {
+    color: #0c5460;
+    margin-bottom: 10px;
+}
+
+.error-box {
+    background: #f8d7da;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.error-box h4 {
+    color: #721c24;
+    margin-bottom: 10px;
+}
+
+/* 4. Интерактивные элементы (structure, steps, checklist) */
+.structure-item {
+    background: var(--surface-2);
+    border-left: 4px solid var(--blue);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.step-guide {
+    background: #fff3cd;
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.step-guide h4 {
+    color: #856404;
+    margin-bottom: 15px;
+}
+
+.step-guide ol {
+    padding-left: 20px;
+}
+
+.step-guide li {
+    margin-bottom: 10px;
+}
+
+.checklist {
+    background: #d4edda;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.checklist h4 {
+    color: #155724;
+    margin-bottom: 15px;
+}
+
+.checklist ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    margin: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.checklist li:before {
+    content: "✓";
+    color: var(--green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* 5. Таблицы и документы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background: var(--orange);
+    color: white;
+    font-weight: 500;
+}
+
+tr:hover {
+    background: var(--surface-2);
+}
+
+.sample-document {
+    background: var(--surface);
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.sample-document h4 {
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+/* 6. Специальные модули (download, cta) */
+.download-section {
+    background: linear-gradient(135deg, var(--green), #20c997);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.download-section h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    background: white;
+    color: var(--green);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background: var(--surface-2);
+    transform: translateY(-2px);
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--orange), var(--orange-2));
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.cta-section h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    background: white;
+    color: var(--orange);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-btn:hover {
+    background: var(--surface-2);
+    transform: translateY(-2px);
+}
+
+/* Калькулятор */
+.calculator-section {
+    background: linear-gradient(135deg, var(--green), #20c997);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.calculator-section h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.calculator-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    background: var(--orange);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--orange-2);
+}
+
+.result {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Изображения */
+.article-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    margin: 30px auto;
+    display: block;
+}
+
+/* Примеры */
+.example {
+    background: #f0f8ff;
+    border-left: 5px solid var(--blue);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* Внутренние ссылки */
+.internal-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted var(--blue);
+}
+
+.internal-link:hover {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+}
+
+/* 7. Адаптивные стили */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .intro-section {
+        padding: 24px 16px;
+    }
+
+    .toc {
+        padding: 20px 16px;
+    }
+
+    .calculator-section {
+        padding: 20px 16px;
+    }
+
+    .cta-section {
+        padding: 30px 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        padding: 40px;
+    }
+}
+
+/* Дополнительные стили для соответствия критериям */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--surface);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+p {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+/* Touch-friendly элементы */
+.btn, .cta-btn, .download-btn {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Плавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Фокус для доступности */
+a:focus, button:focus, input:focus {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+}

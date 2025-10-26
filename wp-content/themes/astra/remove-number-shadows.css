@@ -1,0 +1,66 @@
+/* ИСПРАВЛЕНИЕ ТОЛЬКО для статистических блоков - НЕ ГЛОБАЛЬНО */
+
+/* Убираем тени ТОЛЬКО с цифр в статистических блоках */
+.bfkpis__card .num,
+.bfkpis__value .num,
+.bfkpis__card .dual .num {
+  text-shadow: none !important;
+  -webkit-text-shadow: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Убираем тени с единиц измерения в статистических блоках */
+.bfkpis__card .unit {
+  text-shadow: none !important;
+  -webkit-text-shadow: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+/* Улучшаем контрастность ТОЛЬКО заголовков в статистических блоках */
+.bfkpis__card header {
+  font-weight: 700 !important;
+  color: #000000 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+  font-size: 15px !important;
+}
+
+.bfkpis__card header span {
+  font-weight: 600 !important;
+  color: #333333 !important;
+  text-shadow: none !important;
+}
+
+/* Градиентные числа ТОЛЬКО в статистических блоках */
+.bfkpis__card .num {
+  background: linear-gradient(135deg, #000000, #FF6B00, #000000) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: none !important;
+}
+
+.bfkpis__card--dual .dual .num {
+  background: linear-gradient(135deg, #000000, #FF6B00, #000000) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: none !important;
+}
+
+/* Мобильная адаптивность ТОЛЬКО для статистических блоков */
+@media (max-width: 768px) {
+  .bfkpis__card header {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bfkpis__card header {
+    font-size: 13px !important;
+  }
+}

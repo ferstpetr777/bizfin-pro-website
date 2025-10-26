@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест ChatGPT Консультанта</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { background: #f0f0f0; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        button { padding: 10px 20px; margin: 5px; background: #ff8c42; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #ff6b35; }
+        #result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background: white; }
+    </style>
+</head>
+<body>
+    <h1>Тест ChatGPT Консультанта</h1>
+    
+    <div class="test-section">
+        <h3>1. Проверка загрузки скриптов</h3>
+        <p>jQuery: <span id="jquery-status">Проверяем...</span></p>
+        <p>bcc_ajax: <span id="ajax-status">Проверяем...</span></p>
+    </div>
+    
+    <div class="test-section">
+        <h3>2. Тест AJAX запроса</h3>
+        <input type="text" id="test-message" placeholder="Введите сообщение" value="Привет, как дела?" style="width: 300px; padding: 5px;">
+        <button onclick="testAjax()">Отправить тест</button>
+    </div>
+    
+    <div id="result"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Проверяем jQuery
+            $('#jquery-status').text('Загружен ✓').css('color', 'green');
+            
+            // Проверяем bcc_ajax
+            if (typeof bcc_ajax !== 'undefined') {
+                $('#ajax-status').text('Загружен ✓').css('color', 'green');
+            } else {
+                $('#ajax-status').text('НЕ загружен ✗').css('color', 'red');
+            }
+        });
+        
+        function testAjax() {
+            const message = $('#test-message').val();
+            
+            if (typeof bcc_ajax === 'undefined') {
+                $('#result').html('<div style="color: red;">Ошибка: bcc_ajax не определен. Скрипты плагина не загружены.</div>');
+                return;
+            }
+            
+            $('#result').html('<div>Отправляем запрос...</div>');
+            
+            $.post(bcc_ajax.ajax_url, {
+                action: 'bcc_send_message',
+                nonce: bcc_ajax.nonce,
+                message: message,
+                session_id: 'test-session-' + Date.now()
+            }, function(response) {
+                $('#result').html('<div style="color: green;">Успех: ' + JSON.stringify(response) + '</div>');
+            }).fail(function(xhr, status, error) {
+                $('#result').html('<div style="color: red;">Ошибка: ' + error + '<br>Статус: ' + status + '<br>Ответ: ' + xhr.responseText + '</div>');
+            });
+        }
+    </script>
+</body>
+</html>

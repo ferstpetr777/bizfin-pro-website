@@ -1,0 +1,326 @@
+/* Стили для кнопок "Получить консультацию" и "Оставить заявку" */
+
+/* Основная кнопка "Оставить заявку" */
+a[href="#"]:contains("Оставить заявку"),
+a:contains("Оставить заявку") {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 16px 28px !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, #FF6B00 0%, #FF8F3D 100%) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  text-decoration: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 52px !important;
+  white-space: nowrap !important;
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Эффект блеска для основной кнопки */
+a[href="#"]:contains("Оставить заявку")::before,
+a:contains("Оставить заявку")::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+  transition: left 0.6s !important;
+}
+
+/* Hover для основной кнопки */
+a[href="#"]:contains("Оставить заявку"):hover,
+a:contains("Оставить заявку"):hover {
+  background: linear-gradient(135deg, #E55A00 0%, #FF6B00 100%) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.45) !important;
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+a[href="#"]:contains("Оставить заявку"):hover::before,
+a:contains("Оставить заявку"):hover::before {
+  left: 100% !important;
+}
+
+/* Active для основной кнопки */
+a[href="#"]:contains("Оставить заявку"):active,
+a:contains("Оставить заявку"):active {
+  background: linear-gradient(135deg, #CC4A00 0%, #E55A00 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4) !important;
+}
+
+/* Вторичная кнопка "Получить консультацию" */
+a[href="#"]:contains("Получить консультацию"),
+a:contains("Получить консультацию") {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 16px 28px !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  color: #FF6B00 !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  text-decoration: none !important;
+  border: 2px solid #FF6B00 !important;
+  cursor: pointer !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 52px !important;
+  white-space: nowrap !important;
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Эффект блеска для вторичной кнопки */
+a[href="#"]:contains("Получить консультацию")::before,
+a:contains("Получить консультацию")::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.15), transparent) !important;
+  transition: left 0.6s !important;
+}
+
+/* Hover для вторичной кнопки */
+a[href="#"]:contains("Получить консультацию"):hover,
+a:contains("Получить консультацию"):hover {
+  background: #FFF1E6 !important;
+  border-color: #E55A00 !important;
+  color: #E55A00 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.3) !important;
+  text-decoration: none !important;
+}
+
+a[href="#"]:contains("Получить консультацию"):hover::before,
+a:contains("Получить консультацию"):hover::before {
+  left: 100% !important;
+}
+
+/* Active для вторичной кнопки */
+a[href="#"]:contains("Получить консультацию"):active,
+a:contains("Получить консультацию"):active {
+  background: #FFF1E6 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.25) !important;
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 767px) {
+  a[href="#"]:contains("Оставить заявку"),
+  a:contains("Оставить заявку"),
+  a[href="#"]:contains("Получить консультацию"),
+  a:contains("Получить консультацию") {
+    padding: 14px 24px !important;
+    font-size: 15px !important;
+    min-height: 48px !important;
+    border-radius: 16px !important;
+  }
+  
+  /* Уменьшенные hover-эффекты на мобильных */
+  a[href="#"]:contains("Оставить заявку"):hover,
+  a:contains("Оставить заявку"):hover,
+  a[href="#"]:contains("Получить консультацию"):hover,
+  a:contains("Получить консультацию"):hover {
+    transform: translateY(-1px) !important;
+  }
+}
+
+/* Фокус для доступности */
+a[href="#"]:contains("Оставить заявку"):focus-visible,
+a:contains("Оставить заявку"):focus-visible,
+a[href="#"]:contains("Получить консультацию"):focus-visible,
+a:contains("Получить консультацию"):focus-visible {
+  outline: 3px solid #22D3A7 !important;
+  outline-offset: 3px !important;
+}
+
+/* Исправление рамки изображения директора для Safari */
+img[alt*="Анастасия"][alt*="Борисова"],
+img[alt*="Борисова"][alt*="Директор"],
+img[src*="Анастасия-Борисова-Генеральный-Директор-Бизфин"],
+img[src*="анастасия-Борисова-Генеральный-Директор"] {
+  border: 1px solid #ffffff !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Дополнительное исправление для всех изображений директора */
+img[src*="borisova"],
+img[src*="Борисова"],
+img[src*="директор"],
+img[src*="Директор"] {
+  border: 1px solid #ffffff !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Специальное исправление для Safari */
+@supports (-webkit-appearance: none) {
+  img[alt*="Анастасия"][alt*="Борисова"],
+  img[alt*="Борисова"][alt*="Директор"],
+  img[src*="Анастасия-Борисова-Генеральный-Директор-Бизфин"],
+  img[src*="анастасия-Борисова-Генеральный-Директор"],
+  img[src*="borisova"],
+  img[src*="Борисова"],
+  img[src*="директор"],
+  img[src*="Директор"] {
+    border: 1px solid #ffffff !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+}
+
+/* Стильная тень в стиле Apple для фотографии директора */
+img[alt*="Анастасия"][alt*="Борисова"],
+img[alt*="Борисова"][alt*="Директор"],
+img[src*="Анастасия-Борисова-Генеральный-Директор-Бизфин"],
+img[src*="анастасия-Борисова-Генеральный-Директор"] {
+  border: 1px solid #ffffff !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  
+  /* Стильная многослойная тень в стиле Apple */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.06),
+    0 16px 80px rgba(0, 0, 0, 0.04) !important;
+  
+  -webkit-box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.06),
+    0 16px 80px rgba(0, 0, 0, 0.04) !important;
+  
+  /* Плавный переход для hover эффекта */
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  
+  /* Скругленные углы */
+  border-radius: 12px !important;
+  
+  /* Улучшенное качество изображения */
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+}
+
+/* Hover эффект для фотографии директора */
+img[alt*="Анастасия"][alt*="Борисова"]:hover,
+img[alt*="Борисова"][alt*="Директор"]:hover,
+img[src*="Анастасия-Борисова-Генеральный-Директор-Бизфин"]:hover,
+img[src*="анастасия-Борисова-Генеральный-Директор"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 16px 60px rgba(0, 0, 0, 0.08),
+    0 32px 120px rgba(0, 0, 0, 0.06) !important;
+  
+  -webkit-box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 16px 60px rgba(0, 0, 0, 0.08),
+    0 32px 120px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Дополнительные стили для всех изображений директора */
+img[src*="borisova"],
+img[src*="Борисова"],
+img[src*="директор"],
+img[src*="Директор"] {
+  border: 1px solid #ffffff !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  
+  /* Стильная тень */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.06),
+    0 16px 80px rgba(0, 0, 0, 0.04) !important;
+  
+  -webkit-box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.06),
+    0 16px 80px rgba(0, 0, 0, 0.04) !important;
+  
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  border-radius: 12px !important;
+}
+
+/* Мобильная адаптивность для теней */
+@media (max-width: 768px) {
+  img[alt*="Анастасия"][alt*="Борисова"],
+  img[alt*="Борисова"][alt*="Директор"],
+  img[src*="Анастасия-Борисова-Генеральный-Директор-Бизфин"],
+  img[src*="анастасия-Борисова-Генеральный-Директор"],
+  img[src*="borisova"],
+  img[src*="Борисова"],
+  img[src*="директор"],
+  img[src*="Директор"] {
+    box-shadow: 
+      0 2px 10px rgba(0, 0, 0, 0.06),
+      0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    
+    -webkit-box-shadow: 
+      0 2px 10px rgba(0, 0, 0, 0.06),
+      0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    
+    border-radius: 8px !important;
+  }
+}
+
+/* Специальное исправление для Safari с сохранением теней */
+@supports (-webkit-appearance: none) {
+  img[alt*="Анастасия"][alt*="Борисова"],
+  img[alt*="Борисова"][alt*="Директор"],
+  img[src*="Анастасия-Борисова-Генеральный-Директор-Бизфин"],
+  img[src*="анастасия-Борисова-Генеральный-Директор"],
+  img[src*="borisova"],
+  img[src*="Борисова"],
+  img[src*="директор"],
+  img[src*="Директор"] {
+    border: 1px solid #ffffff !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    
+    /* Сохраняем стильную тень даже в Safari */
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+    
+    -webkit-box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      0 8px 40px rgba(0, 0, 0, 0.06),
+      0 16px 80px rgba(0, 0, 0, 0.04) !important;
+    
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    border-radius: 12px !important;
+  }
+}

@@ -1,0 +1,818 @@
+/* Alphabet Blog Panel v2 - Стили */
+:root {
+  --orange: #FF6B00;
+  --orange-light: rgba(255, 107, 0, 0.1);
+  --text: #0F172A;
+  --text-muted: #556070;
+  --surface: #FFFFFF;
+  --surface-2: #F7F7F7;
+  --surface-3: #F5F5F5;
+  --line: #E6E8EC;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(31, 58, 90, 0.12);
+  --font-title: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-ui: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --transition: all 0.2s ease-out;
+}
+
+/* Основной контейнер */
+.abp-v2-root {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 48px 20px;
+  font-family: var(--font-ui);
+  background: var(--surface-3);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Заголовок */
+.abp-v2-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.abp-v2-title {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px 0;
+}
+
+.abp-v2-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Алфавитная панель */
+.abp-v2-alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+.abp-v2-letter {
+  position: relative;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  min-width: 48px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.abp-v2-letter:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.abp-v2-letter.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.abp-v2-letter[data-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.abp-v2-count {
+  font-size: 0.7rem;
+  background: var(--orange);
+  color: white;
+  border-radius: 10px;
+  padding: 2px 6px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.abp-v2-letter.active .abp-v2-count {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Контент */
+.abp-v2-content {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  min-height: 400px;
+  position: relative;
+}
+
+/* Лоадер */
+.abp-v2-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.abp-v2-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--line);
+  border-top-color: var(--orange);
+  border-radius: 50%;
+  animation: abp-v2-spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes abp-v2-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Результаты */
+.abp-v2-results {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Список статей */
+.abp-v2-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.abp-v2-item {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: var(--transition);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.abp-v2-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--orange);
+}
+
+/* Изображение в элементе списка - iOS стиль с соотношением 16:9 */
+.abp-thumbnail {
+  flex-shrink: 0;
+  width: 200px;
+  height: 112px; /* 16:9 соотношение */
+  border-radius: 8px; /* iOS стиль закругления */
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8); /* Тонкая белая рамка */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #f8f9fa;
+  position: relative;
+}
+
+.abp-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+  border-radius: 7px; /* Чуть меньше радиуса контейнера */
+}
+
+.abp-thumbnail:hover img {
+  transform: scale(1.02);
+}
+
+.abp-thumbnail:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+/* Контент элемента списка */
+.abp-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.abp-v2-item h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.abp-v2-item h3 a {
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.abp-v2-item h3 a:hover {
+  color: var(--orange);
+}
+
+.abp-v2-item p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.abp-v2-date {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Пустое состояние */
+.abp-v2-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Пагинация */
+.abp-v2-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.abp-v2-page {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  min-width: 40px;
+  text-align: center;
+}
+
+.abp-v2-page:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.abp-v2-page:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.abp-v2-page-info {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 0 12px;
+}
+
+/* Стили для стандартной WordPress пагинации */
+.abp-v2-pagination .page-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.abp-v2-pagination .page-numbers li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.abp-v2-pagination .page-numbers a,
+.abp-v2-pagination .page-numbers span {
+  display: inline-block;
+  padding: 12px 16px;
+  border: 2px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  min-width: 44px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.abp-v2-pagination .page-numbers a:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--orange-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.2);
+}
+
+.abp-v2-pagination .page-numbers .current {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  font-weight: 700;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+}
+
+.abp-v2-pagination .page-numbers .prev,
+.abp-v2-pagination .page-numbers .next {
+  font-weight: 700;
+  padding: 12px 20px;
+}
+
+.abp-v2-pagination .page-numbers .prev:hover,
+.abp-v2-pagination .page-numbers .next:hover {
+  background: var(--orange);
+  color: white;
+  border-color: var(--orange);
+}
+
+/* Архивная страница */
+.abp-v2-archive {
+  background: var(--surface-3);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.abp-v2-archive-container {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 48px 20px;
+  box-sizing: border-box;
+}
+
+.abp-v2-archive-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.abp-v2-archive-title {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px 0;
+}
+
+.abp-v2-archive-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.abp-v2-archive-alphabet {
+  margin-bottom: 32px;
+}
+
+.abp-v2-archive-list {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.abp-v2-archive-pagination {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.abp-v2-archive-pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.abp-v2-archive-pagination .page-numbers a,
+.abp-v2-archive-pagination .page-numbers span {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.abp-v2-archive-pagination .page-numbers a:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.abp-v2-archive-pagination .page-numbers .current {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+/* Стили для алфавитной панели на страницах статей */
+.abp-v2-single-post-alphabet {
+  background-color: var(--surface);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.abp-v2-single-post-alphabet .abp-v2-root {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  min-height: auto;
+}
+
+.abp-v2-single-post-alphabet .abp-v2-header {
+  display: none;
+}
+
+.abp-v2-single-post-alphabet .abp-v2-list-wrap {
+  display: none;
+}
+
+.abp-v2-single-post-alphabet .abp-v2-alphabet {
+  margin-bottom: 0;
+  gap: 4px;
+}
+
+.abp-v2-single-post-alphabet .abp-v2-letter {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  min-width: 36px;
+}
+
+/* Стили для компактной алфавитной панели */
+.abp-v2-alphabet-only {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.abp-v2-alphabet-only .abp-v2-letter {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  min-width: 36px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  font-weight: 500;
+}
+
+.abp-v2-alphabet-only .abp-v2-letter:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.abp-v2-alphabet-only .abp-v2-letter.is-active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+.abp-v2-alphabet-only .abp-v2-letter[data-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.abp-v2-alphabet-only .abp-v2-count {
+  font-size: 0.7rem;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 2px 6px;
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+/* Убираем отступ для основного контента, так как панель больше не фиксированная */
+body.single-post {
+  padding-top: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .abp-v2-root,
+  .abp-v2-archive-container {
+    padding: 24px 16px;
+  }
+  
+  .abp-v2-title {
+    font-size: 2rem;
+  }
+  
+  .abp-v2-alphabet {
+    gap: 6px;
+    justify-content: flex-start;
+  }
+  
+  .abp-v2-letter {
+    padding: 10px 12px;
+    min-width: 40px;
+    font-size: 0.9rem;
+  }
+  
+  .abp-v2-items {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .abp-v2-item {
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .abp-thumbnail {
+    width: 100%;
+    height: 180px; /* 16:9 соотношение для мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .abp-v2-alphabet {
+    gap: 4px;
+  }
+  
+  .abp-v2-letter {
+    padding: 8px 10px;
+    min-width: 36px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Стили для главной страницы блога */
+.abp-v2-main-page {
+  min-height: 100vh;
+  background: var(--surface-2);
+}
+
+.abp-v2-main-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 100;
+}
+
+.abp-v2-main-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.abp-v2-main-title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  font-family: var(--font-title);
+}
+
+.abp-v2-main-subtitle {
+  flex: 1;
+  text-align: center;
+}
+
+.abp-v2-main-subtitle p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.abp-v2-main-search {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.abp-v2-main-search input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  min-width: 300px;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.abp-v2-main-search input:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
+}
+
+.abp-v2-main-search button {
+  padding: 0.75rem 1rem;
+  background: var(--orange);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.abp-v2-main-search button:hover {
+  background: var(--orange-2);
+}
+
+.abp-v2-main-alphabet {
+  padding: 1rem 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 0 2rem;
+}
+
+.abp-v2-main-alphabet .abp-v2-alphabet-only {
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.abp-v2-main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.abp-v2-main-posts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.abp-v2-main-posts-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  font-family: var(--font-title);
+}
+
+.abp-v2-main-posts-count {
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--surface);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.abp-v2-main-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.abp-v2-main-post-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.8); /* Тонкая белая рамка */
+  box-shadow: 0 2px 8px rgba(31, 58, 90, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.abp-v2-main-post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(31, 58, 90, 0.15);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.abp-v2-main-post-title {
+  margin: 0 0 1rem 0;
+}
+
+.abp-v2-main-post-title a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.abp-v2-main-post-title a:hover {
+  color: var(--orange);
+}
+
+.abp-v2-main-post-excerpt {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.abp-v2-main-post-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.abp-v2-main-no-posts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--muted);
+}
+
+/* Адаптивность для главной страницы */
+@media (max-width: 1200px) {
+  .abp-v2-main-header-content {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .abp-v2-main-search input {
+    min-width: 250px;
+  }
+  
+  .abp-v2-main-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .abp-v2-main-header-content {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .abp-v2-main-title h1 {
+    font-size: 1.5rem;
+  }
+  
+  .abp-v2-main-search input {
+    min-width: 200px;
+  }
+  
+  .abp-v2-main-content {
+    padding: 1rem;
+  }
+  
+  .abp-v2-main-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .abp-v2-main-post-card {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,60 @@
+/* Усиление контрастности ТОЛЬКО заголовков в статистических блоках */
+
+/* Усиливаем контрастность ТОЛЬКО заголовков в статистических карточках */
+.bfkpis__card header {
+  font-weight: 800 !important;
+  color: #000000 !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.25),
+    0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+  font-size: 16px !important;
+  position: relative !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Подзаголовки в статистических блоках */
+.bfkpis__card header span {
+  font-weight: 700 !important;
+  color: #222222 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  display: block !important;
+  margin-top: 0.25rem !important;
+  font-size: 13px !important;
+}
+
+/* Добавляем левую полосу для лучшей видимости заголовков */
+.bfkpis__card header::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -20px !important;
+  width: 4px !important;
+  height: 100% !important;
+  background: linear-gradient(180deg, #FF6B00, #FF9950) !important;
+  border-radius: 2px !important;
+}
+
+/* Мобильная адаптивность ТОЛЬКО для заголовков статистических блоков */
+@media (max-width: 768px) {
+  .bfkpis__card header {
+    font-size: 15px !important;
+    font-weight: 800 !important;
+  }
+  
+  .bfkpis__card header span {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bfkpis__card header {
+    font-size: 14px !important;
+    font-weight: 800 !important;
+  }
+  
+  .bfkpis__card header span {
+    font-size: 11px !important;
+  }
+}

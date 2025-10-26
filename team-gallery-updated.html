@@ -1,0 +1,465 @@
+<!-- Стильная галерея команды -->
+<div class="team-gallery-section">
+  <div class="team-container">
+    <div class="team-header">
+      <div class="team-title-section">
+        <h2 class="team-title">Наша команда</h2>
+        <p class="team-description">В нашем штате квалифицированный персонал с успешным опытом в ведущих банках</p>
+      </div>
+      <div class="team-navigation">
+        <button class="nav-arrow prev-arrow" onclick="scrollTeam('left')">‹</button>
+        <button class="nav-arrow next-arrow" onclick="scrollTeam('right')">›</button>
+      </div>
+    </div>
+    
+    <div class="team-cards-container">
+      <div class="team-cards-wrapper" id="teamCards">
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/01-anastasia-borisova.jpg" alt="Анастасия Борисова - генеральный директор ООО Бизнес-Финанс" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Анастасия Борисова</h3>
+            <p class="card-position">Генеральный директор</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/02-elena-remizova.jpg" alt="Елена Ремизова - руководитель отдела экспертизы и документарного сопровождения" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Елена Ремизова</h3>
+            <p class="card-position">Руководитель отдела экспертизы и документарного сопровождения</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/03-tatyana-lopatina.jpg" alt="Татьяна Лопатина - финансовый консультант в области госзаказа" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Татьяна Лопатина</h3>
+            <p class="card-position">Финансовый консультант в области госзаказа, специалист по работе с корпоративными клиентами</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/04-anastasia-lokhova.jpg" alt="Анастасия Лохова - финансовый консультант в области госзаказа" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Анастасия Лохова</h3>
+            <p class="card-position">Финансовый консультант в области госзаказа, специалист по работе с корпоративными клиентами</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/05-anzhelika-kulikova.jpg" alt="Анжелика Куликова - финансовый консультант в области госзаказа" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Анжелика Куликова</h3>
+            <p class="card-position">Финансовый консультант в области госзаказа, специалист по работе с корпоративными клиентами</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/06-maria-belonogova.jpg" alt="Мария Белоногова - специалист отдела экспертизы и документарного сопровождения" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Мария Белоногова</h3>
+            <p class="card-position">Специалист отдела экспертизы и документарного сопровождения</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/07-evgeniya-nosova.jpg" alt="Евгения Носова - заместитель директора ООО Бизнес-Финанс" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Евгения Носова</h3>
+            <p class="card-position">Заместитель директора</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <div class="card-image">
+            <img src="https://bizfin-pro.ru/wp-content/uploads/2025/10/08-aleksandr-volokontsev.jpg" alt="Александр Волоконцев - финансовый консультант, руководитель отдела по работе с корпоративными клиентами" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">Александр Волоконцев</h3>
+            <p class="card-position">Финансовый консультант в области госзаказа, руководитель отдела по работе с корпоративными клиентами</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.team-gallery-section {
+  background-color: #F5F5F5;
+  padding: 80px 20px;
+  margin: 0;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.team-title-section {
+  flex: 1;
+}
+
+.team-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.team-description {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+}
+
+.team-navigation {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nav-arrow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: #ff8c00;
+  border-color: #ff8c00;
+  color: white;
+}
+
+.team-cards-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.team-cards-wrapper {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.3s ease;
+  padding: 10px 0;
+}
+
+.team-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  flex: 0 0 280px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.card-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.card-position {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .team-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .team-navigation {
+    margin-top: 20px;
+  }
+  
+  .team-card {
+    flex: 0 0 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-gallery-section {
+    padding: 60px 15px;
+  }
+  
+  .team-title {
+    font-size: 36px;
+  }
+  
+  .team-description {
+    font-size: 16px;
+  }
+  
+  .team-cards-wrapper {
+    gap: 20px;
+  }
+  
+  .team-card {
+    flex: 0 0 220px;
+  }
+  
+  .card-image {
+    height: 280px;
+  }
+  
+  .card-content {
+    padding: 20px 15px;
+  }
+  
+  .card-position {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-title {
+    font-size: 28px;
+  }
+  
+  .team-description {
+    font-size: 14px;
+  }
+  
+  .team-card {
+    flex: 0 0 200px;
+  }
+  
+  .card-image {
+    height: 250px;
+  }
+  
+  .card-name {
+    font-size: 18px;
+  }
+  
+  .card-position {
+    font-size: 12px;
+  }
+}
+
+/* Анимации появления */
+.team-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.team-card:nth-child(1) { animation-delay: 0.1s; }
+.team-card:nth-child(2) { animation-delay: 0.2s; }
+.team-card:nth-child(3) { animation-delay: 0.3s; }
+.team-card:nth-child(4) { animation-delay: 0.4s; }
+.team-card:nth-child(5) { animation-delay: 0.5s; }
+.team-card:nth-child(6) { animation-delay: 0.6s; }
+.team-card:nth-child(7) { animation-delay: 0.7s; }
+.team-card:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Градиентные тени по краям */
+.team-cards-container::before,
+.team-cards-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.team-cards-container::before {
+  left: 0;
+  background: linear-gradient(to right, #F5F5F5, transparent);
+}
+
+.team-cards-container::after {
+  right: 0;
+  background: linear-gradient(to left, #F5F5F5, transparent);
+}
+</style>
+
+<script>
+let currentPosition = 0;
+const cardWidth = 310; // ширина карточки + gap (280 + 30)
+const visibleCards = Math.floor(window.innerWidth / cardWidth);
+const totalCards = 8;
+
+function scrollTeam(direction) {
+  const container = document.getElementById('teamCards');
+  const maxPosition = Math.max(0, totalCards - visibleCards);
+  
+  if (direction === 'left') {
+    currentPosition = Math.max(0, currentPosition - 1);
+  } else {
+    currentPosition = Math.min(maxPosition, currentPosition + 1);
+  }
+  
+  const translateX = -currentPosition * cardWidth;
+  container.style.transform = `translateX(${translateX}px)`;
+  
+  // Обновляем состояние кнопок
+  updateNavigationButtons();
+}
+
+function updateNavigationButtons() {
+  const prevButton = document.querySelector('.prev-arrow');
+  const nextButton = document.querySelector('.next-arrow');
+  const maxPosition = Math.max(0, totalCards - visibleCards);
+  
+  prevButton.style.opacity = currentPosition > 0 ? '1' : '0.5';
+  nextButton.style.opacity = currentPosition < maxPosition ? '1' : '0.5';
+  
+  prevButton.disabled = currentPosition <= 0;
+  nextButton.disabled = currentPosition >= maxPosition;
+}
+
+// Автоматическая прокрутка при наведении
+document.addEventListener('DOMContentLoaded', function() {
+  const cardsWrapper = document.getElementById('teamCards');
+  const cards = cardsWrapper.querySelectorAll('.team-card');
+  
+  // Плавная прокрутка при наведении на карточки
+  cards.forEach((card, index) => {
+    card.addEventListener('mouseenter', function() {
+      if (index >= currentPosition && index < currentPosition + visibleCards) {
+        // Если карточка уже видна, не меняем позицию
+        return;
+      }
+      
+      // Центрируем карточку
+      const newPosition = Math.max(0, Math.min(totalCards - visibleCards, index - Math.floor(visibleCards / 2)));
+      currentPosition = newPosition;
+      
+      const translateX = -currentPosition * cardWidth;
+      cardsWrapper.style.transform = `translateX(${translateX}px)`;
+      
+      updateNavigationButtons();
+    });
+  });
+  
+  // Обновляем состояние кнопок при загрузке
+  updateNavigationButtons();
+  
+  // Обновляем при изменении размера окна
+  window.addEventListener('resize', function() {
+    const newVisibleCards = Math.floor(window.innerWidth / cardWidth);
+    if (newVisibleCards !== visibleCards) {
+      currentPosition = Math.min(currentPosition, Math.max(0, totalCards - newVisibleCards));
+      const translateX = -currentPosition * cardWidth;
+      cardsWrapper.style.transform = `translateX(${translateX}px)`;
+      updateNavigationButtons();
+    }
+  });
+});
+
+// Добавляем поддержку свайпов на мобильных устройствах
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.team-cards-container');
+  
+  container.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+  
+  container.addEventListener('touchmove', function(e) {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+  });
+  
+  container.addEventListener('touchend', function() {
+    if (!isDragging) return;
+    isDragging = false;
+    
+    const diff = startX - currentX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        scrollTeam('right');
+      } else {
+        scrollTeam('left');
+      }
+    }
+  });
+});
+</script>

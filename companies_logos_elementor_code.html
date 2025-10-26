@@ -1,0 +1,113 @@
+<div class="companies-partners-logos" style="
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 30px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+">
+    <div class="companies-logos-track" style="
+        display: flex;
+        align-items: center;
+        height: 100%;
+        animation: scroll-left-seamless 20s linear infinite;
+        gap: 40px;
+        padding: 0 20px;
+        width: max-content;
+    ">
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/gazprom.svg" alt="Газпром" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/rosneft.svg" alt="Роснефть" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/lukoil.svg" alt="Лукойл" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/sberbank.svg" alt="Сбербанк" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/rzd.svg" alt="РЖД" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/rosatom.svg" alt="Росатом" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        
+        <!-- Дублируем для бесшовной анимации -->
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/gazprom.svg" alt="Газпром" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/rosneft.svg" alt="Роснефть" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/lukoil.svg" alt="Лукойл" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/sberbank.svg" alt="Сбербанк" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/rzd.svg" alt="РЖД" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+        <div class="company-logo" style="flex-shrink: 0; height: 40px; width: auto; opacity: 0.8; transition: all 0.3s ease; filter: grayscale(20%) brightness(1.1);">
+            <img src="/wp-content/uploads/rosatom.svg" alt="Росатом" style="height: 100%; width: auto; max-width: 120px;">
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes scroll-left-seamless {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .companies-partners-logos {
+        padding: 20px 15px !important;
+        margin: 15px 0 !important;
+    }
+    
+    .companies-logos-track {
+        gap: 25px !important;
+        padding: 0 15px !important;
+    }
+    
+    .company-logo {
+        height: 35px !important;
+    }
+    
+    .company-logo img {
+        max-width: 100px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .companies-partners-logos {
+        padding: 15px 10px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .companies-logos-track {
+        gap: 20px !important;
+        padding: 0 10px !important;
+    }
+    
+    .company-logo {
+        height: 30px !important;
+    }
+    
+    .company-logo img {
+        max-width: 80px !important;
+    }
+}
+</style>

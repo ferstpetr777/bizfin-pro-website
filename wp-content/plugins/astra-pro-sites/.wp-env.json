@@ -1,0 +1,13 @@
+{
+    "core": null,
+    "plugins": [
+        ".",
+        "./tests/e2e/e2e-plugin"
+    ],
+    "port": 9092,
+    "env": {
+        "tests": {
+            "port": 9093
+        }
+    }
+}

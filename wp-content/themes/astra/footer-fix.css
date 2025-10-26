@@ -1,0 +1,112 @@
+/* Исправление цветов футера - заголовки и текст должны быть черными */
+
+/* Исправление заголовков в блоке контактов */
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6,
+.footer-widget h1,
+.footer-widget h2,
+.footer-widget h3,
+.footer-widget h4,
+.footer-widget h5,
+.footer-widget h6,
+.ast-footer-widget h1,
+.ast-footer-widget h2,
+.ast-footer-widget h3,
+.ast-footer-widget h4,
+.ast-footer-widget h5,
+.ast-footer-widget h6,
+.elementor-widget-heading h1,
+.elementor-widget-heading h2,
+.elementor-widget-heading h3,
+.elementor-widget-heading h4,
+.elementor-widget-heading h5,
+.elementor-widget-heading h6,
+.elementor-heading-title {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* Исправление текста в блоке контактов */
+.site-footer,
+.footer-widget,
+.ast-footer-widget,
+.elementor-widget-text-editor,
+.elementor-widget-html,
+.elementor-widget-shortcode {
+    color: #000000 !important;
+}
+
+/* Исправление ссылок в футере */
+.site-footer a,
+.footer-widget a,
+.ast-footer-widget a,
+.elementor-widget-text-editor a,
+.elementor-widget-html a {
+    color: #000000 !important;
+}
+
+/* Исправление для всех элементов футера */
+.site-footer *,
+.footer-widget *,
+.ast-footer-widget *,
+.elementor-widget-text-editor *,
+.elementor-widget-html * {
+    color: #000000 !important;
+}
+
+/* Специально для блока контактов */
+.footer-widget:contains("Контакты") *,
+.ast-footer-widget:contains("Контакты") *,
+.elementor-widget:contains("Контакты") * {
+    color: #000000 !important;
+}
+
+/* Скрытие пустого подвала */
+.site-footer .ast-footer-copyright,
+.site-footer .footer-copyright,
+.site-footer .copyright,
+.footer-copyright,
+.ast-footer-copyright,
+.copyright {
+    display: none !important;
+}
+
+/* Скрытие всего нижнего подвала если он пустой */
+.site-footer .ast-builder-footer-row[data-section="section-below-footer-builder"],
+.site-footer .ast-builder-footer-row[data-section="section-primary-footer-builder"]:empty {
+    display: none !important;
+}
+
+/* Дополнительные селекторы для Astra темы */
+.ast-footer-bar,
+.ast-footer-bar * {
+    color: #000000 !important;
+}
+
+/* Исправление для Elementor виджетов в футере */
+.elementor-section.elementor-section-footer .elementor-widget-heading .elementor-heading-title,
+.elementor-section.elementor-section-footer .elementor-widget-text-editor,
+.elementor-section.elementor-section-footer .elementor-widget-html {
+    color: #000000 !important;
+}
+
+/* Исправление для всех заголовков в футере */
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+.footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6 {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* Исправление для всего текста в футере */
+footer, .footer {
+    color: #000000 !important;
+}
+
+footer *, .footer * {
+    color: #000000 !important;
+}
+

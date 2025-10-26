@@ -1,0 +1,219 @@
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                           СИСТЕМА БЛОГА BIZFIN PRO                              │
+│                            АРХИТЕКТУРНАЯ ДИАГРАММА                              │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                WORDPRESS CORE                                   │
+│  • save_post hooks                                                              │
+│  • template_include filters                                                     │
+│  • wp_enqueue_scripts actions                                                   │
+│  • rewrite_rules                                                                │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                         ALPHABET BLOG PANEL V2                                  │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐                 │
+│  │   CORE PLUGIN   │  │   TEMPLATES     │  │   ASSETS        │                 │
+│  │                 │  │                 │  │                 │                 │
+│  │ • ABP_V2_Plugin │  │ • main-page.php │  │ • abp-v2.css    │                 │
+│  │ • save_first_   │  │ • archive.php   │  │ • abp-v2.js     │                 │
+│  │   letter()      │  │                 │  │                 │                 │
+│  │ • ajax_fetch_   │  │                 │  │                 │                 │
+│  │   posts()       │  │                 │  │                 │                 │
+│  │ • seo_title()   │  │                 │  │                 │                 │
+│  │ • rewrite_rules │  │                 │  │                 │                 │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                        │
+                    ┌───────────────────┼───────────────────┐
+                    │                   │                   │
+                    ▼                   ▼                   ▼
+┌─────────────────────────┐ ┌─────────────────────────┐ ┌─────────────────────────┐
+│  YOAST ALPHABET         │ │  ABP AI                 │ │  ABP ARTICLE            │
+│  INTEGRATION            │ │  CATEGORIZATION         │ │  QUALITY MONITOR        │
+│                         │ │                         │ │                         │
+│ • auto_optimize_post_   │ │ • auto_categorize_      │ │ • check_post_quality    │
+│   seo()                 │ │   post()                │ │ • optimize_post_        │
+│ • optimize_letter_      │ │ • categorize_post_      │ │   automatically()       │
+│   archive_title()       │ │   with_ai()             │ │ • quality_history       │
+│ • wpseo_title filter    │ │ • OpenAI GPT-3.5 API    │ │ • bulk_optimization     │
+│ • wpseo_metadesc filter │ │ • 10 business categories│ │ • integration_checks    │
+└─────────────────────────┘ └─────────────────────────┘ └─────────────────────────┘
+                    │                   │                   │
+                    └───────────────────┼───────────────────┘
+                                        │
+                                        ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                              ABP EXTERNAL API                                  │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐                 │
+│  │   REST ROUTES   │  │   ENDPOINTS     │  │   FEATURES      │                 │
+│  │                 │  │                 │  │                 │                 │
+│  │ /abp/v1/letters │  │ GET /letters    │  │ CORS Support    │                 │
+│  │ /abp/v1/posts/  │  │ GET /posts/{l}  │  │ JSON Response   │                 │
+│  │ /abp/v1/search  │  │ GET /search     │  │ Authentication  │                 │
+│  │ /abp/v1/stats   │  │ GET /stats      │  │ Rate Limiting   │                 │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                               ABP SEARCH CACHE                                 │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐                 │
+│  │   CACHING       │  │   PERFORMANCE   │  │   MANAGEMENT    │                 │
+│  │                 │  │                 │  │                 │                 │
+│  │ • TTL Cache     │  │ • AJAX Cache    │  │ • Auto Cleanup  │                 │
+│  │ • Result Cache  │  │ • 60-80% Speed  │  │ • Cache Inval   │                 │
+│  │ • 1 Hour TTL    │  │ • <2s Response  │  │ • Manual Clear  │                 │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                               ПОТОКИ ДАННЫХ                                     │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+1. СОХРАНЕНИЕ СТАТЬИ:
+   save_post → ABP_V2_Plugin::save_first_letter()
+            → YoastAlphabetIntegration::auto_optimize_post_seo()
+            → ABP_AI_Categorization::auto_categorize_post()
+            → ABP_Article_Quality_Monitor::check_post_quality()
+
+2. ЗАГРУЗКА БЛОГА:
+   Template Load → abp-v2-main-page.php
+                → enqueue_assets()
+                → JavaScript инициализация
+                → AJAX загрузка контента
+
+3. ПЕРЕКЛЮЧЕНИЕ БУКВ:
+   Click Event → abp-v2.js::loadPosts()
+              → AJAX Request → ajax_fetch_posts()
+              → Response Processing
+              → DOM Update
+              → URL Update (pushState)
+
+4. SEO ОПТИМИЗАЦИЯ:
+   Page Load → seo_title() → Dynamic Title
+            → seo_meta() → Meta Description
+            → Yoast Integration → Advanced SEO
+
+5. AI КАТЕГОРИЗАЦИЯ:
+   Post Save → OpenAI API Request → Content Analysis
+            → Category Assignment → Meta Update
+            → Quality Check → Integration Update
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                             ТЕХНИЧЕСКИЙ СТЕК                                    │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+BACKEND:
+• PHP 7.4+
+• WordPress 5.0+
+• MySQL 5.6+
+• OpenAI GPT-3.5 API
+
+FRONTEND:
+• JavaScript ES6
+• CSS3
+• AJAX
+• History API
+• Responsive Design
+
+INTEGRATION:
+• Yoast SEO
+• WordPress Hooks
+• REST API
+• CORS Support
+
+DATABASE:
+• WordPress Meta Tables
+• Custom Quality Table
+• Cache Tables
+• Search Indexes
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                              ФАЙЛОВАЯ СТРУКТУРА                                │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+alphabet-blog-panel-v2/
+├── alphabet-blog-panel-v2.php          # Основной класс
+├── assets/
+│   ├── css/abp-v2.css                  # Стили
+│   └── js/abp-v2.js                    # JavaScript
+├── templates/
+│   ├── abp-v2-main-page.php            # Главная страница
+│   └── abp-v2-archive.php              # Буквенные архивы
+└── ARCHITECTURE_DOCUMENTATION.md       # Документация
+
+yoast-alphabet-integration/
+├── yoast-alphabet-integration.php      # Основной класс
+├── assets/
+│   ├── admin.css                       # Админ стили
+│   └── admin.js                        # Админ скрипты
+
+abp-ai-categorization/
+├── abp-ai-categorization.php           # AI категоризация
+
+abp-external-api/
+├── abp-external-api.php                # REST API
+
+abp-article-quality-monitor/
+├── abp-article-quality-monitor.php     # Мониторинг качества
+├── assets/
+│   ├── admin.css                       # Админ стили
+│   └── admin.js                        # Админ скрипты
+
+abp-search-cache/
+├── abp-search-cache.php                # Кеширование
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                              МЕТА-ДАННЫЕ                                       │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+POST META FIELDS:
+• abp_first_letter      - Первая буква заголовка
+• abp_ai_category       - AI категория статьи
+• _yoast_wpseo_title    - SEO заголовок
+• _yoast_wpseo_metadesc - SEO описание
+• abp_quality_check     - Статус проверки качества
+
+CUSTOM TABLES:
+• wp_abp_quality_checks - История проверок качества
+
+URL STRUCTURE:
+• /blog2/               - Главная страница блога
+• /blog2/{Буква}/       - Буквенные архивы
+• /wp-json/abp/v1/      - REST API endpoints
+
+AJAX ENDPOINTS:
+• abp_v2_fetch_posts    - Загрузка статей по букве
+• abp_v2_search         - Поиск по ключевым словам
+• yai_optimize_post     - SEO оптимизация
+• abp_ai_categorize     - AI категоризация
+• abp_bulk_optimize     - Массовая оптимизация
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                            ПРОИЗВОДИТЕЛЬНОСТЬ                                   │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+ОПТИМИЗАЦИИ:
+• Кеширование AJAX запросов (60-80% ускорение)
+• Ленивая загрузка контента
+• Минификация CSS/JS
+• Оптимизированные SQL запросы
+• CDN готовность
+
+МОНИТОРИНГ:
+• Логирование ошибок
+• Статистика производительности
+• Отслеживание качества контента
+• Анализ использования API
+
+БЕЗОПАСНОСТЬ:
+• Nonce защита AJAX
+• Санитизация входных данных
+• Валидация параметров
+• CORS настройки
+
+
+

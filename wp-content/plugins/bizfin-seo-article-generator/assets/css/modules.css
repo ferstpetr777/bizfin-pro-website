@@ -1,0 +1,635 @@
+/* BizFin SEO Article Generator - Modules Styles */
+
+/* Общие стили для модулей */
+.bsag-module {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.bsag-module h3 {
+    color: #0073aa;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Калькулятор банковских гарантий */
+.bsag-calculator-module {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.bsag-calculator-module h3 {
+    color: white;
+}
+
+.calculator-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: white;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 14px;
+}
+
+.calculate-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.calculate-btn:hover {
+    background: #218838;
+}
+
+.calculation-result {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.calculation-result h4 {
+    margin-top: 0;
+    color: white;
+}
+
+.calculation-result p {
+    margin: 5px 0;
+    color: white;
+}
+
+.cost-result, .monthly-cost {
+    font-weight: 600;
+    color: #ffd700;
+}
+
+/* Схема-диаграмма процесса */
+.bsag-schema-diagram-module {
+    background: #fff;
+    border-left: 4px solid #0073aa;
+}
+
+.process-diagram {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 150px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    border-color: #0073aa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #0073aa;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.step-content h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.step-content p {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+}
+
+.process-arrow {
+    font-size: 24px;
+    color: #0073aa;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .process-diagram {
+        flex-direction: column;
+    }
+    
+    .process-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+/* Таблица сравнения */
+.bsag-comparison-table-module {
+    background: #fff;
+    border-left: 4px solid #28a745;
+}
+
+.comparison-table {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comparison-table th {
+    background: #28a745;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.comparison-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Актуальные ставки */
+.bsag-live-rates-module {
+    background: #fff;
+    border-left: 4px solid #ffc107;
+}
+
+.rates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.rate-item {
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.rate-item:hover {
+    border-color: #ffc107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.bank-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.rate-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffc107;
+    margin-bottom: 5px;
+}
+
+.rate-period {
+    color: #666;
+    font-size: 12px;
+}
+
+.rates-update {
+    margin-top: 15px;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Чек-лист документов */
+.bsag-document-checklist-module {
+    background: #fff;
+    border-left: 4px solid #17a2b8;
+}
+
+.document-checklist {
+    margin-top: 15px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.checklist-item:hover {
+    background: #e9ecef;
+}
+
+.checklist-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.checklist-item label {
+    margin: 0;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Временная шкала */
+.bsag-timeline-module {
+    background: #fff;
+    border-left: 4px solid #6f42c1;
+}
+
+.timeline {
+    margin-top: 15px;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #6f42c1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 70px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: #6f42c1;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px #6f42c1;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: #6f42c1;
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Разбор стоимости */
+.bsag-cost-breakdown-module {
+    background: #fff;
+    border-left: 4px solid #dc3545;
+}
+
+.cost-breakdown {
+    margin-top: 15px;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #dc3545;
+}
+
+.cost-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.cost-value {
+    font-weight: 700;
+    color: #dc3545;
+    font-size: 18px;
+}
+
+.cost-description {
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Рейтинг банков */
+.bsag-bank-rating-module {
+    background: #fff;
+    border-left: 4px solid #fd7e14;
+}
+
+.bank-rating {
+    margin-top: 15px;
+}
+
+.rating-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #fd7e14;
+}
+
+.rating-item .bank-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.rating-score {
+    font-weight: 700;
+    color: #fd7e14;
+    font-size: 18px;
+    padding: 5px 10px;
+    background: rgba(253, 126, 20, 0.1);
+    border-radius: 4px;
+}
+
+.rating-description {
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* FAQ секция */
+.bsag-faq-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.bsag-faq-section h2 {
+    color: #0073aa;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 4px;
+    border-left: 4px solid #0073aa;
+}
+
+.faq-item h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.faq-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* CTA блок */
+.bsag-cta-block {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #0073aa 0%, #005a87 100%);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.bsag-cta-block h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.bsag-cta-block p {
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #28a745;
+    color: white;
+    border: 2px solid #28a745;
+}
+
+.btn-primary:hover {
+    background: #218838;
+    border-color: #218838;
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #0073aa;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .bsag-module {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .rates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cost-item, .rating-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-diagram {
+        flex-direction: column;
+    }
+    
+    .process-step {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .comparison-table {
+        font-size: 14px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 8px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bsag-module {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    .bsag-module {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .bsag-module h3 {
+        color: #63b3ed;
+    }
+    
+    .process-step {
+        background: #4a5568;
+        border-color: #718096;
+        color: #e2e8f0;
+    }
+    
+    .comparison-table th {
+        background: #2b6cb0;
+    }
+    
+    .comparison-table td {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .rate-item {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .checklist-item {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .cost-item, .rating-item {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+}
+

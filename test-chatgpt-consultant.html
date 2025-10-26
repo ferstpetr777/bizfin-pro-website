@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест ChatGPT Консультанта - BizFin Pro</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+        .header p {
+            margin: 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .test-section h2 {
+            color: #1f2937;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .test-section p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .shortcode-example {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .button {
+            display: inline-block;
+            background: #1e40af;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #1d4ed8;
+        }
+        .button-secondary {
+            background: #6b7280;
+        }
+        .button-secondary:hover {
+            background: #4b5563;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .feature-card h3 {
+            color: #1f2937;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #6b7280;
+            margin: 0;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-active {
+            background: #10b981;
+        }
+        .status-inactive {
+            background: #ef4444;
+        }
+        .admin-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .admin-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #374151;
+            transition: all 0.2s;
+        }
+        .admin-links a:hover {
+            background: #e5e7eb;
+            border-color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 ChatGPT Консультант BizFin Pro</h1>
+            <p>Профессиональный AI-консультант по банковским гарантиям</p>
+        </div>
+
+        <div class="test-section">
+            <h2>📋 Статус плагина</h2>
+            <p>Проверьте статус установки и активации плагина:</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><span class="status-indicator status-active"></span>Плагин установлен</h3>
+                    <p>Файлы плагина созданы в директории wp-content/plugins/bizfin-chatgpt-consultant/</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="status-indicator status-inactive"></span>Требует активации</h3>
+                    <p>Активируйте плагин в админ-панели WordPress</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="status-indicator status-inactive"></span>Настройка API</h3>
+                    <p>Настройте OpenAI API ключ в админ-панели</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>⚙️ Админ-панель</h2>
+            <p>Управление плагином через админ-панель WordPress:</p>
+            
+            <div class="admin-links">
+                <a href="/wp-admin/admin.php?page=bizfin-chatgpt-consultant">
+                    🏠 Главная панель
+                </a>
+                <a href="/wp-admin/admin.php?page=bizfin-chatgpt-consultant-settings">
+                    ⚙️ Настройки
+                </a>
+                <a href="/wp-admin/admin.php?page=bizfin-chatgpt-consultant-stats">
+                    📊 Статистика
+                </a>
+                <a href="/wp-admin/admin.php?page=bizfin-chatgpt-consultant-logs">
+                    📝 Логи
+                </a>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>💬 Использование на сайте</h2>
+            <p>Добавьте чат-консультанта на любую страницу с помощью шорткода:</p>
+            
+            <div class="shortcode-example">
+[bizfin_chatgpt]
+            </div>
+            
+            <p>Или с дополнительными параметрами:</p>
+            
+            <div class="shortcode-example">
+[bizfin_chatgpt title="Мой консультант" theme="dark" height="500px" show_files="true"]
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔧 Возможности плагина</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🤖 AI-консультант "Алексей"</h3>
+                    <p>Специализированный консультант по банковским гарантиям с ограниченной тематикой</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📁 Обработка файлов</h3>
+                    <p>Поддержка JPG, PNG, PDF, DOC, DOCX, XLS, XLSX с автоматическим извлечением текста</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧠 Векторная память</h3>
+                    <p>Контекстная память и поиск релевантной информации из истории общения</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🍪 Идентификация пользователей</h3>
+                    <p>Система cookies для запоминания пользователей и их истории</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚙️ Гибкие настройки</h3>
+                    <p>Выбор модели OpenAI, настройка параметров агента, управление файлами</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Мониторинг</h3>
+                    <p>Подробная статистика, логирование, мониторинг API и состояния системы</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🚀 Следующие шаги</h2>
+            <p>Для полного запуска плагина выполните следующие действия:</p>
+            
+            <ol style="color: #6b7280; line-height: 1.8;">
+                <li><strong>Активируйте плагин</strong> в админ-панели WordPress (Плагины → Установленные)</li>
+                <li><strong>Настройте API</strong> в разделе "ChatGPT Консультант → Настройки"</li>
+                <li><strong>Протестируйте подключение</strong> к OpenAI API</li>
+                <li><strong>Добавьте шорткод</strong> на страницу для тестирования</li>
+                <li><strong>Проверьте работу</strong> чата и загрузки файлов</li>
+                <li><strong>Настройте параметры</strong> агента под ваши потребности</li>
+            </ol>
+            
+            <div style="margin-top: 30px;">
+                <a href="/wp-admin/plugins.php" class="button">Активировать плагин</a>
+                <a href="/wp-admin/admin.php?page=bizfin-chatgpt-consultant-settings" class="button button-secondary">Настройки</a>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📞 Поддержка</h2>
+            <p>При возникновении проблем:</p>
+            <ul style="color: #6b7280; line-height: 1.8;">
+                <li>Проверьте логи в админ-панели (ChatGPT Консультант → Логи)</li>
+                <li>Убедитесь в корректности API ключа OpenAI</li>
+                <li>Проверьте права доступа к директории uploads</li>
+                <li>Убедитесь в наличии средств на счете OpenAI</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Проверка статуса плагина
+        document.addEventListener('DOMContentLoaded', function() {
+            // Можно добавить AJAX проверку статуса плагина
+            console.log('BizFin ChatGPT Consultant - Test Page Loaded');
+        });
+    </script>
+</body>
+</html>

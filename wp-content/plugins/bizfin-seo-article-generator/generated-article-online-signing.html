@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подписание документов онлайн: ЭДО и КЭП для бизнеса</title>
+    <meta name="description" content="Подписание документов онлайн с использованием ЭДО и КЭП. Безопасный процесс, проверка подлинности, полностью удаленная работа с документами.">
+    <meta name="keywords" content="подписание документов онлайн, ЭДО, КЭП, электронная подпись, удаленная работа с документами">
+    <style>
+        :root {
+            --orange: #FF6B00;
+            --orange-2: #FF9A3C;
+            --text: #0F172A;
+            --text-muted: #556070;
+            --surface: #FFFFFF;
+            --surface-2: #F7F7F7;
+            --blue: #3498db;
+            --green: #28a745;
+            --yellow: #ffc107;
+            --red: #dc3545;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--surface-2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--surface);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--orange);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--text);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, var(--orange), var(--orange-2));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .example {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid white;
+        }
+
+        .toc {
+            background: var(--surface-2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .toc strong {
+            color: var(--orange);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--orange);
+            text-decoration: underline;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            margin: 2rem auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .content-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 8px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .form-module {
+            background: linear-gradient(135deg, var(--blue), var(--info));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .form-module h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--orange-2);
+        }
+
+        .step-guide {
+            background: var(--surface-2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--blue);
+        }
+
+        .step-guide h4 {
+            color: var(--blue);
+            margin-bottom: 1rem;
+        }
+
+        .step-guide ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .step-guide li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .checklist {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid var(--green);
+            border-left: 4px solid var(--green);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist h4 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .checklist ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .checklist li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .faq-section {
+            background: var(--surface-2);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--green);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--green), #20c997);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--green);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .internal-link {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted var(--blue);
+            transition: all 0.3s ease;
+        }
+
+        .internal-link:hover {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 193, 7, 0.3) 0%, rgba(255, 193, 7, 0.3) 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid var(--yellow);
+            border-left: 4px solid var(--yellow);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .success-box {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid var(--green);
+            border-left: 4px solid var(--green);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .info-box {
+            background: rgba(23, 162, 184, 0.1);
+            border: 1px solid var(--info);
+            border-left: 4px solid var(--info);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .error-box {
+            background: rgba(220, 53, 69, 0.1);
+            border: 1px solid var(--red);
+            border-left: 4px solid var(--red);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .sample-document {
+            background: var(--surface);
+            border: 2px solid var(--blue);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .sample-document h4 {
+            color: var(--blue);
+            margin-bottom: 1rem;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, var(--green), #20c997);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .download-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            background: white;
+            color: var(--green);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 16px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .intro-section, .form-module, .cta-section {
+                padding: 1.5rem;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px 12px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .container {
+                padding: 60px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- wp:bizfin/intro-section -->
+        <section class="intro-section">
+            <p><strong>Подписание документов онлайн</strong> — это современный способ заверения документов с использованием электронной цифровой подписи (ЭДО) и квалифицированной электронной подписи (КЭП) через интернет. Этот процесс позволяет полностью дистанционно оформлять договоры, соглашения и другие важные документы без необходимости личного присутствия сторон.</p>
+            
+            <div class="example">
+                <p><strong>Например,</strong> Михаил Сергеевич — генеральный директор IT-компании "ТехноСофт". Компания заключила контракт с заказчиком из другого города на разработку программного обеспечения. Поэтому Михаилу Сергеевичу нужно подписать договор и дополнительные соглашения. Чтобы не тратить время на поездки и курьерскую доставку, "ТехноСофт" использует систему онлайн подписания документов. По условиям системы Михаил Сергеевич получает уведомление на email, переходит по ссылке, проверяет документ и ставит электронную подпись, если все условия устраивают.</p>
+            </div>
+        </section>
+        <!-- /wp:bizfin/intro-section -->
+
+        <!-- wp:bizfin/toc -->
+        <nav class="toc">
+            <strong>Содержание:</strong>
+            <ul>
+                <li><a href="#signing-process">Процесс онлайн подписания документов</a></li>
+                <li><a href="#electronic-signature">Электронная подпись и КЭП</a></li>
+                <li><a href="#security-measures">Безопасность и защита данных</a></li>
+                <li><a href="#verification-process">Проверка подлинности документов</a></li>
+                <li><a href="#online-form">Форма для онлайн подписания</a></li>
+                <li><a href="#faq-section">Часто задаваемые вопросы</a></li>
+                <li><a href="#cta-section">Оформить документы онлайн</a></li>
+            </ul>
+        </nav>
+        <!-- /wp:bizfin/toc -->
+
+        <!-- wp:bizfin/article-image -->
+        <img src="/wp-content/uploads/2024/online-document-signing.jpg" alt="Изображение для статьи: Подписание документов онлайн" class="article-image">
+        <!-- /wp:bizfin/article-image -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="signing-process">
+            <h2>Процесс онлайн подписания документов</h2>
+            
+            <p>Современный процесс подписания документов онлайн представляет собой многоэтапную процедуру, которая обеспечивает юридическую значимость и безопасность электронных документов. Этот процесс значительно упрощает деловые операции и позволяет экономить время и ресурсы.</p>
+
+            <h3>Основные этапы процесса</h3>
+            
+            <div class="step-guide">
+                <h4>Пошаговое руководство по подписанию:</h4>
+                <ol>
+                    <li><strong>Подготовка документа</strong> — создание или загрузка файла в систему</li>
+                    <li><strong>Настройка параметров</strong> — определение порядка подписания и уведомлений</li>
+                    <li><strong>Отправка на подписание</strong> — рассылка ссылок участникам процесса</li>
+                    <li><strong>Проверка документа</strong> — ознакомление с содержанием и условиями</li>
+                    <li><strong>Проставление подписи</strong> — использование ЭДО или КЭП</li>
+                    <li><strong>Завершение процесса</strong> — получение подписанного документа</li>
+                </ol>
+            </div>
+
+            <h3>Технические требования</h3>
+            
+            <p>Для успешного подписания документов онлайн необходимо соблюдение следующих технических требований:</p>
+
+            <div class="checklist">
+                <h4>Чек-лист технических требований:</h4>
+                <ul>
+                    <li>Современный веб-браузер с поддержкой JavaScript</li>
+                    <li>Стабильное интернет-соединение</li>
+                    <li>Сертификат электронной подписи (при использовании КЭП)</li>
+                    <li>Специальное программное обеспечение (при необходимости)</li>
+                    <li>Мобильное устройство для двухфакторной аутентификации</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Важно:</strong> Большинство современных платформ для онлайн подписания работают через веб-браузер и не требуют установки дополнительного программного обеспечения. Это делает процесс доступным для пользователей с любым уровнем технической подготовки.</p>
+            </div>
+
+            <h3>Преимущества онлайн подписания</h3>
+            
+            <p>Использование систем онлайн подписания документов предоставляет множество преимуществ:</p>
+
+            <ul>
+                <li><strong>Экономия времени</strong> — подписание занимает минуты вместо дней</li>
+                <li><strong>Снижение затрат</strong> — отсутствие расходов на курьерскую доставку</li>
+                <li><strong>Повышение безопасности</strong> — многоуровневая защита и шифрование</li>
+                <li><strong>Удобство использования</strong> — доступ с любого устройства</li>
+                <li><strong>Юридическая значимость</strong> — полное соответствие законодательству</li>
+                <li><strong>Экологичность</strong> — сокращение использования бумаги</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Практический совет:</strong> При выборе платформы для онлайн подписания обращайте внимание на наличие сертификатов соответствия и интеграцию с популярными CRM-системами. Это обеспечит совместимость с вашими бизнес-процессами.</p>
+            </div>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="electronic-signature">
+            <h2>Электронная подпись и КЭП</h2>
+            
+            <p>Электронная подпись является ключевым элементом системы онлайн подписания документов. Понимание различий между типами электронных подписей и их применения критически важно для правильного выбора решения.</p>
+
+            <h3>Типы электронных подписей</h3>
+            
+            <p>В соответствии с российским законодательством выделяются три основных типа электронных подписей:</p>
+
+            <h4>1. Простая электронная подпись (ПЭП)</h4>
+            <p>Простая электронная подпись создается с использованием кодов, паролей или иных средств подтверждения личности. Применяется для:</p>
+            <ul>
+                <li>Внутреннего документооборота организации</li>
+                <li>Получения государственных услуг</li>
+                <li>Подписания договоров с физическими лицами</li>
+            </ul>
+
+            <h4>2. Усиленная неквалифицированная электронная подпись (НЭП)</h4>
+            <p>Создается с использованием средств криптографической защиты информации. Обеспечивает:</p>
+            <ul>
+                <li>Определение лица, подписавшего документ</li>
+                <li>Обнаружение факта внесения изменений</li>
+                <li>Повышенный уровень защиты</li>
+            </ul>
+
+            <h4>3. Квалифицированная электронная подпись (КЭП)</h4>
+            <p>Наиболее защищенный тип подписи, созданный с использованием средств криптографической защиты информации, сертифицированных ФСБ России. Используется для:</p>
+            <ul>
+                <li>Сдачи отчетности в государственные органы</li>
+                <li>Участия в электронных торгах</li>
+                <li>Подписания документов с юридической силой</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>Внимание:</strong> Квалифицированная электронная подпись имеет полную юридическую силу и приравнивается к собственноручной подписи. Ее использование требует особой осторожности и соблюдения всех мер безопасности.</p>
+            </div>
+
+            <h3>Получение сертификата КЭП</h3>
+            
+            <div class="step-guide">
+                <h4>Процедура получения сертификата КЭП:</h4>
+                <ol>
+                    <li><strong>Выбор удостоверяющего центра</strong> — аккредитованного Минцифры России</li>
+                    <li><strong>Подача заявления</strong> — с приложением необходимых документов</li>
+                    <li><strong>Идентификация личности</strong> — личное присутствие или видеозвонок</li>
+                    <li><strong>Получение сертификата</strong> — на токене или в облаке</li>
+                    <li><strong>Установка программного обеспечения</strong> — для работы с подписью</li>
+                </ol>
+            </div>
+
+            <h3>Стоимость и срок действия</h3>
+            
+            <p>Стоимость сертификата КЭП варьируется в зависимости от удостоверяющего центра и типа носителя:</p>
+
+            <ul>
+                <li><strong>Облачный сертификат:</strong> 3,000-8,000 рублей в год</li>
+                <li><strong>Сертификат на токене:</strong> 5,000-12,000 рублей в год</li>
+                <li><strong>Сертификат для юридических лиц:</strong> 8,000-15,000 рублей в год</li>
+            </ul>
+
+            <p>Срок действия сертификата составляет 1 год, после чего необходимо продление.</p>
+
+            <div class="info-box">
+                <p><strong>Полезно знать:</strong> Многие удостоверяющие центры предлагают бесплатные пробные сертификаты на 30 дней. Это позволяет протестировать функциональность перед покупкой полной версии.</p>
+            </div>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="security-measures">
+            <h2>Безопасность и защита данных</h2>
+            
+            <p>Безопасность является критически важным аспектом системы онлайн подписания документов. Современные платформы используют многоуровневую систему защиты для обеспечения конфиденциальности и целостности данных.</p>
+
+            <h3>Методы защиты информации</h3>
+            
+            <p>Современные системы онлайн подписания применяют следующие методы защиты:</p>
+
+            <h4>1. Шифрование данных</h4>
+            <p>Все документы и данные шифруются с использованием алгоритмов AES-256 или аналогичных:</p>
+            <ul>
+                <li>Шифрование при передаче (TLS 1.3)</li>
+                <li>Шифрование при хранении</li>
+                <li>Шифрование резервных копий</li>
+            </ul>
+
+            <h4>2. Аутентификация пользователей</h4>
+            <p>Многофакторная аутентификация включает:</p>
+            <ul>
+                <li>Пароль или PIN-код</li>
+                <li>SMS-код или push-уведомление</li>
+                <li>Биометрические данные (отпечаток, лицо)</li>
+                <li>Аппаратные токены</li>
+            </ul>
+
+            <h4>3. Контроль доступа</h4>
+            <p>Система разграничения прав доступа обеспечивает:</p>
+            <ul>
+                <li>Ролевую модель доступа</li>
+                <li>Временные ограничения</li>
+                <li>Географические ограничения</li>
+                <li>Логирование всех действий</li>
+            </ul>
+
+            <div class="success-box">
+                <p><strong>Рекомендация:</strong> При выборе платформы для онлайн подписания убедитесь, что она имеет сертификаты соответствия требованиям ФЗ-152 "О персональных данных" и международным стандартам безопасности ISO 27001.</p>
+            </div>
+
+            <h3>Защита от мошенничества</h3>
+            
+            <p>Современные системы включают множество механизмов защиты от мошенничества:</p>
+
+            <div class="checklist">
+                <h4>Меры защиты от мошенничества:</h4>
+                <ul>
+                    <li>Проверка подлинности документов</li>
+                    <li>Детекция поддельных подписей</li>
+                    <li>Анализ поведения пользователей</li>
+                    <li>Блокировка подозрительных операций</li>
+                    <li>Уведомления о попытках несанкционированного доступа</li>
+                </ul>
+            </div>
+
+            <h3>Соответствие требованиям законодательства</h3>
+            
+            <p>Платформы онлайн подписания должны соответствовать следующим требованиям:</p>
+
+            <ul>
+                <li><strong>ФЗ-63 "Об электронной подписи"</strong> — требования к ЭП</li>
+                <li><strong>ФЗ-152 "О персональных данных"</strong> — защита персональных данных</li>
+                <li><strong>ФЗ-149 "Об информации"</strong> — требования к информационным системам</li>
+                <li><strong>ГОСТ Р 34.10-2012</strong> — алгоритмы электронной подписи</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>Важно:</strong> При работе с конфиденциальными документами обязательно используйте платформы с сертификацией ФСБ России. Это гарантирует соответствие требованиям государственной безопасности.</p>
+            </div>
+
+            <h3>Резервное копирование и восстановление</h3>
+            
+            <p>Надежные платформы обеспечивают:</p>
+
+            <ul>
+                <li>Автоматическое резервное копирование</li>
+                <li>Географически распределенное хранение</li>
+                <li>Возможность восстановления данных</li>
+                <li>Планы аварийного восстановления</li>
+            </ul>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/content-section -->
+        <section class="content-section" id="verification-process">
+            <h2>Проверка подлинности документов</h2>
+            
+            <p>Проверка подлинности электронных документов является важнейшим этапом процесса онлайн подписания. Современные системы используют комплексные методы для обеспечения достоверности и неизменности документов.</p>
+
+            <h3>Методы проверки подлинности</h3>
+            
+            <p>Системы онлайн подписания применяют следующие методы проверки:</p>
+
+            <h4>1. Криптографическая проверка</h4>
+            <p>Проверка электронной подписи включает:</p>
+            <ul>
+                <li>Валидацию сертификата подписи</li>
+                <li>Проверку целостности документа</li>
+                <li>Верификацию временных меток</li>
+                <li>Проверку отзыва сертификата</li>
+            </ul>
+
+            <h4>2. Визуальная проверка</h4>
+            <p>Пользователь может проверить:</p>
+            <ul>
+                <li>Содержание документа</li>
+                <li>Наличие всех необходимых подписей</li>
+                <li>Корректность заполнения полей</li>
+                <li>Соответствие требованиям</li>
+            </ul>
+
+            <h4>3. Автоматическая проверка</h4>
+            <p>Система автоматически проверяет:</p>
+            <ul>
+                <li>Формат и структуру документа</li>
+                <li>Наличие обязательных полей</li>
+                <li>Соответствие шаблону</li>
+                <li>Логическую целостность данных</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Полезно знать:</strong> Современные платформы предоставляют детальные отчеты о проверке подлинности, включая информацию о сертификатах, времени подписания и статусе проверки.</p>
+            </div>
+
+            <h3>Инструменты проверки</h3>
+            
+            <div class="sample-document">
+                <h4>Образец отчета о проверке:</h4>
+                <p><strong>Документ:</strong> Договор поставки №123-2024</p>
+                <p><strong>Статус проверки:</strong> ✅ Подлинный</p>
+                <p><strong>Время подписания:</strong> 15.01.2024 14:30:25</p>
+                <p><strong>Подписант:</strong> Иванов И.И. (Сертификат №1234567890)</p>
+                <p><strong>Срок действия сертификата:</strong> до 15.01.2025</p>
+                <p><strong>Статус сертификата:</strong> Действительный</p>
+            </div>
+
+            <h3>Проверка через государственные сервисы</h3>
+            
+            <p>Для документов с КЭП доступна проверка через официальные сервисы:</p>
+
+            <ul>
+                <li><strong>Портал Госуслуги</strong> — проверка подписей в документах</li>
+                <li><strong>Сайт Минцифры</strong> — валидация сертификатов</li>
+                <li><strong>Сервисы удостоверяющих центров</strong> — проверка статуса сертификатов</li>
+            </ul>
+
+            <div class="download-section">
+                <h4>Полезные инструменты</h4>
+                <p>Скачайте программы для работы с электронными подписями:</p>
+                <button class="download-btn" onclick="downloadTool('crypto-pro')">КриптоПро CSP</button>
+                <button class="download-btn" onclick="downloadTool('viper')">ViPNet CSP</button>
+                <button class="download-btn" onclick="downloadTool('cades')">КриптоАРМ</button>
+            </div>
+
+            <h3>Обработка ошибок проверки</h3>
+            
+            <p>При обнаружении проблем с подлинностью документа система может:</p>
+
+            <div class="error-box">
+                <p><strong>Возможные ошибки:</strong></p>
+                <ul>
+                    <li>Сертификат подписи недействителен</li>
+                    <li>Документ был изменен после подписания</li>
+                    <li>Сертификат отозван</li>
+                    <li>Истек срок действия сертификата</li>
+                </ul>
+            </div>
+
+            <p>В таких случаях система блокирует подписание и уведомляет всех участников процесса о необходимости исправления ошибок.</p>
+
+            <div class="success-box">
+                <p><strong>Практический совет:</strong> Регулярно проверяйте статус своих сертификатов и своевременно продлевайте их. Это предотвратит сбои в работе с документами.</p>
+            </div>
+        </section>
+        <!-- /wp:bizfin/content-section -->
+
+        <!-- wp:bizfin/form-module -->
+        <section class="form-module" id="online-form">
+            <h3>Форма для онлайн подписания документов</h3>
+            <p>Заполните форму для начала процесса подписания документов онлайн</p>
+            
+            <form id="signing-form">
+                <div class="form-group">
+                    <label for="document-type">Тип документа:</label>
+                    <select id="document-type" required>
+                        <option value="">Выберите тип документа</option>
+                        <option value="contract">Договор</option>
+                        <option value="agreement">Соглашение</option>
+                        <option value="application">Заявление</option>
+                        <option value="report">Отчет</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signature-type">Тип подписи:</label>
+                    <select id="signature-type" required>
+                        <option value="">Выберите тип подписи</option>
+                        <option value="simple">Простая ЭП</option>
+                        <option value="enhanced">Усиленная НЭП</option>
+                        <option value="qualified">Квалифицированная ЭП (КЭП)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="participants">Количество участников:</label>
+                    <input type="number" id="participants" min="1" max="10" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="urgency">Срочность:</label>
+                    <select id="urgency" required>
+                        <option value="normal">Обычная (1-3 дня)</option>
+                        <option value="urgent">Срочная (в течение дня)</option>
+                        <option value="express">Экспресс (в течение часа)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Дополнительные комментарии:</label>
+                    <textarea id="comments" placeholder="Укажите особые требования или пожелания"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Начать процесс подписания</button>
+            </form>
+        </section>
+        <!-- /wp:bizfin/form-module -->
+
+        <!-- wp:bizfin/faq-section -->
+        <section class="faq-section" id="faq-section">
+            <h2>Часто задаваемые вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Можно ли работать полностью удаленно с документами?</div>
+                <div class="faq-answer">
+                    <p>Да, современные системы онлайн подписания позволяют работать полностью удаленно. Для этого необходимо:</p>
+                    <ol>
+                        <li><strong>Получить квалифицированную электронную подпись</strong> — можно оформить дистанционно через аккредитованные удостоверяющие центры</li>
+                        <li><strong>Настроить рабочее место</strong> — установить необходимое программное обеспечение</li>
+                        <li><strong>Выбрать подходящую платформу</strong> — с поддержкой всех необходимых функций</li>
+                        <li><strong>Обучить команду</strong> — работе с системой электронного документооборота</li>
+                        <li><strong>Настроить интеграции</strong> — с существующими бизнес-процессами</li>
+                    </ol>
+                    <p>Полностью удаленная работа с документами особенно актуальна для <!-- INTERNAL_LINK: удаленная работа с банковскими гарантиями --><a href="/remote-bank-guarantees/" class="internal-link">удаленной работы с банковскими гарантиями</a> и другими финансовыми документами.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Какова юридическая сила электронных подписей?</div>
+                <div class="faq-answer">
+                    <p>Юридическая сила электронных подписей определяется Федеральным законом №63-ФЗ "Об электронной подписи":</p>
+                    <ul>
+                        <li><strong>Простая ЭП</strong> — равнозначна собственноручной подписи при наличии соглашения сторон</li>
+                        <li><strong>Усиленная НЭП</strong> — равнозначна собственноручной подписи при наличии соглашения сторон</li>
+                        <li><strong>Квалифицированная ЭП</strong> — автоматически равнозначна собственноручной подписи без дополнительных соглашений</li>
+                    </ul>
+                    <p>КЭП имеет максимальную юридическую силу и признается всеми государственными органами.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Сколько времени занимает процесс подписания?</div>
+                <div class="faq-answer">
+                    <p>Время подписания зависит от нескольких факторов:</p>
+                    <ul>
+                        <li><strong>Количество участников</strong> — каждый участник должен подписать документ</li>
+                        <li><strong>Сложность документа</strong> — объем и количество страниц</li>
+                        <li><strong>Тип подписи</strong> — КЭП требует больше времени на проверку</li>
+                        <li><strong>Скорость реакции участников</strong> — время отклика на уведомления</li>
+                    </ul>
+                    <p>В среднем процесс занимает от 15 минут до 2-3 дней в зависимости от обстоятельств.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Можно ли отозвать электронную подпись?</div>
+                <div class="faq-answer">
+                    <p>Электронную подпись нельзя "отозвать" после подписания документа, но можно:</p>
+                    <ul>
+                        <li><strong>Отозвать сертификат</strong> — если он был скомпрометирован</li>
+                        <li><strong>Аннулировать документ</strong> — по соглашению сторон</li>
+                        <li><strong>Создать новый документ</strong> — с исправлениями и новыми подписями</li>
+                    </ul>
+                    <p>Важно понимать, что подписанный документ имеет юридическую силу, и его изменение требует согласия всех сторон.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Какие документы нельзя подписывать электронно?</div>
+                <div class="faq-answer">
+                    <p>Некоторые документы требуют собственноручной подписи:</p>
+                    <ul>
+                        <li>Документы, связанные с государственной тайной</li>
+                        <li>Некоторые виды доверенностей</li>
+                        <li>Документы о регистрации брака и развода</li>
+                        <li>Завещания и наследственные документы</li>
+                        <li>Документы, требующие нотариального удостоверения</li>
+                    </ul>
+                    <p>Полный перечень ограничений указан в соответствующих нормативных актах.</p>
+                </div>
+            </div>
+        </section>
+        <!-- /wp:bizfin/faq-section -->
+
+        <!-- wp:bizfin/cta-section -->
+        <section class="cta-section" id="cta-section">
+            <h3>Оформить документы онлайн</h3>
+            <p>Переходите на современный электронный документооборот и экономьте время на подписании документов. Наша платформа обеспечивает полную безопасность и юридическую значимость всех операций.</p>
+            
+            <p>Мы предоставляем:</p>
+            <ul style="text-align: left; display: inline-block; margin: 1rem 0;">
+                <li>Полнофункциональную платформу для онлайн подписания</li>
+                <li>Поддержку всех типов электронных подписей</li>
+                <li>Интеграцию с популярными CRM-системами</li>
+                <li>Круглосуточную техническую поддержку</li>
+                <li>Обучение сотрудников работе с системой</li>
+                <li>Соответствие всем требованиям безопасности</li>
+            </ul>
+            
+            <button class="cta-button" onclick="window.location.href='/online-signing/'">Начать работу онлайн</button>
+        </section>
+        <!-- /wp:bizfin/cta-section -->
+
+        <!-- Дополнительные внутренние ссылки -->
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+            <!-- INTERNAL_LINK: электронный документооборот -->
+            Узнайте больше об <a href="/electronic-document-flow/" class="internal-link">электронном документообороте</a> и <!-- INTERNAL_LINK: цифровизация бизнес-процессов -->
+            <a href="/business-digitalization/" class="internal-link">цифровизации бизнес-процессов</a>. <!-- INTERNAL_LINK: облачные решения для бизнеса -->
+            <a href="/cloud-solutions/" class="internal-link">Облачные решения</a> помогут оптимизировать работу с документами.
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('signing-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const documentType = document.getElementById('document-type').value;
+            const signatureType = document.getElementById('signature-type').value;
+            const participants = document.getElementById('participants').value;
+            const urgency = document.getElementById('urgency').value;
+            const comments = document.getElementById('comments').value;
+            
+            if (!documentType || !signatureType || !participants) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return;
+            }
+            
+            // Симуляция отправки формы
+            alert('Заявка на подписание документов отправлена! Мы свяжемся с вами в ближайшее время.');
+            
+            // Очистка формы
+            this.reset();
+        });
+        
+        function downloadTool(toolName) {
+            const tools = {
+                'crypto-pro': 'https://www.cryptopro.ru/products/csp',
+                'viper': 'https://www.infotecs.ru/products/viper-csp/',
+                'cades': 'https://www.cryptopro.ru/products/cades'
+            };
+            
+            if (tools[toolName]) {
+                window.open(tools[toolName], '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

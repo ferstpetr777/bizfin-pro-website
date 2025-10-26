@@ -1,0 +1,506 @@
+/* BizFin ChatGPT Consultant - Admin Styles */
+
+.bcc-admin-dashboard {
+    margin-top: 20px;
+}
+
+.bcc-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.bcc-dashboard-card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bcc-dashboard-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1f2937;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bcc-full-width {
+    grid-column: 1 / -1;
+}
+
+.bcc-logs-container {
+    background: #1f2937;
+    color: #f9fafb;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.bcc-logs-container pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Статистика */
+.bcc-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bcc-stats-card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bcc-stats-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1f2937;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bcc-stats-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bcc-stats-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bcc-stats-card li:last-child {
+    border-bottom: none;
+}
+
+.bcc-stats-card strong {
+    color: #374151;
+}
+
+/* Логи */
+.bcc-logs-actions {
+    margin-bottom: 20px;
+}
+
+.bcc-logs-actions .button {
+    margin-right: 10px;
+}
+
+/* Формы настроек */
+.form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+    vertical-align: top;
+}
+
+.form-table td {
+    padding: 15px 10px;
+}
+
+.form-table input[type="text"],
+.form-table input[type="number"],
+.form-table select,
+.form-table textarea {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-table .large-text {
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-table .small-text {
+    width: 80px;
+}
+
+.form-table .description {
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Кнопки */
+.button-primary {
+    background: #1e40af;
+    border-color: #1e40af;
+}
+
+.button-primary:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.button {
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Уведомления */
+.notice {
+    border-left: 4px solid #1e40af;
+    background: #f8fafc;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.notice.notice-success {
+    border-left-color: #10b981;
+    background: #f0fdf4;
+}
+
+.notice.notice-error {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+
+.notice.notice-warning {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+/* Индикаторы статуса */
+.bcc-status-online {
+    color: #10b981;
+}
+
+.bcc-status-offline {
+    color: #ef4444;
+}
+
+.bcc-status-warning {
+    color: #f59e0b;
+}
+
+/* Прогресс-бары */
+.bcc-progress {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.bcc-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #1e40af, #7c3aed);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Карточки метрик */
+.bcc-metric-card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.bcc-metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bcc-metric-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 8px;
+}
+
+.bcc-metric-label {
+    font-size: 14px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Таблицы */
+.bcc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.bcc-table th,
+.bcc-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.bcc-table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+}
+
+.bcc-table tr:hover {
+    background: #f9fafb;
+}
+
+/* Модальные окна */
+.bcc-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.bcc-modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.bcc-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.bcc-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.bcc-modal-close:hover {
+    color: #374151;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .bcc-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bcc-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .form-table th {
+        border-bottom: none;
+        padding-bottom: 5px;
+    }
+    
+    .bcc-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+/* Анимации загрузки */
+.bcc-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1e40af;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Индикаторы состояния */
+.bcc-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.bcc-indicator-success {
+    background: #10b981;
+}
+
+.bcc-indicator-error {
+    background: #ef4444;
+}
+
+.bcc-indicator-warning {
+    background: #f59e0b;
+}
+
+.bcc-indicator-info {
+    background: #3b82f6;
+}
+
+/* Списки */
+.bcc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bcc-list-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bcc-list-item:last-child {
+    border-bottom: none;
+}
+
+.bcc-list-item:hover {
+    background: #f9fafb;
+}
+
+/* Бейджи */
+.bcc-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bcc-badge-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.bcc-badge-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.bcc-badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.bcc-badge-info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* Улучшения для WordPress админки */
+.wrap h1 {
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.wrap h2 {
+    color: #374151;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.wrap h3 {
+    color: #4b5563;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Специальные стили для BizFin Pro */
+.bcc-brand-colors {
+    --primary-color: #1e40af;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #7c3aed;
+    --success-color: #059669;
+    --warning-color: #d97706;
+    --error-color: #dc2626;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --border-color: #e5e7eb;
+}
+
+/* Темная тема для админки */
+@media (prefers-color-scheme: dark) {
+    .bcc-dashboard-card,
+    .bcc-stats-card,
+    .bcc-metric-card {
+        background: #1f2937;
+        border-color: #374151;
+        color: #f9fafb;
+    }
+    
+    .bcc-dashboard-card h3,
+    .bcc-stats-card h3 {
+        color: #f9fafb;
+    }
+    
+    .bcc-stats-card strong {
+        color: #d1d5db;
+    }
+    
+    .bcc-modal-content {
+        background: #1f2937;
+        color: #f9fafb;
+    }
+    
+    .bcc-modal-header {
+        border-bottom-color: #374151;
+    }
+    
+    .bcc-table th {
+        background: #374151;
+        color: #f9fafb;
+    }
+    
+    .bcc-table tr:hover {
+        background: #374151;
+    }
+}
