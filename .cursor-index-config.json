@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "project_name": "BizFin Pro Website",
+  "description": "WordPress financial consulting website with AI integration",
+  "indexing_strategy": {
+    "include_patterns": [
+      "wordpress/wp-content/plugins/**/*.php",
+      "wordpress/wp-content/mu-plugins/**/*.php",
+      "wordpress/wp-content/themes/**/*.php",
+      "documentation/**/*.md",
+      "scripts/**/*.php",
+      "config/**/*.php",
+      "*.php",
+      "*.js",
+      "*.css",
+      "*.json",
+      "*.md"
+    ],
+    "exclude_patterns": [
+      "wordpress/wp-content/uploads/**",
+      "wordpress/wp-content/cache/**",
+      "wordpress/wp-content/backup-*/**",
+      "node_modules/**",
+      "vendor/**",
+      "*.log",
+      "*.tmp",
+      "*.cache",
+      "backups/**",
+      "logs/**"
+    ],
+    "priority_files": [
+      "wordpress/wp-content/plugins/bizfin-chatgpt-consultant/**",
+      "wordpress/wp-content/plugins/bizfin-seo-article-generator/**",
+      "wordpress/wp-content/plugins/abp-image-generator/**",
+      "wordpress/wp-content/mu-plugins/openai-api-manager.php",
+      "wordpress/wp-content/mu-plugins/dutch-proxy-integration.php",
+      "wordpress/wp-content/mu-plugins/proxy-monitor.php",
+      "documentation/architecture/**",
+      "wp-config.php",
+      ".htaccess"
+    ]
+  },
+  "ai_integration": {
+    "openai_api": {
+      "enabled": true,
+      "models": ["gpt-4o", "gpt-4", "dall-e-2", "dall-e-3"],
+      "proxy_integration": true,
+      "proxy_host": "89.110.80.198",
+      "proxy_port": "8889"
+    },
+    "content_generation": {
+      "enabled": true,
+      "article_generation": true,
+      "image_generation": true,
+      "seo_optimization": true
+    }
+  },
+  "plugins_analysis": {
+    "active_plugins": 29,
+    "mu_plugins": 16,
+    "key_plugins": [
+      "bizfin-chatgpt-consultant",
+      "bizfin-seo-article-generator",
+      "abp-image-generator",
+      "abp-ai-categorization",
+      "article-analyzer-regenerator",
+      "elementor",
+      "elementor-pro",
+      "wordpress-seo",
+      "wordpress-seo-premium",
+      "alphabet-blog-panel-v2"
+    ]
+  },
+  "technical_stack": {
+    "wordpress_version": "6.8.3",
+    "php_version": "8.0+",
+    "mysql_version": "5.7+",
+    "theme": "astra",
+    "page_builder": "elementor",
+    "seo_plugin": "yoast-seo-premium"
+  },
+  "monitoring": {
+    "proxy_monitoring": true,
+    "performance_monitoring": true,
+    "error_logging": true,
+    "api_usage_tracking": true
+  },
+  "development_workflow": {
+    "version_control": "git",
+    "backup_strategy": "automated",
+    "deployment": "manual",
+    "testing": "staging_environment"
+  },
+  "security": {
+    "wordpress_hiding": true,
+    "login_protection": true,
+    "ssl_enabled": true,
+    "proxy_protection": true
+  },
+  "performance": {
+    "caching_enabled": true,
+    "image_compression": true,
+    "lazy_loading": true,
+    "cdn_integration": false
+  }
+}

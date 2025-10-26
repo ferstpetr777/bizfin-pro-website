@@ -1,0 +1,128 @@
+# Cursor Rules for BizFin Pro Website
+
+## Project Overview
+This is a WordPress financial consulting website with advanced AI integration, specializing in bank guarantees, tenders, and business financial services.
+
+## Key Technologies
+- WordPress 6.8.3 with Astra theme
+- 29 active plugins + 16 must-use plugins
+- OpenAI GPT-4 integration via Dutch proxy
+- Advanced SEO with Yoast Premium
+- Elementor page builder
+- AI content generation and image creation
+
+## Project Structure
+- `wordpress/` - WordPress core files
+- `wordpress/wp-content/plugins/` - 29 active plugins
+- `wordpress/wp-content/mu-plugins/` - 16 must-use plugins
+- `wordpress/wp-content/themes/` - Astra theme + custom theme
+- `documentation/` - Comprehensive project documentation
+- `scripts/` - Deployment and maintenance scripts
+
+## Focus Areas for Development
+
+### AI Integration (Priority 1)
+- OpenAI API integration through Dutch proxy
+- ChatGPT consultant for financial advice
+- AI content generation and SEO optimization
+- Image generation with DALL-E
+- Content analysis and regeneration
+
+### Plugin Architecture (Priority 2)
+- BizFin ChatGPT Consultant plugin
+- SEO Article Generator plugin
+- ABP Image Generator plugin
+- AI Categorization plugin
+- Article Analyzer Regenerator plugin
+
+### Performance Optimization (Priority 3)
+- Caching strategies (Query Monitor, Cache Purge)
+- Image compression (Smart Image Compressor)
+- Lazy loading (A3 Lazy Load)
+- Database optimization
+- CDN integration
+
+### Security (Priority 4)
+- WordPress hiding (Hide My WP)
+- Login protection (WPS Hide Login)
+- Proxy monitoring and alerts
+- SSL/TLS configuration
+- Security headers
+
+## Important Files to Monitor
+
+### Core AI Plugins:
+- `bizfin-chatgpt-consultant/` - Main AI consultant
+- `bizfin-seo-article-generator/` - Content generation
+- `abp-image-generator/` - Image creation
+- `abp-ai-categorization/` - Content categorization
+- `article-analyzer-regenerator/` - Content analysis
+
+### MU-Plugins (Must-Use):
+- `openai-api-manager.php` - OpenAI API management
+- `proxy-monitor.php` - Proxy monitoring
+- `dutch-proxy-integration.php` - Dutch proxy integration
+- `ai-engine-proxy.php` - AI engine proxy
+- `proxy-admin-indicator.php` - Admin panel indicator
+
+### Configuration Files:
+- `wp-config.php` - WordPress configuration
+- `.htaccess` - Server configuration
+- `wp-content/uploads/proxy-monitor/` - Proxy monitoring data
+- `wp-content/uploads/openai-logs/` - OpenAI API logs
+
+## Development Priorities
+
+### 1. AI System Optimization
+- Improve OpenAI API response times
+- Optimize proxy connection stability
+- Enhance content generation quality
+- Implement better error handling
+
+### 2. Plugin Integration
+- Ensure all plugins work together seamlessly
+- Optimize plugin loading order
+- Implement proper plugin dependencies
+- Monitor plugin conflicts
+
+### 3. Performance Enhancement
+- Optimize database queries
+- Implement advanced caching
+- Compress and optimize images
+- Minimize CSS/JS files
+
+### 4. Security Hardening
+- Implement additional security measures
+- Monitor for vulnerabilities
+- Regular security audits
+- Backup and recovery procedures
+
+## Code Standards
+- Follow WordPress coding standards
+- Use proper PHP documentation
+- Implement security best practices
+- Optimize for performance
+- Ensure mobile responsiveness
+- Maintain SEO optimization
+
+## API Integrations
+- OpenAI GPT-4 API (via Dutch proxy)
+- DALL-E API for image generation
+- Yandex Metrika for analytics
+- Custom internal APIs
+- Third-party financial APIs
+
+## Monitoring and Logging
+- Proxy status monitoring
+- OpenAI API usage tracking
+- Performance metrics
+- Error logging and alerting
+- User activity monitoring
+
+## Notes
+- This is a production financial website
+- All changes must be thoroughly tested
+- Backup before making modifications
+- Follow WordPress and security best practices
+- Monitor AI API usage and costs
+- Ensure compliance with financial regulations
